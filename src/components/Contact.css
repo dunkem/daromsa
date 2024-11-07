@@ -1,0 +1,31 @@
+.container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+h1 {
+    color: #343a40;
+}
+
+.card {
+    border: none;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 576px) {
+    h5 {
+        font-size: 1rem;
+    }
+}
