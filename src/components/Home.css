@@ -1,6 +1,11 @@
+.carousel-container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .carousel-image {
-    height: 400px; /* Ajusta la altura de las imágenes del carrusel */
-    object-fit: cover; /* Asegúrate de que las imágenes cubran el área del carrusel */
+    height: 200px; /* Ajusta esta altura según lo que necesites */
+    object-fit: cover; /* Mantiene las proporciones de las imágenes */
 }
 
 .carousel-title {
@@ -31,4 +36,33 @@ footer {
     font-size: 1.2em; /* Tamaño de fuente mayor */
     margin-top: 10px; /* Espacio entre la descripción y la oferta */
 }
+/* Home.css */
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.triangle-small {
+    border-width: 0 15px 26px 15px;
+    border-color: transparent transparent red transparent;
+}
+
+.triangle-large {
+    border-width: 0 30px 52px 30px;
+    border-color: transparent transparent red transparent;
+}
+
+/* Posicionamiento de triángulos */
+.triangle-top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.triangle-bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
 

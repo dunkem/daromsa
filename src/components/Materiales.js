@@ -1,23 +1,20 @@
 import React, { useContext, useState } from 'react';
-import { Container, Row, Col, Button, ListGroup, DropdownButton, Dropdown } from 'react-bootstrap';
-import { CartContext } from '../contexts/CartContext';
-
-function Materiales() {
-    const { addToCart } = useContext(CartContext);
-    const [selectedSubrubro, setSelectedSubrubro] = useState('hidrofugos');
+      import { Container, Row, Col, Button, DropdownButton, Dropdown, Card } from 'react-bootstrap';
+      import { CartContext } from '../contexts/CartContext';
+      
+      function Materiales() {
+          const { addToCart } = useContext(CartContext);
+          const [selectedSubrubro, setSelectedSubrubro] = useState('hidrofugos');
+      
+        
 
     const materiales = {
         hidrofugos: [
-          { id: 1, name: "Hidrofugo Sika 1 Tambor x 200 Kg" },
-          { id: 2, name: "Hidrofugo Sika 1 Bidón x 20 Kg" },
-          { id: 3, name: "Hidrofugo Sika 1 Bidón x 10 Kg" },
-          { id: 4, name: "Hidrófugo Sika 1 x 4 Lts." },
-          { id: 5, name: "Hidrófugo Darapel 19 Grace" },
-          { id: 6, name: "Hidrofugo Mapei Balde x 20 Kg" },
-          { id: 7, name: "Hidrofugo Mapei Tambor x 200 Kg" },
-          { id: 8, name: "Hidrofugo Mapei Box 4 x 5 Kg" },
-          { id: 9, name: "HIDROFUGO CERESITA X 4LTS" },
-          { id: 10, name: "Revoque Exterior Hidrofugo Proyectable 3 en 1 x 30Kg" }
+          { id: 1, name: "Hidrofugo Sika 1 Tambor x 200 Kg", img: "/path/to/image1.jpg" }, 
+          { id: 2, name: "Hidrofugo Sika 1 Bidón x 20 Kg", img: "/path/to/image2.jpg" }, 
+          { id: 3, name: "Hidrofugo Sika 1 Bidón x 10 Kg", img: "/path/to/image3.jpg" }, 
+          { id: 4, name: "Hidrófugo Sika 1 x 4 Lts.", img: "/path/to/image4.jpg" }, 
+          { id: 5, name: "Hidrófugo Darapel 19 Grace", img: "/path/to/image5.jpg"}, 
         ],
         ladrillos: [
           { id: 11, name: "Ladrillo Comun" },
@@ -135,68 +132,82 @@ function Materiales() {
         ]
       };
       
-
-    const handleSelect = (eventKey) => {
-        setSelectedSubrubro(eventKey);
-    };
-
-    return (
-        <Container className="mt-4">
-            <Row>
-                <Col md={6}>
-                    <h1>Materiales de Corralón</h1>
-                    <DropdownButton
-                        id="dropdown-basic-button"
-                        title={selectedSubrubro.charAt(0).toUpperCase() + selectedSubrubro.slice(1)}
-                        onSelect={handleSelect}
-                        variant="success"
-                    >
-                        {Object.keys(materiales).map(subrubro => (
-                            <Dropdown.Item eventKey={subrubro} key={subrubro}>
-                                {subrubro.charAt(0).toUpperCase() + subrubro.slice(1)}
-                            </Dropdown.Item>
-                        ))}
-                    </DropdownButton>
-                    <ListGroup className="mt-4">
-                        {materiales[selectedSubrubro].map(material => (
-                            <ListGroup.Item key={material.id}>
-                                <h5>{material.name}</h5>
-                                <Button variant="success" size="sm" onClick={() => addToCart(material)} className="w-50">
-                                    Agregar al Carrito
-                                </Button>
-                            </ListGroup.Item>
-                        ))}
-                    </ListGroup>
-                </Col>
-                <Col md={6}>
-                    <h2>Nuestros Proveedores</h2>
-                    <img src="/proveedor1.jpg" alt="Proveedor 1" className="img-fluid mb-2" />
-                    <img src="/proveedor2.jpg" alt="Proveedor 2" className="img-fluid mb-2" />
-                    <img src="/proveedor3.jpg" alt="Proveedor 3" className="img-fluid mb-2" />
-                    {/* Añade los logos de todos tus proveedores aquí */}
-                </Col>
-            </Row>
-            <Row className="mt-4">
-                <Col>
-                    <h2>Información de la Empresa</h2>
-                    <p><strong>Dirección:</strong> 152 N° 6352 - 2do.Piso-Of.212, Hudson, Provincia de Buenos Aires</p>
-                    <p><strong>Teléfono:</strong> 555-555-5555</p>
-                    <p><strong>Correo Electrónico:</strong> <a href="mailto:contacto@darom.com">contacto@darom.com</a></p>
-                    <p><strong>Horario de Atención:</strong> Lunes a Viernes, de 9:00 a 18:00 hs</p>
-                    <iframe
-    title="Mapa de oficinas en Hudson"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.456022497281!2d-58.21165368427842!3d-34.84763467913954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32f4db3ac5cb7%3A0x7d313e6fdb2c1a!2s152%20N%C2%B06352%2C%20B1848HRB%20Hudson%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1634008710566!5m2!1ses!2sar"
-    width="100%"
-    height="450"
-    style={{ border: 0 }}
-    allowFullScreen=""
-    loading="lazy"
-></iframe>
-
-                </Col>
-            </Row>
-        </Container>
-    );
-}
-
-export default Materiales;
+      
+      
+             
+      
+          const handleSelect = (eventKey) => {
+              setSelectedSubrubro(eventKey);
+          };
+      
+          return (
+              <Container className="mt-4">
+                  <Row>
+                      <Col md={12}>
+                          <h1>Materiales de Corralón</h1>
+                          <DropdownButton
+                              id="dropdown-basic-button"
+                              title={selectedSubrubro.charAt(0).toUpperCase() + selectedSubrubro.slice(1)}
+                              onSelect={handleSelect}
+                              variant="success"
+                              className="mb-4"
+                          >
+                              {Object.keys(materiales).map(subrubro => (
+                                  <Dropdown.Item eventKey={subrubro} key={subrubro}>
+                                      {subrubro.charAt(0).toUpperCase() + subrubro.slice(1)}
+                                  </Dropdown.Item>
+                              ))}
+                          </DropdownButton>
+                          <Row className="d-flex justify-content-center">
+                              {materiales[selectedSubrubro].map(material => (
+                                  <Col xs={12} sm={6} md={4} lg={3} key={material.id} className="mb-4 d-flex align-items-stretch">
+                                      <Card>
+                                          <Card.Img variant="top" src={material.img} alt={material.name} />
+                                          <Card.Body>
+                                              <Card.Title>{material.name}</Card.Title>
+                                              <Button variant="success" size="sm" onClick={() => addToCart(material)} className="w-100">
+                                                  Agregar al Carrito
+                                              </Button>
+                                          </Card.Body>
+                                      </Card>
+                                  </Col>
+                              ))}
+                          </Row>
+                      </Col>
+                  </Row>
+                  {/* Proveedores Section */}
+                  <Row className="mt-4">
+                      <Col>
+                          <h2>Nuestros Proveedores</h2>
+                          <img src="/proveedor1.jpg" alt="Proveedor 1" className="img-fluid mb-2" />
+                          <img src="/proveedor2.jpg" alt="Proveedor 2" className="img-fluid mb-2" />
+                          <img src="/proveedor3.jpg" alt="Proveedor 3" className="img-fluid mb-2" />
+                          {/* Añade los logos de todos tus proveedores aquí */}
+                      </Col>
+                  </Row>
+                  {/* Información de la Empresa Section */}
+                  <Row className="mt-4">
+                      <Col>
+                          <h2>Información de la Empresa</h2>
+                          <p><strong>Dirección:</strong> 152 N° 6352 - 2do.Piso-Of.212, Hudson, Provincia de Buenos Aires</p>
+                          <p><strong>Teléfono:</strong> 555-555-5555</p>
+                          <p><strong>Correo Electrónico:</strong> <a href="mailto:contacto@darom.com">contacto@darom.com</a></p>
+                          <p><strong>Horario de Atención:</strong> Lunes a Viernes, de 9:00 a 18:00 hs</p>
+                          <iframe
+                              title="Mapa de oficinas en Hudson"
+                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.456022497281!2d-58.21165368427842!3d-34.84763467913954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32f4db3ac5cb7%3A0x7d313e6fdb2c1a!2s152%20N%C2%B06352%2C%20B1848HRB%20Hudson%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1634008710566!5m2!1ses!2sar"
+                              width="100%"
+                              height="450"
+                              style={{ border: 0 }}
+                              allowFullScreen=""
+                              loading="lazy"
+                          ></iframe>
+                      </Col>
+                  </Row>
+              </Container>
+          );
+      }
+      
+      export default Materiales;
+      
+      

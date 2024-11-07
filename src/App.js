@@ -11,6 +11,7 @@ import Hormigon from './components/Hormigon';
 import Materiales from './components/Materiales';
 import Suelos from './components/Suelos';
 import ServiciosDeBombeo from './components/ServiciosDeBombeo';
+import './App.css'; // Asegúrate de tener este archivo CSS
 
 function App() {
     return (
@@ -18,7 +19,7 @@ function App() {
             <Container fluid>
                 <Navbar bg="light" expand="lg" className="shadow-sm p-3 mb-5 bg-white rounded">
                     <Container>
-                        <Navbar.Brand>
+                        <Navbar.Brand as={Link} to="/">
                             <img src="/logodaromtransparente.png" alt="Darom SA" style={{ height: 70, width: 200 }} />
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -32,7 +33,7 @@ function App() {
                                 <Nav.Link as={Link} to="/about" className="btn btn-outline-primary mx-1">Sobre Nosotros</Nav.Link>
                                 <Nav.Link as={Link} to="/contact" className="btn btn-outline-primary mx-1">Contacto</Nav.Link>
                             </Nav>
-                            <Nav className="social-icons">
+                            <Nav className="social-icons d-flex flex-row justify-content-between">
                                 <Nav.Link href="https://www.facebook.com/tu_pagina" target="_blank" className="mx-1">
                                     <FaFacebook size={25} />
                                 </Nav.Link>

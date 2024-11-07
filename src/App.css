@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+/* Estilo CSS para íconos de redes sociales */
+.social-icons {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+@media (max-width: 576px) {
+  .social-icons {
+      justify-content: space-around;
+  }
+}
+
+
