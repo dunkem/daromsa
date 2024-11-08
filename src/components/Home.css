@@ -1,68 +1,38 @@
 .carousel-container {
-    max-width: 100%;
-    overflow: hidden;
+    margin-bottom: 40px;
 }
 
 .carousel-image {
-    height: 200px; /* Ajusta esta altura según lo que necesites */
-    object-fit: cover; /* Mantiene las proporciones de las imágenes */
+    max-height: 450px;
+    object-fit: cover;
 }
 
-.carousel-title {
-    font-size: 2rem; /* Tamaño de fuente para el título del carrusel */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra de texto para mejor visibilidad */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
 }
 
-.carousel-text {
-    font-size: 1.2rem; /* Tamaño de fuente para el texto del carrusel */
+.modern-button {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
-/* Estilo de las tarjetas de servicio */
-.service-card {
-    transition: transform 0.3s; /* Animación al pasar el mouse */
+.modern-button:hover {
+    background-color: #0056b3;
 }
 
-.service-card:hover {
-    transform: scale(1.05); /* Efecto de hover */
+.modern-card {
+    border: none;
+    border-radius: 10px;
 }
 
-/* Estilo del footer */
-footer {
-    background-color: #f8f9fa; /* Fondo del footer */
-    padding: 1rem 0; /* Espaciado */
+.testimonial {
+    text-align: center;
+    font-style: italic;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
 }
-
-.service-card .text-danger {
-    font-size: 1.2em; /* Tamaño de fuente mayor */
-    margin-top: 10px; /* Espacio entre la descripción y la oferta */
-}
-/* Home.css */
-.triangle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-}
-
-.triangle-small {
-    border-width: 0 15px 26px 15px;
-    border-color: transparent transparent red transparent;
-}
-
-.triangle-large {
-    border-width: 0 30px 52px 30px;
-    border-color: transparent transparent red transparent;
-}
-
-/* Posicionamiento de triángulos */
-.triangle-top-left {
-    top: 10px;
-    left: 10px;
-}
-
-.triangle-bottom-right {
-    bottom: 10px;
-    right: 10px;
-}
-
-
