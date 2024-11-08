@@ -3,14 +3,15 @@
 }
 
 .carousel-image {
-    max-height: 450px;
+    max-height: 400px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .carousel-caption {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 10px;
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 15px;
 }
 
 .modern-button {
@@ -18,15 +19,24 @@
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .modern-button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .modern-card {
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.modern-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial {
@@ -34,5 +44,35 @@
     font-style: italic;
     padding: 20px;
     background: #f8f9fa;
-    border-radius: 10px;
+    border-radius: 15px;
+}
+
+.contact-section {
+    background: #f1f1f1;
+    padding: 40px 20px;
+    border-radius: 15px;
+}
+
+.contact-section h4 {
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.contact-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+.office-location {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    margin-top: 40px;
 }
