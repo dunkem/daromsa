@@ -1,31 +1,94 @@
-.container {
-    background-color: #f8f9fa;
+/* Contact.css */
+
+.contact-container {
+    background-color: #f8f9fa; /* Fondo claro */
     border-radius: 8px;
     padding: 20px;
 }
 
 h1 {
-    color: #343a40;
+    color: #343a40; /* Color del título principal */
+    text-align: center; /* Centra el título */
+    margin-bottom: 20px; /* Espaciado inferior */
 }
 
 .card {
-    border: none;
+    border: none; /* Sin borde en la tarjeta */
 }
 
 .card-body {
-    padding: 30px;
+    padding: 30px; /* Padding interno de la tarjeta */
+}
+
+.card-title {
+    font-size: 1.5rem; /* Tamaño del título de la tarjeta */
+    margin-bottom: 20px; /* Espaciado inferior */
+    text-align: center; /* Centra el título de la tarjeta */
+}
+
+.form-group label {
+    font-weight: bold; /* Negrita para las etiquetas */
+}
+
+.form-control {
+    border-radius: 5px; /* Bordes redondeados en inputs y textarea */
+    box-shadow: none; /* Sin sombra */
+    transition: border-color 0.3s ease; /* Transición suave */
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Color de borde al enfocar */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
 }
 
 button {
     transition: all 0.3s ease;
+    background-color: #007bff; /* Color de fondo del botón */
+    border: none; /* Sin borde */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold; /* Negrita para el texto */
 }
 
 button:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
 }
 
+.map-container {
+    margin-top: 20px; /* Espacio superior para el mapa */
+}
+
+/* Estilos del Footer */
+footer {
+    background-color: #343a40; /* Fondo oscuro para el footer */
+    color: white; /* Texto blanco */
+    padding: 40px 20px; /* Espaciado */
+    margin-top: 30px; /* Espaciado superior para el footer */
+    text-align: center; /* Centrar texto en el footer */
+}
+
+footer h5 {
+    margin-bottom: 20px; /* Espaciado inferior en el título del footer */
+}
+
+footer a {
+    color: #007bff; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Media Queries */
 @media (max-width: 576px) {
     h5 {
-        font-size: 1rem;
+        font-size: 1rem; /* Tamaño de fuente más pequeño en móviles */
+    }
+    
+    button {
+        width: 100%; /* Botones ocupan el 100% en móviles */
     }
 }

@@ -1,52 +1,113 @@
-.App {
-  text-align: center;
+/* App.css */
+
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa; /* Fondo claro */
+  color: #333; /* Texto oscuro */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar */
+.navbar {
+  transition: background-color 0.3s ease;
+  background-color: #ffffff; /* Fondo blanco para la navbar */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar:hover {
+  background-color: #e9ecef; /* Color de fondo al pasar el ratón */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-brand img {
+  height: 70px; /* Altura del logo */
+  width: auto; /* Mantiene la proporción */
 }
 
-.App-link {
-  color: #61dafb;
+.nav-link {
+  transition: color 0.3s ease;
+  color: #007bff; /* Color primario */
+  margin: 0 10px; /* Espacio entre los enlaces */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-/* Estilo CSS para íconos de redes sociales */
-.social-icons {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+.nav-link:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Fondo suave al pasar el ratón */
+  border-radius: 5px; /* Bordes redondeados en hover */
 }
 
+.navbar-nav .nav-link.active {
+  color: #0056b3; /* Color para el enlace activo */
+  font-weight: bold; /* Negrita para el enlace activo */
+  text-decoration: underline; /* Subrayado para el enlace activo */
+}
+
+/* Iconos sociales */
+.social-icons .nav-link {
+  color: #333; /* Color por defecto de los iconos */
+}
+
+.social-icons .nav-link:hover {
+  color: #007bff; /* Color al pasar el ratón */
+}
+
+/* Estilos para el carrito */
+.dropdown-toggle::after {
+  display: none; /* Oculta el símbolo del dropdown */
+}
+
+.dropdown-item {
+  color: #333; /* Color de los elementos del dropdown */
+}
+
+/* Resumen del carrito */
+.nav-dropdown-item {
+  font-weight: bold; /* Negrita para el título */
+}
+
+/* Estilos de botones */
+.btn-outline-primary {
+  border-color: #007bff; /* Color del borde */
+  color: #007bff; /* Color del texto */
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff; /* Fondo al pasar el ratón */
+  color: white; /* Texto blanco al pasar el ratón */
+}
+
+/* Contenedor */
+.container {
+  padding-top: 20px; /* Espaciado superior */
+}
+
+/* Footer */
+.footer {
+  background-color: #343a40; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  padding: 20px 0; /* Espaciado */
+  text-align: center; /* Centra el texto */
+}
+
+/* Enlaces del footer */
+.footer a {
+  color: #ffc107; /* Color dorado para los enlaces */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Media Queries */
 @media (max-width: 576px) {
-  .social-icons {
-      justify-content: space-around;
+  .navbar-brand img {
+      height: 50px; /* Ajusta el tamaño de la imagen en móviles */
+  }
+
+  .nav-link {
+      font-size: 0.8rem; /* Tamaño de fuente más pequeño en móviles */
+  }
+
+  .social-icons .nav-link {
+      font-size: 20px; /* Tamaño de iconos en móviles */
   }
 }
-
-

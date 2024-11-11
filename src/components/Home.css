@@ -1,126 +1,97 @@
-.carousel-container {
-    margin-bottom: 40px;
-}
+/* Contact.css */
 
-.carousel-image {
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.carousel-caption {
-    background: rgba(0, 0, 0, 0.7);
+.contact-container {
+    background-color: #f8f9fa; /* Fondo claro */
+    border-radius: 8px;
     padding: 20px;
-    border-radius: 15px;
 }
 
-.modern-button {
-    background-color: #007bff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
+h1 {
+    color: #343a40; /* Color del título principal */
+    text-align: center; /* Centra el título */
+    margin-bottom: 20px; /* Espaciado inferior */
 }
 
-.modern-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+.card {
+    border: none; /* Sin borde en la tarjeta */
 }
 
-.modern-card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+.card-body {
+    padding: 30px; /* Padding interno de la tarjeta */
 }
 
-.modern-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.card-title {
+    font-size: 1.5rem; /* Tamaño del título de la tarjeta */
+    margin-bottom: 20px; /* Espaciado inferior */
+    text-align: center; /* Centra el título de la tarjeta */
 }
 
-.testimonial {
-    text-align: center;
-    font-style: italic;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 15px;
+.form-group label {
+    font-weight: bold; /* Negrita para las etiquetas */
 }
 
-/* contacthome*/
-.contact-section {
-    background-color: #e9ecef; /* Color de fondo suave */
-    border-radius: 15px;
-    padding: 30px;
-    margin-top: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+.form-control {
+    border-radius: 5px; /* Bordes redondeados en inputs y textarea */
+    box-shadow: none; /* Sin sombra */
+    transition: border-color 0.3s ease; /* Transición suave */
 }
 
-.contact-card h4 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #007bff; /* Color llamativo */
-    margin-bottom: 15px;
+.form-control:focus {
+    border-color: #007bff; /* Color de borde al enfocar */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
 }
 
-.contact-card p {
-    font-size: 1.1rem;
-    color: #555; /* Color de texto más oscuro */
+button {
+    transition: all 0.3s ease;
+    background-color: #007bff; /* Color de fondo del botón */
+    border: none; /* Sin borde */
 }
 
-.modern-button {
-    border-radius: 25px;
-    padding: 10px 25px; /* Aumentar el padding para mayor clicabilidad */
-    font-size: 1.1rem;
-    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+button:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+    color: white; /* Texto blanco al pasar el ratón */
 }
 
-.modern-button:hover {
-    background-color: #28a745; /* Cambia el color al pasar el ratón */
-    transform: scale(1.05); /* Efecto de escalado */
+.map-container {
+    margin-top: 20px; /* Espacio superior para el mapa */
 }
 
-.whatsapp-button {
-    background-color: #25D366; /* Color verde de WhatsApp */
-    color: white; /* Texto blanco */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-}
-
-.whatsapp-button:hover {
-    background-color: #1DAF1A; /* Color más oscuro al pasar el ratón */
-}
-.office-location {
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-    margin-top: 40px;
-}
-/* footerhome */
 .footer-section {
-    background-color: #343a40; /* Color de fondo oscuro */
-    color: white; /* Color de texto blanco */
-    padding: 20px 0; /* Espaciado vertical */
-    text-align: center; /* Centrar texto */
+    background-color: #343a40; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 40px 20px; /* Espaciado */
+    margin-top: 30px; /* Espaciado superior */
+    text-align: center; /* Centrar texto en el footer */
 }
 
-.footer-section p {
-    margin: 0; /* Eliminar margen */
-    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+.footer-title {
+    font-size: 1.5rem; /* Tamaño del título */
+    margin-bottom: 10px; /* Espaciado inferior */
 }
 
 .footer-links {
-    margin-top: 10px; /* Espaciado entre párrafo y enlaces */
+    margin-top: 10px; /* Espaciado superior */
 }
 
 .footer-links a {
-    color: #ffc107; /* Color amarillo para los enlaces */
+    color: #007bff; /* Color de los enlaces */
     text-decoration: none; /* Sin subrayado */
-    margin: 0 15px; /* Espaciado entre enlaces */
-    transition: color 0.3s; /* Transición suave */
+    margin: 0 10px; /* Espaciado entre enlaces */
 }
 
 .footer-links a:hover {
-    color: #fff; /* Color blanco al pasar el ratón */
+    text-decoration: underline; /* Subrayado al pasar el ratón */
 }
+
+/* Media Queries */
+@media (max-width: 576px) {
+    .footer-title {
+        font-size: 1.25rem; /* Tamaño más pequeño en móviles */
+    }
+
+    .footer-links {
+        display: block; /* Muestra los enlaces en bloque en móviles */
+    }
+}
+

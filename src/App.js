@@ -11,7 +11,7 @@ import Hormigon from './components/Hormigon';
 import Materiales from './components/Materiales';
 import Suelos from './components/Suelos';
 import ServiciosDeBombeo from './components/ServiciosDeBombeo';
-import './App.css'; // Asegúrate de tener este archivo CSS
+import './App.css';
 
 function App() {
     return (
@@ -20,7 +20,7 @@ function App() {
                 <Navbar bg="light" expand="lg" className="shadow-sm p-3 mb-5 bg-white rounded">
                     <Container>
                         <Navbar.Brand as={Link} to="/">
-                            <img src="/logodaromtransparente.png" alt="Darom SA" style={{ height: 70, width: 200 }} />
+                            <img src="/daromlogooficial2.png" alt="Darom SA" className="img-fluid" style={{ height: 70 }} />
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
@@ -34,16 +34,16 @@ function App() {
                                 <Nav.Link as={Link} to="/contact" className="btn btn-outline-primary mx-1">Contacto</Nav.Link>
                             </Nav>
                             <Nav className="social-icons d-flex flex-row justify-content-between">
-                                <Nav.Link href="https://www.facebook.com/tu_pagina" target="_blank" className="mx-1">
+                                <Nav.Link href="https://www.facebook.com/tu_pagina" target="_blank" title="Facebook" className="mx-1">
                                     <FaFacebook size={25} />
                                 </Nav.Link>
-                                <Nav.Link href="https://www.instagram.com/tu_pagina" target="_blank" className="mx-1">
+                                <Nav.Link href="https://www.instagram.com/tu_pagina" target="_blank" title="Instagram" className="mx-1">
                                     <FaInstagram size={25} />
                                 </Nav.Link>
-                                <Nav.Link href="https://www.youtube.com/tu_pagina" target="_blank" className="mx-1">
+                                <Nav.Link href="https://www.youtube.com/tu_pagina" target="_blank" title="YouTube" className="mx-1">
                                     <FaYoutube size={25} />
                                 </Nav.Link>
-                                <Nav.Link href="https://wa.me/1234567890" target="_blank" className="mx-1">
+                                <Nav.Link href="https://wa.me/1234567890" target="_blank" title="WhatsApp" className="mx-1">
                                     <FaWhatsapp size={25} />
                                 </Nav.Link>
                                 <CartSummary />
@@ -74,8 +74,9 @@ function CartSummary() {
     return (
         <NavDropdown title={<><FaShoppingCart /> ({totalItems})</>} id="basic-nav-dropdown">
             <NavDropdown.Item as={Link} to="/cart">Ver Carrito</NavDropdown.Item>
-            <NavDropdown.Item>Artículos: {totalItems}</NavDropdown.Item>
-            <NavDropdown.Item>Total: ${totalPrice}</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item disabled>Artículos: {totalItems}</NavDropdown.Item>
+            <NavDropdown.Item disabled>Total: ${totalPrice.toFixed(2)}</NavDropdown.Item>
         </NavDropdown>
     );
 }

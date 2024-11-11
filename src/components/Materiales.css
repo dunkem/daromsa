@@ -1,0 +1,65 @@
+/* Materiales.css */
+
+.materiales-container {
+    background-color: #f8f9fa; /* Fondo claro */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #343a40; /* Color de los títulos */
+    text-align: center; /* Centrar títulos */
+}
+
+.material-card {
+    border: none; /* Sin borde en la tarjeta */
+    transition: transform 0.2s; /* Transición suave al pasar el ratón */
+}
+
+.material-card:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+}
+
+.card-body {
+    padding: 15px; /* Padding interno de la tarjeta */
+}
+
+.card-title {
+    font-size: 1.2rem; /* Tamaño del título de la tarjeta */
+}
+
+button {
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+}
+
+.proveedores-images img {
+    margin: 0 10px; /* Espaciado entre imágenes */
+    max-width: 150px; /* Tamaño máximo de las imágenes */
+}
+
+.footer {
+    background-color: #343a40; /* Fondo oscuro para el footer */
+    color: white; /* Texto blanco */
+    padding: 20px 0; /* Espaciado */
+    margin-top: 30px; /* Espaciado superior para el footer */
+    font-size: 0.9rem; /* Tamaño de fuente del footer */
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño en móviles */
+    }
+
+    h2 {
+        font-size: 1.25rem; /* Tamaño de subtítulos en móviles */
+    }
+
+    .material-card {
+        margin-bottom: 20px; /* Espacio entre tarjetas en móviles */
+    }
+}

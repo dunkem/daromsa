@@ -1,10 +1,13 @@
-import React from 'react';
-import { Container, Row, Col, Card, Button, Carousel } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Card, Button, Carousel, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaWhatsapp } from 'react-icons/fa';
-import './Home.css'; // Asegúrate de aplicar estilos modernos aquí
+import './Home.css';
 
 function Home() {
+    const [visibleProducts, setVisibleProducts] = useState(5);
+    const [visibleProjects, setVisibleProjects] = useState(3);
+
     const services = [
         {
             src: '/portadahomeplumamixer.jpg',
@@ -67,7 +70,7 @@ function Home() {
             src: '/matpiedra620.jpg',
             name: 'Piedra en Bolson',
             link: '/products/piedra-bolson'
-        }
+        },
     ];
 
     const projects = [
@@ -80,49 +83,104 @@ function Home() {
             title: 'Ecas'
         },
         {
+            src: '/obraecas.jpg',
+            title: 'Ecas'
+        },
+        {
+            src: '/obraecas.jpg',
+            title: 'Ecas'
+        },
+        {
+            src: '/obraecas.jpg',
+            title: 'Ecas'
+        },
+        {
             src: '/obrasvarias.jpg',
             title: 'Magallanes'
         }
     ];
 
+    useEffect(() => {
+        const updateVisibleProducts = () => {
+            if (window.innerWidth < 768) {
+                setVisibleProducts(2); // Muestra 2 productos en pantallas pequeñas
+                setVisibleProjects(2); // Muestra 2 proyectos en pantallas pequeñas
+            } else if (window.innerWidth < 992) {
+                setVisibleProducts(3); // Muestra 3 productos en pantallas medianas
+                setVisibleProjects(3); // Muestra 3 proyectos en pantallas medianas
+            } else {
+                setVisibleProducts(5); // Muestra 5 productos en pantallas grandes
+                setVisibleProjects(3); // Muestra 3 proyectos en pantallas grandes
+            }
+        };
+
+        updateVisibleProducts(); // Llamada inicial
+        window.addEventListener('resize', updateVisibleProducts); // Actualiza al cambiar el tamaño de la ventana
+
+        return () => {
+            window.removeEventListener('resize', updateVisibleProducts); // Limpieza del evento
+        };
+    }, []);
+
     const renderProducts = () => {
-        const productChunks = [];
-        for (let i = 0; i < featuredProducts.length; i += 3) {
-            productChunks.push(featuredProducts.slice(i, i + 3));
-        }
-        return productChunks.map((chunk, index) => (
-            <Carousel.Item key={index}>
-                <Row>
-                    {chunk.map((product, idx) => (
-                        <Col md={4} key={idx}>
-                            <Card className="mb-4 shadow-sm modern-card">
+        const slides = [];
+        for (let i = 0; i < featuredProducts.length; i += visibleProducts) {
+            slides.push(
+                <Carousel.Item key={i}>
+                    <div className="d-flex justify-content-center">
+                        {featuredProducts.slice(i, i + visibleProducts).map((product, index) => (
+                            <Card key={index} className="product-card mx-2">
                                 <Card.Img variant="top" src={product.src} alt={product.name} />
                                 <Card.Body>
                                     <Card.Title>{product.name}</Card.Title>
-                                    <Button variant="primary" as={Link} to={product.link} className="modern-button">Ver Detalles</Button>
+                                    <Button variant="primary" as={Link} to={product.link} className="mt-2">Ver Artículo</Button>
                                 </Card.Body>
                             </Card>
-                        </Col>
-                    ))}
-                </Row>
-            </Carousel.Item>
-        ));
+                        ))}
+                    </div>
+                </Carousel.Item>
+            );
+        }
+        return slides;
+    };
+
+    const renderProjects = () => {
+        const slides = [];
+        for (let i = 0; i < projects.length; i += visibleProjects) {
+            slides.push(
+                <Carousel.Item key={i}>
+                    <div className="d-flex justify-content-center">
+                        {projects.slice(i, i + visibleProjects).map((project, index) => (
+                            <Card key={index} className="project-card mx-2">
+                                <Card.Img variant="top" src={project.src} alt={project.title} />
+                                <Card.Body>
+                                    <Card.Title>{project.title}</Card.Title>
+                                </Card.Body>
+                            </Card>
+                        ))}
+                    </div>
+                </Carousel.Item>
+            );
+        }
+        return slides;
     };
 
     return (
         <Container className="mt-4">
             {/* Carousel Section */}
-            <Row className="carousel-container">
+            <Row className="carousel-container mb-5">
                 <Col>
                     <Carousel interval={3000}>
                         {services.map((service, index) => (
                             <Carousel.Item key={index}>
-                                <img className="d-block w-100 carousel-image" src={service.src} alt={`Imagen ${index + 1}`} />
-                                <Carousel.Caption>
-                                    <h3 className="carousel-title">{service.title}</h3>
-                                    <p className="carousel-text">{service.description}</p>
-                                    <Button variant="primary" as={Link} to={service.link} className="modern-button">Descubre Más</Button>
-                                </Carousel.Caption>
+                                <div className="carousel-image-container">
+                                    <img className="d-block w-100 carousel-image" src={service.src} alt={`Imagen ${index + 1}`} />
+                                    <div className="carousel-caption">
+                                        <h3 className="carousel-title">{service.title}</h3>
+                                        <p className="carousel-text d-none d-md-block">{service.description}</p> {/* Oculta en móviles */}
+                                        <Button variant="primary" as={Link} to={service.link} className="modern-button">Descubre Más</Button>
+                                    </div>
+                                </div>
                             </Carousel.Item>
                         ))}
                     </Carousel>
@@ -132,61 +190,88 @@ function Home() {
             {/* Featured Products Carousel */}
             <Row className="mt-4">
                 <Col>
-                    <h2 className="text-center">Productos Destacados</h2>
-                    <Carousel>
+                    <h2 className="text-center section-title">Productos Destacados</h2>
+                    <Carousel controls={true} interval={null}>
                         {renderProducts()}
                     </Carousel>
                 </Col>
             </Row>
 
-            {/* Projects Section */}
+            {/* Projects Carousel */}
             <Row className="mt-4">
                 <Col>
-                    <h2 className="text-center">Nuestras Obras</h2>
+                    <h2 className="text-center section-title">Nuestras Obras</h2>
+                    <Carousel controls={true} interval={null}>
+                        {renderProjects()}
+                    </Carousel>
                 </Col>
             </Row>
-            <Row>
-                {projects.map((project, index) => (
-                    <Col md={4} key={index}>
-                        <Card className="mb-4 shadow-sm modern-card">
-                            <Card.Img variant="top" src={project.src} alt={project.title} />
-                            <Card.Body>
-                                <Card.Title>{project.title}</Card.Title>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                ))}
+
+            {/* Quick Contact */}
+            <Row className="mt-4 contact-section">
+                <Col className="text-center">
+                    <h4 className="contact-title">Contáctanos para un Presupuesto Personalizado</h4>
+                    <p>Selecciona un vendedor para recibir asistencia personalizada:</p>
+                    <Row>
+                        <Col md={6} className="d-flex justify-content-center">
+                            <Card className="mb-4 shadow-sm modern-card contact-card">
+                                <Card.Body>
+                                    <Card.Text>Especialista en Hormigón Elaborado.</Card.Text>
+                                    <Button 
+                                        variant="success" 
+                                        className="whatsapp-button" 
+                                        href="https://wa.me/5555555555"
+                                    >
+                                        <FaWhatsapp className="me-2" /> Contactar por WhatsApp
+                                    </Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col md={6} className="d-flex justify-content-center">
+                            <Card className="mb-4 shadow-sm modern-card contact-card">
+                                <Card.Body>
+                                    <Card.Text>Especialista en Materiales de Construcción.</Card.Text>
+                                    <Button 
+                                        variant="success" 
+                                        className="whatsapp-button" 
+                                        href="https://wa.me/5555555556"
+                                    >
+                                        <FaWhatsapp className="me-2" /> Contactar por WhatsApp
+                                    </Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+
+                    <h5 className="mt-4">O envíanos un mensaje:</h5>
+                    <Form>
+                        <Form.Group controlId="formName">
+                            <Form.Label>Nombre</Form.Label>
+                            <Form.Control type="text" placeholder="Ingresa tu nombre" />
+                        </Form.Group>
+                        <Form.Group controlId="formEmail">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="email" placeholder="Ingresa tu email" />
+                        </Form.Group>
+                        <Form.Group controlId="formMessage">
+                            <Form.Label>Mensaje</Form.Label>
+                            <Form.Control as="textarea" rows={3} placeholder="Escribe tu mensaje aquí" />
+                        </Form.Group>
+                        <Button variant="primary" type="submit" className="mt-2">Enviar Mensaje</Button>
+                    </Form>
+                </Col>
             </Row>
 
-           {/* Quick Contact */}
-<Row className="mt-4">
-    <Col className="text-center contact-section">
-        <div className="contact-card">
-            <h4>Contáctanos para un Presupuesto Personalizado</h4>
-            <p className="contact-details">
-                Llama al <strong>555-555-5555</strong> o envía un correo a <a href="mailto:contacto@darom.com">contacto@darom.com</a>
-            </p>
-            <Button 
-                variant="success" 
-                href="https://wa.me/1234567890" 
-                className="whatsapp-button d-flex align-items-center justify-content-center mt-3 modern-button"
-            >
-                <FaWhatsapp size={20} className="me-2" /> Contáctanos por WhatsApp
-            </Button>
-        </div>
-    </Col>
-</Row>
-
             {/* Office Location Section */}
-            <Row className="office-location">
+            <Row className="office-location mt-5">
                 <Col md={6}>
                     <h4>Oficinas Hudson</h4>
                     <p>152 N° 6352 - 2do.Piso-Of.212</p>
                     <iframe
                         title="Mapa de oficinas en Hudson"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13104.631459387174!2d-58.1581789!3d-34.80197!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3278932239ca3%3A0xed9063c343d970ce!2sDowntown%20Greenville%20Hudson!5e0!3m2!1ses!2sar!4v1731112187148!5m2!1ses!2sar" 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13104.631459387174!2d-58.1581789!3d-34.80197!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3278932239ca3%3A0xed9063c343d970ce!2sDowntown%20Greenville%20Hudson!5e0!3m2!1ses!2sar!4v1731112187148!5m2!1ses!2sar"
                         width="100%"
-                        height="450"
+                        height="300" // Ajusta la altura
                         style={{ border: 0 }}
                         allowFullScreen=""
                         loading="lazy"
@@ -197,9 +282,9 @@ function Home() {
                     <p>Pitec - Parque Industrial y Tecnológico Florencio Varela</p>
                     <iframe
                         title="Mapa de planta y corralón"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3274.330843200107!2d-58.206128!3d-34.8479134!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2d7ff2e248f6b%3A0x13a6d078d9f675a2!2sPitec%20-%20Parque%20Industrial%20y%20Tecnol%C3%B3gico%20Florencio%20Varela!5e0!3m2!1ses!2sar!4v1731110773986!5m2!1ses!2sar" 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3274.330843200107!2d-58.206128!3d-34.8479134!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2d7ff2e248f6b%3A0x13a6d078d9f675a2!2sPitec%20-%20Parque%20Industrial%20y%20Tecnol%C3%B3gico%20Florencio%20Varela!5e0!3m2!1ses!2sar!4v1731110773986!5m2!1ses!2sar"
                         width="100%"
-                        height="450"
+                        height="300" // Ajusta la altura
                         style={{ border: 0 }}
                         allowFullScreen=""
                         loading="lazy"
@@ -207,20 +292,24 @@ function Home() {
                 </Col>
             </Row>
 
-      {/* Footer Section */}
-<Row className="mt-4 footer-section">
-    <Col>
-        <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados. Dtecno estudio</p>
-        <div className="footer-links">
-            <Link to="/privacy">Política de Privacidad</Link>
-            <Link to="/terms">Términos de Servicio</Link>
-            <Link to="/contact">Contáctanos</Link>
-        </div>
-    </Col>
-</Row>
+            {/* Footer Section */}
+            <Row className="footer-section mt-4">
+                <Col>
+                    <div className="footer-content text-center">
+                        <h5 className="footer-title">Dtecno</h5>
+                        <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
+                        <div className="footer-links">
+                            <Link to="/privacy">Política de Privacidad</Link>
+                            <span>|</span>
+                            <Link to="/terms">Términos de Servicio</Link>
+                            <span>|</span>
+                            <Link to="/contact">Contáctanos</Link>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
         </Container>
     );
 }
 
 export default Home;
-
