@@ -34,54 +34,54 @@ function Home() {
 
     const featuredProducts = [
         {
-            src: '/hidrofugo.jpg',
-            name: 'Hidrofugo Sika 200 Kg',
+            src: '/mathidrofugosika20l.jpg',
+            name: 'Hidrofugo Sika 20 tls',
             link: '/products/hidrofugo-sika-200'
         },
         {
-            src: '/ladrillo.jpg',
-            name: 'Ladrillo Común',
+            src: '/matlad12.jpg',
+            name: 'Ladrillo 12x12x18',
             link: '/products/ladrillo-comun'
         },
         {
-            src: '/arena.jpg',
-            name: 'Arena Gruesa en Bolsón',
+            src: '/matbolsonarena.jpg',
+            name: 'Arena en Bolsón',
             link: '/products/arena-gruesa'
         },
         {
-            src: '/cemento.jpg',
-            name: 'Cemento Portland',
+            src: '/matcementoloma50kg.jpg',
+            name: 'Cemento Loma Negra 50kg',
             link: '/products/cemento-portland'
         },
         {
-            src: '/cal.jpg',
-            name: 'Cal Hidratada',
+            src: '/matcalcaciquemax30kg.jpg',
+            name: 'Cal Hidratada x 30kg',
             link: '/products/cal-hidratada'
         },
         {
-            src: '/hierro.jpg',
+            src: '/matvarillashierro.png',
             name: 'Hierro de Construcción',
             link: '/products/hierro-construccion'
         },
         {
-            src: '/grava.jpg',
-            name: 'Grava Triturada',
-            link: '/products/grava-triturada'
+            src: '/matpiedra620.jpg',
+            name: 'Piedra en Bolson',
+            link: '/products/piedra-bolson'
         }
     ];
 
     const projects = [
         {
-            src: '/obra1.jpg',
-            title: 'Construcción de Edificio'
+            src: '/obraconstrumex.jpg',
+            title: 'Pavimentación Construmex'
         },
         {
-            src: '/obra2.jpg',
-            title: 'Puente de Hormigón'
+            src: '/obraecas.jpg',
+            title: 'Ecas'
         },
         {
-            src: '/obra3.jpg',
-            title: 'Carretera Pavimentada'
+            src: '/obrasvarias.jpg',
+            title: 'Magallanes'
         }
     ];
 
@@ -158,16 +158,24 @@ function Home() {
                 ))}
             </Row>
 
-            {/* Quick Contact */}
-            <Row className="mt-4">
-                <Col className="text-center contact-section">
-                    <h4>Contáctanos para un Presupuesto Personalizado</h4>
-                    <p>Llama al 555-555-5555 o envía un correo a <a href="mailto:contacto@darom.com">contacto@darom.com</a></p>
-                    <Button variant="success" href="https://wa.me/1234567890" className="d-flex align-items-center justify-content-center mt-3 modern-button">
-                        <FaWhatsapp size={20} className="me-2" /> WhatsApp
-                    </Button>
-                </Col>
-            </Row>
+           {/* Quick Contact */}
+<Row className="mt-4">
+    <Col className="text-center contact-section">
+        <div className="contact-card">
+            <h4>Contáctanos para un Presupuesto Personalizado</h4>
+            <p className="contact-details">
+                Llama al <strong>555-555-5555</strong> o envía un correo a <a href="mailto:contacto@darom.com">contacto@darom.com</a>
+            </p>
+            <Button 
+                variant="success" 
+                href="https://wa.me/1234567890" 
+                className="whatsapp-button d-flex align-items-center justify-content-center mt-3 modern-button"
+            >
+                <FaWhatsapp size={20} className="me-2" /> Contáctanos por WhatsApp
+            </Button>
+        </div>
+    </Col>
+</Row>
 
             {/* Office Location Section */}
             <Row className="office-location">
@@ -176,7 +184,7 @@ function Home() {
                     <p>152 N° 6352 - 2do.Piso-Of.212</p>
                     <iframe
                         title="Mapa de oficinas en Hudson"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.456022497281!2d-58.21165368427842!3d-34.84763467913954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32f4db3ac5cb7%3A0x7d313e6fdb2c1a!2s152%20N%C2%B06352%2C%20B1848HRB%20Hudson%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1634008710566!5m2!1ses!2sar"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13104.631459387174!2d-58.1581789!3d-34.80197!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3278932239ca3%3A0xed9063c343d970ce!2sDowntown%20Greenville%20Hudson!5e0!3m2!1ses!2sar!4v1731112187148!5m2!1ses!2sar" 
                         width="100%"
                         height="450"
                         style={{ border: 0 }}
@@ -186,10 +194,10 @@ function Home() {
                 </Col>
                 <Col md={6}>
                     <h4>Planta de Hormigón Elaborado y Corralón</h4>
-                    <p>Dirección de la planta y corralón</p>
+                    <p>Pitec - Parque Industrial y Tecnológico Florencio Varela</p>
                     <iframe
                         title="Mapa de planta y corralón"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.456022497281!2d-58.21165368427842!3d-34.84763467913954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32f4db3ac5cb7%3A0x7d313e6fdb2c1a!2s152%20N%C2%B06352%2C%20B1848HRB%20Hudson%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1634008710566!5m2!1ses!2sar"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3274.330843200107!2d-58.206128!3d-34.8479134!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2d7ff2e248f6b%3A0x13a6d078d9f675a2!2sPitec%20-%20Parque%20Industrial%20y%20Tecnol%C3%B3gico%20Florencio%20Varela!5e0!3m2!1ses!2sar!4v1731110773986!5m2!1ses!2sar" 
                         width="100%"
                         height="450"
                         style={{ border: 0 }}
@@ -199,17 +207,17 @@ function Home() {
                 </Col>
             </Row>
 
-            {/* Footer Section */}
-            <Row className="mt-4">
-                <Col>
-                    <p className="text-center">&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
-                    <div className="text-center">
-                        <Link to="/privacy" className="me-3">Política de Privacidad</Link>
-                        <Link to="/terms" className="me-3">Términos de Servicio</Link>
-                        <Link to="/contact">Contáctanos</Link>
-                    </div>
-                </Col>
-            </Row>
+      {/* Footer Section */}
+<Row className="mt-4 footer-section">
+    <Col>
+        <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados. Dtecno estudio</p>
+        <div className="footer-links">
+            <Link to="/privacy">Política de Privacidad</Link>
+            <Link to="/terms">Términos de Servicio</Link>
+            <Link to="/contact">Contáctanos</Link>
+        </div>
+    </Col>
+</Row>
         </Container>
     );
 }

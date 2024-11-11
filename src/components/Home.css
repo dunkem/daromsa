@@ -47,32 +47,80 @@
     border-radius: 15px;
 }
 
+/* contacthome*/
 .contact-section {
-    background: #f1f1f1;
-    padding: 40px 20px;
+    background-color: #e9ecef; /* Color de fondo suave */
     border-radius: 15px;
+    padding: 30px;
+    margin-top: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
 }
 
-.contact-section h4 {
-    margin-bottom: 20px;
+.contact-card h4 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #007bff; /* Color llamativo */
+    margin-bottom: 15px;
 }
 
-.contact-section p {
-    margin-bottom: 10px;
-    font-size: 18px;
+.contact-card p {
+    font-size: 1.1rem;
+    color: #555; /* Color de texto más oscuro */
 }
 
-.contact-section a {
-    color: #007bff;
-    text-decoration: none;
+.modern-button {
+    border-radius: 25px;
+    padding: 10px 25px; /* Aumentar el padding para mayor clicabilidad */
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
 }
 
-.contact-section a:hover {
-    text-decoration: underline;
+.modern-button:hover {
+    background-color: #28a745; /* Cambia el color al pasar el ratón */
+    transform: scale(1.05); /* Efecto de escalado */
 }
 
+.whatsapp-button {
+    background-color: #25D366; /* Color verde de WhatsApp */
+    color: white; /* Texto blanco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DAF1A; /* Color más oscuro al pasar el ratón */
+}
 .office-location {
     border-top: 1px solid #ddd;
     padding-top: 20px;
     margin-top: 40px;
+}
+/* footerhome */
+.footer-section {
+    background-color: #343a40; /* Color de fondo oscuro */
+    color: white; /* Color de texto blanco */
+    padding: 20px 0; /* Espaciado vertical */
+    text-align: center; /* Centrar texto */
+}
+
+.footer-section p {
+    margin: 0; /* Eliminar margen */
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+}
+
+.footer-links {
+    margin-top: 10px; /* Espaciado entre párrafo y enlaces */
+}
+
+.footer-links a {
+    color: #ffc107; /* Color amarillo para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    margin: 0 15px; /* Espaciado entre enlaces */
+    transition: color 0.3s; /* Transición suave */
+}
+
+.footer-links a:hover {
+    color: #fff; /* Color blanco al pasar el ratón */
 }
