@@ -1,0 +1,66 @@
+/* Suelos.css */
+
+/* Títulos y párrafos */
+h1, h2 {
+    font-family: 'Arial', sans-serif;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+p {
+    font-family: 'Arial', sans-serif;
+    color: #34495e;
+    font-size: 1.1rem;
+}
+
+/* Carrusel */
+.carousel-image {
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones */
+.me-2 {
+    margin-right: 8px;
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DAF1A;
+}
+
+button {
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Pie de página */
+.footer-section {
+    background-color: #f8f9fa; /* Color de fondo claro */
+    color: #2c3e50; /* Color de texto oscuro */
+    padding: 20px 0; /* Espaciado vertical */
+    margin-top: 20px;
+}

@@ -1,113 +1,77 @@
-/* App.css */
-
-/* Estilos generales */
 body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa; /* Fondo claro */
-  color: #333; /* Texto oscuro */
+  background-color: #f8f9fa;
 }
 
-/* Navbar */
-.navbar {
-  transition: background-color 0.3s ease;
-  background-color: #ffffff; /* Fondo blanco para la navbar */
+.navbar-custom {
+  background-color: #ffcccc;
+  width: 100%;
 }
 
-.navbar:hover {
-  background-color: #e9ecef; /* Color de fondo al pasar el ratón */
-}
-
-.navbar-brand img {
-  height: 70px; /* Altura del logo */
-  width: auto; /* Mantiene la proporción */
+.navbar-nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-link {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
   transition: color 0.3s ease;
-  color: #007bff; /* Color primario */
-  margin: 0 10px; /* Espacio entre los enlaces */
+  padding: 0.5rem 1rem;
 }
 
 .nav-link:hover {
-  background-color: rgba(0, 123, 255, 0.1); /* Fondo suave al pasar el ratón */
-  border-radius: 5px; /* Bordes redondeados en hover */
+  color: #c70000;
 }
 
-.navbar-nav .nav-link.active {
-  color: #0056b3; /* Color para el enlace activo */
-  font-weight: bold; /* Negrita para el enlace activo */
-  text-decoration: underline; /* Subrayado para el enlace activo */
+.nav {
+  margin: 0;
+  padding: 0;
 }
 
-/* Iconos sociales */
-.social-icons .nav-link {
-  color: #333; /* Color por defecto de los iconos */
+.social-icons {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
 }
 
-.social-icons .nav-link:hover {
-  color: #007bff; /* Color al pasar el ratón */
+.social-icons a {
+  color: #007bff;
+  margin: 0 0.5rem;
 }
 
-/* Estilos para el carrito */
-.dropdown-toggle::after {
-  display: none; /* Oculta el símbolo del dropdown */
+.social-icons a:hover {
+  color: #0056b3;
 }
 
-.dropdown-item {
-  color: #333; /* Color de los elementos del dropdown */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
 
-/* Resumen del carrito */
-.nav-dropdown-item {
-  font-weight: bold; /* Negrita para el título */
+.whatsapp-float:hover {
+  background-color: #128C7E;
 }
 
-/* Estilos de botones */
-.btn-outline-primary {
-  border-color: #007bff; /* Color del borde */
-  color: #007bff; /* Color del texto */
-}
-
-.btn-outline-primary:hover {
-  background-color: #007bff; /* Fondo al pasar el ratón */
-  color: white; /* Texto blanco al pasar el ratón */
-}
-
-/* Contenedor */
-.container {
-  padding-top: 20px; /* Espaciado superior */
-}
-
-/* Footer */
-.footer {
-  background-color: #343a40; /* Fondo oscuro */
-  color: white; /* Texto blanco */
-  padding: 20px 0; /* Espaciado */
-  text-align: center; /* Centra el texto */
-}
-
-/* Enlaces del footer */
-.footer a {
-  color: #ffc107; /* Color dorado para los enlaces */
-  text-decoration: none; /* Sin subrayado */
-}
-
-.footer a:hover {
-  text-decoration: underline; /* Subrayado al pasar el ratón */
-}
-
-/* Media Queries */
-@media (max-width: 576px) {
-  .navbar-brand img {
-      height: 50px; /* Ajusta el tamaño de la imagen en móviles */
+@media (max-width: 767px) {
+  .navbar-nav {
+      flex-direction: column;
+      align-items: center;
   }
 
   .nav-link {
-      font-size: 0.8rem; /* Tamaño de fuente más pequeño en móviles */
+      padding: 0.5rem 0;
   }
 
-  .social-icons .nav-link {
-      font-size: 20px; /* Tamaño de iconos en móviles */
+  .social-icons {
+      justify-content: center;
+      margin-top: 1rem;
+      flex-direction: row;
   }
 }

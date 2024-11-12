@@ -1,5 +1,10 @@
 import React from 'react';
 import { Container, Row, Col, Button, Image } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { FaWhatsapp } from 'react-icons/fa';
+import './Home.css'; // Importa tu CSS
+
 
 function Hormigon() {
     return (
@@ -10,37 +15,91 @@ function Hormigon() {
                     <p>Ofrecemos hormigón de alta calidad y servicios de bombeo para tus proyectos de construcción.</p>
                     <p>Trabajamos con los estándares más altos para asegurar la durabilidad y resistencia de tus estructuras.</p>
                     <Image src="/tiposhormigon.jpg" alt="Hormigón de alta calidad" fluid className="my-4" />
-                    <Image src="/lomamid.png" alt="Hormigón de alta calidad" fluid className="my-4" />
-                    <Image src="/pqelegirnos.png" alt="Hormigón de alta calidad" fluid className="my-4" />
+                    <Image src="/servicioshormilomanegra.png" alt="Hormigón de alta calidad" fluid className="my-4" />
+                    
                 </Col>
             </Row>
-            <Row className="mt-4">
-                <Col>
-                    <h2>Contacta con Nosotros</h2>
-                    <p>Para más información sobre nuestros productos y servicios, no dudes en contactarnos. Estamos aquí para ayudarte en cada paso de tu proyecto.</p>
-                    <p><strong>Teléfono:</strong> 555-555-5555</p>
-                    <p><strong>Correo Electrónico:</strong> <a href="mailto:contacto@darom.com">contacto@darom.com</a></p>
-                    <Button variant="primary" href="mailto:contacto@darom.com" className="me-2">Enviar Correo</Button>
-                    <Button variant="success" href="https://wa.me/1234567890" className="me-2">WhatsApp</Button>
-                    <Button variant="info" href="tel:555-555-5555" className="me-2">Llamar</Button>
+            {/* Quick Contact */}
+            <Row className="mt-4 contact-section">
+                <Col className="text-center">
+                    <h4 className="contact-title">Contáctanos para un Presupuesto Personalizado</h4>
+                    <Row>
+                        <Col md={6} className="d-flex justify-content-center">
+                            <Card className="mb-4 shadow-sm modern-card contact-card">
+                                <Card.Body>
+                                    <Card.Text>Especialista en Hormigón Elaborado.</Card.Text>
+                                    <Button
+                                        variant="success"
+                                        className="whatsapp-button"
+                                        href="https://wa.me/5555555555"
+                                    >
+                                        <FaWhatsapp className="me-2" /> Contactar por WhatsApp
+                                    </Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col md={6} className="d-flex justify-content-center">
+                            <Card className="mb-4 shadow-sm modern-card contact-card">
+                                <Card.Body>
+                                    <Card.Text>Especialista en Materiales de Construcción.</Card.Text>
+                                    <Button
+                                        variant="success"
+                                        className="whatsapp-button"
+                                        href="https://wa.me/5555555556"
+                                    >
+                                        <FaWhatsapp className="me-2" /> Contactar por WhatsApp
+                                    </Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
-            <Row className="mt-4">
-                <Col>
-                    <h2>Visítanos</h2>
-                    <p>Nuestras oficinas están ubicadas en:</p>
-                    <p>152 N° 6352 - 2do.Piso-Of.212, Hudson, Provincia de Buenos Aires</p>
+
+            {/* Office Location Section */}
+            <Row className="office-location mt-5">
+                <Col md={6}>
+                    <h4>Oficinas Hudson</h4>
+                    <p>152 N° 6352 - 2do.Piso-Of.212</p>
                     <iframe
-    title="Mapa de oficinas en Hudson"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.456022497281!2d-58.21165368427842!3d-34.84763467913954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32f4db3ac5cb7%3A0x7d313e6fdb2c1a!2s152%20N%C2%B06352%2C%20B1848HRB%20Hudson%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1634008710566!5m2!1ses!2sar"
-    width="100%"
-    height="450"
-    style={{ border: 0 }}
-    allowFullScreen=""
-    loading="lazy"
-></iframe>
+                        title="Mapa de oficinas en Hudson"
+                        src="https://www.google.com/maps/embed?pb=..."
+                        width="100%"
+                        height="300"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                    ></iframe>
+                </Col>
+                <Col md={6}>
+                    <h4>Planta de Hormigón Elaborado y Corralón</h4>
+                    <p>Pitec - Parque Industrial y Tecnológico Florencio Varela</p>
+                    <iframe
+                        title="Mapa de planta y corralón"
+                        src="https://www.google.com/maps/embed?pb=..."
+                        width="100%"
+                        height="300"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                    ></iframe>
+                </Col>
+            </Row>
 
-
+            {/* Footer Section */}
+            <Row className="footer-section mt-4">
+                <Col>
+                    <div className="footer-content text-center">
+                        <h5 className="footer-title">Dtecno</h5>
+                        <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
+                        <div className="footer-links">
+                            <Link to="/privacy">Política de Privacidad</Link>
+                            <span>|</span>
+                            <Link to="/terms">Términos de Servicio</Link>
+                            <span>|</span>
+                            <Link to="/contact">Contáctanos</Link>
+                        </div>
+                    </div>
                 </Col>
             </Row>
         </Container>

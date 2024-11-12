@@ -10,43 +10,40 @@ import Cart from './components/Cart';
 import Hormigon from './components/Hormigon';
 import Materiales from './components/Materiales';
 import Suelos from './components/Suelos';
-import ServiciosDeBombeo from './components/ServiciosDeBombeo';
+import Pisos from './components/Pisos';
 import './App.css';
 
 function App() {
     return (
         <CartProvider>
             <Container fluid>
-                <Navbar bg="light" expand="lg" className="shadow-sm p-3 mb-5 bg-white rounded">
-                    <Container>
+                <Navbar bg="light" expand="lg" className="shadow-sm p-3 mb-5 rounded navbar-custom">
+                    <Container fluid>
                         <Navbar.Brand as={Link} to="/">
                             <img src="/daromlogooficial2.png" alt="Darom SA" className="img-fluid" style={{ height: 70 }} />
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="me-auto">
-                                <Nav.Link as={Link} to="/" className="btn btn-outline-primary mx-1">Home</Nav.Link>
-                                <Nav.Link as={Link} to="/services/hormigon" className="btn btn-outline-primary mx-1">Hormigón Elaborado</Nav.Link>
-                                <Nav.Link as={Link} to="/services/bombeo" className="btn btn-outline-primary mx-1">Servicios de Bombeo</Nav.Link>
-                                <Nav.Link as={Link} to="/services/materiales" className="btn btn-outline-primary mx-1">Materiales</Nav.Link>
-                                <Nav.Link as={Link} to="/services/suelos" className="btn btn-outline-primary mx-1">Estudio y Movimientos de Suelos</Nav.Link>
-                                <Nav.Link as={Link} to="/about" className="btn btn-outline-primary mx-1">Sobre Nosotros</Nav.Link>
-                                <Nav.Link as={Link} to="/contact" className="btn btn-outline-primary mx-1">Contacto</Nav.Link>
-                            </Nav>
-                            <Nav className="social-icons d-flex flex-row justify-content-between">
-                                <Nav.Link href="https://www.facebook.com/tu_pagina" target="_blank" title="Facebook" className="mx-1">
-                                    <FaFacebook size={25} />
-                                </Nav.Link>
-                                <Nav.Link href="https://www.instagram.com/tu_pagina" target="_blank" title="Instagram" className="mx-1">
-                                    <FaInstagram size={25} />
-                                </Nav.Link>
-                                <Nav.Link href="https://www.youtube.com/tu_pagina" target="_blank" title="YouTube" className="mx-1">
-                                    <FaYoutube size={25} />
-                                </Nav.Link>
-                                <Nav.Link href="https://wa.me/1234567890" target="_blank" title="WhatsApp" className="mx-1">
-                                    <FaWhatsapp size={25} />
-                                </Nav.Link>
-                                <CartSummary />
+                            <Nav className="ms-auto nav-links">
+                                <Nav.Link as={Link} to="/" className="mx-2">Inicio</Nav.Link>
+                                <Nav.Link as={Link} to="/services/hormigon" className="mx-2">Hormigón Elaborado</Nav.Link>
+                                <Nav.Link as={Link} to="/services/materiales" className="mx-2">Materiales</Nav.Link>
+                                <Nav.Link as={Link} to="/services/suelos" className="mx-2">Estudio y Movimientos de Suelos</Nav.Link>
+                                <Nav.Link as={Link} to="/services/pisos" className="mx-2">Pisos llaneados</Nav.Link>
+                                <Nav.Link as={Link} to="/about" className="mx-2">Sobre Nosotros</Nav.Link>
+                                <Nav.Link as={Link} to="/contact" className="mx-2">Contacto</Nav.Link>
+                                <Nav className="social-icons">
+                                    <Nav.Link href="https://www.facebook.com/tu_pagina" target="_blank" rel="noopener noreferrer" className="mx-1">
+                                        <FaFacebook size={25} />
+                                    </Nav.Link>
+                                    <Nav.Link href="https://www.instagram.com/tu_pagina" target="_blank" rel="noopener noreferrer" className="mx-1">
+                                        <FaInstagram size={25} />
+                                    </Nav.Link>
+                                    <Nav.Link href="https://www.youtube.com/tu_pagina" target="_blank" rel="noopener noreferrer" className="mx-1">
+                                        <FaYoutube size={25} />
+                                    </Nav.Link>
+                                    <CartSummary />
+                                </Nav>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
@@ -55,12 +52,15 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/services/materiales" element={<Materiales />} />
                     <Route path="/services/hormigon" element={<Hormigon />} />
-                    <Route path="/services/bombeo" element={<ServiciosDeBombeo />} />
                     <Route path="/services/suelos" element={<Suelos />} />
+                    <Route path="/services/pisos" element={<Pisos />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/cart" element={<Cart />} />
                 </Routes>
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="whatsapp-float" title="Chat on WhatsApp">
+                    <FaWhatsapp size={60} />
+                </a>
             </Container>
         </CartProvider>
     );
