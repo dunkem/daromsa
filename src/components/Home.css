@@ -1,141 +1,168 @@
-/* Home.css */
-
 body {
-    font-family: 'arial', sans-serif;
-    background-color: #f8f9fa; /* Color de fondo suave */
-    color: #333; /* Color del texto */
     margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-.carousel-image-container {
-    position: relative;
-    width: 100%;
-    height: 600px; /* Ajusta según sea necesario */
-    overflow: hidden;
+.main-container {
+    padding: 0;
 }
 
-.carousel-image {
-    width: 100vw; /* Asegura que la imagen ocupe todo el ancho de la ventana */
-    height: 100%; /* Asegura que la imagen ocupe toda la altura */
-    object-fit: cover; /* Mantiene la proporción de la imagen */
-    filter: brightness(0.8); /* Oscurecimiento */
-    transition: filter 0.5s ease;
-    position: absolute; /* Asegura que la imagen esté posicionada correctamente */
-    left: 50%; /* Para centrar la imagen */
-    transform: translateX(-50%); /* Para centrar la imagen */
-}
-
-.carousel-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 50%; /* Centrar horizontalmente */
-    transform: translateX(-50%); /* Ajuste de centrado */
-    text-align: center; /* Alinear texto al centro */
-    width: 100%; /* Asegura que el caption ocupe todo el ancho */
-}
-
-.carousel-caption h3 {
-    margin: 0; /* Eliminar margen para mejor alineación */
-}
-
-.benefit-card, .project-card {
-    border: 1px solid #e0e0e0; /* Borde sutil */
-    transition: transform 0.3s; /* Efecto de hover */
-}
-
-.benefit-card:hover, .project-card:hover {
-    transform: translateY(-5px); /* Efecto de levantamiento */
-}
-
-.product-card {
-    transition: transform 0.3s; /* Efecto de hover */
-}
-
-.product-card:hover {
-    transform: translateY(-5px); /* Efecto de levantamiento */
-}
-
-.supplier-logo {
-    max-width: 150px; /* Ajusta el tamaño de los logos */
-    height: auto;
-    margin: 0 15px; /* Espaciado entre logos */
-    transition: transform 0.3s ease; /* Animación suave */
-}
-
-.supplier-logo:hover {
-    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
-}
-
-.contact-section {
-    background-color: #e9ecef; /* Fondo claro para la sección de contacto */
-    padding: 20px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-}
-
-.whatsapp-button {
+.hero-section {
+    background: url('C:/Users/Damian/OneDrive/Escritorio/DD/DAROMSA/daromsa-clone/public/portadamixeredit.jpg') no-repeat center center;
+    background-size: cover;
+    height: 70vh;
     display: flex;
-    align-items: center; /* Alinea el icono y el texto */
-}
-
-.footer-section {
-    background-color: #343a40; /* Color oscuro para el pie de página */
-    color: white; /* Color del texto en el pie de página */
-    padding: 20px 0; /* Espaciado interno */
-}
-
-.footer-title {
-    margin: 0;
-    font-size: 1.5rem; /* Tamaño del título del pie de página */
-}
-
-.map-container {
+    align-items: center;
+    padding: 40px 20px;
+    color: #fff;
     position: relative;
-    overflow: hidden;
-    border-radius: 5px; /* Bordes redondeados */
-    margin-top: 20px; /* Espaciado superior */
 }
 
-/* Adicional para mejorar la responsividad */
-@media (max-width: 768px) {
-    .carousel-caption {
-        font-size: 0.8rem;
-    }
-}
-.benefit-card {
+.hero-content {
+    text-align: left;
+    max-width: 800px;
     position: relative;
-    overflow: hidden;
+    z-index: 2;
+    padding: 20px;
 }
 
-.benefit-card-inner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    animation: fadeIn 1s ease-in;
 }
 
-.benefit-card:hover .benefit-card-inner {
-    transform: rotateY(180deg);
+.hero-subtitle {
+    font-size: 1.8rem;
+    color: #ffffff;
+    animation: fadeIn 1.5s ease-in;
 }
 
-.benefit-card-front, .benefit-card-back {
-    position: absolute;
-    width: 100%;
-    backface-visibility: hidden;
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #000000;
+    animation: fadeIn 0.5s ease-in-out; /* Añadido para animación */
+}
+
+.line-divider {
+    width: 1200px;
+    height: 3px;
+    background: #e00909;
+    margin: 0 auto 20px;
+}
+
+.service-card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border-radius: 15px;
+    align-items: center; /* Centra el contenido del card */
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(20px); /* Comienza desplazada hacia abajo */
+    animation: fadeInUp 0.5s forwards; /* Aplica la animación */
+    
 }
 
-.benefit-card-back {
-    transform: rotateY(180deg);
-    background-color: #f8f9fa; /* Cambia esto según tu preferencia */
+.service-card:hover {
+    transform: translateY(-5px); /* Mueve la tarjeta hacia arriba */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* Aumenta la sombra */
+}
+
+.service-card img {
+    max-height: 180px; /* Ajusta la altura máxima de las imágenes */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+}
+.service-card .card-text {
+    color: #ffffff; /* Cambia el color a blanco */
+}
+
+.benefit-container {
+    margin-bottom: 20px; /* Espacio entre beneficios */
 }
 
 .benefit-logo {
-    max-height: 170px;
-    margin-bottom: 15px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.supplier-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.supplier-logo {
+    max-width: 100px; /* Ajusta según sea necesario */
+    height: auto; /* Mantiene la proporción */
+}
+
+.footer-section {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-links a {
+    color: #f00707;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.contact-form-section {
+    padding: 20px;
+    background-color: #f0f0f0; /* Fondo claro para la sección de contacto */
+}
+
+.contact-form-section h2 {
+    margin-bottom: 20px;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Se vuelve visible */
+        transform: translateY(0); /* Vuelve a su posición original */
+    }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .line-divider {
+        width: 100px;
+    }
+
+    .benefit-logo {
+        height: 60px;
+    }
 }
