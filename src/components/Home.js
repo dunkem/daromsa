@@ -133,7 +133,7 @@ function Home() {
                 <Col className="text-center">
                     <div className="hero-content animated fadeIn">
                         <h2 className="hero-title">BIENVENIDOS A DAROM, CALIDAD GARANTIZADA QUE TE ACOMPAÑA EN TUS PROYECTOS</h2>
-                        <h3 className="hero-subtitle">Calidad superior en hormigón elaborado y servicios de construcción. Descubre cómo nuestros servicios y productos de alta calidad pueden transformar tus proyectos en realidad.</h3>
+                        <h3 className="hero-subtitle">HORMIGÓN ELABORADO Y SERVICIOS DE CONSTRUCCIÓN DE CALIDAD SUPERIOR. TRANSFORMA TUS PROYECTOS CON NUESTRA EXCELENCIA.</h3>
                     </div>
                 </Col>
             </Row>

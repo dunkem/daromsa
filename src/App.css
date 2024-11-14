@@ -1,10 +1,15 @@
 body {
   background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 .navbar-custom {
-  background-color: #ffcccc;
+  background-color: #000000 !important; /* Asegúrate de que la barra de navegación sea negra */
   width: 100%;
+  padding: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
 }
 
 .navbar-nav {
@@ -15,13 +20,16 @@ body {
 .nav-link {
   font-weight: bold;
   text-transform: uppercase;
-  color: #333;
-  transition: color 0.3s ease;
+  color: #ffffff !important; /* Asegúrate de que el texto sea blanco */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Animación suave */
   padding: 0.5rem 1rem;
+  margin: 0 0.5rem; /* Espaciado entre enlaces */
+  border-radius: 5px; /* Bordes redondeados para un efecto moderno */
 }
 
 .nav-link:hover {
-  color: #c70000;
+  color: #ffd700 !important; /* Color dorado en hover */
+  background-color: rgba(255, 215, 0, 0.1); /* Fondo dorado translúcido en hover */
 }
 
 .nav {
@@ -36,12 +44,13 @@ body {
 }
 
 .social-icons a {
-  color: #007bff;
+  color: #ffffff !important; /* Iconos blancos */
   margin: 0 0.5rem;
+  transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #0056b3;
+  color: #ffd700 !important; /* Color dorado en hover */
 }
 
 .whatsapp-float {
@@ -52,11 +61,12 @@ body {
   border-radius: 50%;
   padding: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Añadido transform para animación */
 }
 
 .whatsapp-float:hover {
   background-color: #128C7E;
+  transform: scale(1.1); /* Efecto de agrandamiento */
 }
 
 @media (max-width: 767px) {
@@ -67,6 +77,7 @@ body {
 
   .nav-link {
       padding: 0.5rem 0;
+      margin: 0.5rem 0; /* Espaciado vertical para enlaces en móviles */
   }
 
   .social-icons {
