@@ -20,7 +20,7 @@ function App() {
                 <Navbar bg="light" expand="lg" className="shadow-sm p-3 mb-5 rounded navbar-custom">
                     <Container fluid>
                         <Navbar.Brand as={Link} to="/">
-                            <img src="/logodaromtransparente.png" alt="Darom SA" className="img-fluid" style={{ height: 80 }} />
+                            <img src="/ultimologodarom.png" alt="Darom SA" className="img-fluid" style={{ height: 120 }} />
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">

@@ -23,25 +23,27 @@ function Home() {
     const services = [
         {
             src: '/PORTADAHORMIGONBOMBAOFICIAL.JPG',
-            title: 'Hormigón Elaborado',
-            description: 'Proveemos hormigón de la mejor calidad para tus proyectos.',
+            title: 'HORMIGÓN ELABORADO Y SERVICIOS DE BOMBEO',
+            description: 'nos especializamos en proveer hormigón de alta calidad, asegurando resistencia y durabilidad en cada aplicación. nuestros servicios de bombeo facilitan su uso en cualquier obra.',
         },
         {
             src: '/portadacorralon2 (2).jpg',
-            title: 'Materiales de Corralón',
-            description: 'Amplia variedad de materiales para construcción y remodelación.',
+            title: 'MATERIALES DE CONSTRUCCIÓN Y CORRALÓN',
+            description: 'ofrecemos una amplia gama de materiales de construcción, desde ladrillos y cementos hasta acabados y accesorios. calidad garantizada para todo tipo de proyectos.',
         },
         {
             src: '/portadamovofi.jpg',
-            title: 'Estudio y Movimientos de Suelos',
-            description: 'Expertos en estudios de suelos para garantizar la solidez de tus proyectos.',
+            title: 'ESTUDIO Y MOVIMIENTOS DE SUELOS',
+            description: 'realizamos estudios de suelos detallados y precisos para asegurar la estabilidad de tus proyectos. nuestros expertos gestionan movimientos de tierra con eficiencia y seguridad.',
         },
         {
             src: '/portadapisollaneado.jpg',
-            title: 'Pisos llanos',
-            description: 'Mejoramos la calidad de tus superficies con nuestros servicios de pisos.',
+            title: 'PISOS LLANEADOS Y ACABADOS SUPERFICIALES',
+            description: 'transformamos tus superficies con nuestros servicios de pisos llanos y acabados de alta calidad. mejora la estética y funcionalidad de tus espacios con nuestros especialistas.',
         }
     ];
+    
+    
 
     const featuredProducts = [
         {
@@ -139,25 +141,26 @@ function Home() {
             </Row>
 
             {/* Servicios Section */}
-            <Row className="text-center mb-4" style={{ backgroundColor: '#f0f0f0', padding: '20px' }}>
-                <Col>
-                    <h2 className="section-title">NUESTROS SERVICIOS</h2>
-                    <div className="line-divider"></div>
-                </Col>
-            </Row>
-            <Row className="mb-4">
-                {services.map((service, index) => (
-                    <Col md={3} sm={6} key={index} className="mb-4">
-                        <Card className="service-card" style={{ backgroundColor: '#495057', color: '#ffffff' }}>
-                            <Card.Img variant="top" src={service.src} />
-                            <Card.Body>
-                                <Card.Title>{service.title}</Card.Title>
-                                <Card.Text>{service.description}</Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                ))}
-            </Row>
+<Row className="text-center mb-4 services-section">
+    <Col>
+        <h2 className="section-title">NUESTROS SERVICIOS</h2>
+        <div className="line-divider"></div>
+    </Col>
+</Row>
+<Row className="mb-4">
+    {services.map((service, index) => (
+        <Col md={3} sm={6} key={index} className="mb-4 d-flex align-items-stretch">
+            <Card className="service-card">
+                <Card.Img variant="top" src={service.src} className="service-img" />
+                <Card.Body>
+                    <Card.Title className="service-title">{service.title}</Card.Title>
+                    <Card.Text className="service-description">{service.description}</Card.Text>
+                </Card.Body>
+            </Card>
+        </Col>
+    ))}
+</Row>
+
 
             {/* Beneficios Section */}
             <Row className="text-center mb-4" style={{ backgroundColor: '#f8f9fa', padding: '20px 0' }}>
