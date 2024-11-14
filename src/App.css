@@ -6,10 +6,14 @@ body {
 }
 
 .navbar-custom {
-  background-color: #000000 !important; /* Asegúrate de que la barra de navegación sea negra */
+  background-color: #000000 !important; /* Barra de navegación negra */
   width: 100%;
-  padding: 1rem 0;
+  padding: 0.5rem 1rem; /* Reduce la altura del fondo negro */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+.navbar-brand img {
+  height: 100px; /* Ajusta la altura del logo */
 }
 
 .navbar-nav {
@@ -20,7 +24,7 @@ body {
 .nav-link {
   font-weight: bold;
   text-transform: uppercase;
-  color: #ffffff !important; /* Asegúrate de que el texto sea blanco */
+  color: #ffffff !important; /* Texto blanco */
   transition: color 0.3s ease, background-color 0.3s ease; /* Animación suave */
   padding: 0.5rem 1rem;
   margin: 0 0.5rem; /* Espaciado entre enlaces */
@@ -30,6 +34,15 @@ body {
 .nav-link:hover {
   color: #ffd700 !important; /* Color dorado en hover */
   background-color: rgba(255, 215, 0, 0.1); /* Fondo dorado translúcido en hover */
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1); /* Color del borde del botón */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  /* Líneas del botón en blanco */
 }
 
 .nav {

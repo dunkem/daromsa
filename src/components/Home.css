@@ -1,6 +1,6 @@
 /* Sección Hero */
 .hero-section {
-    background: url('D:\DAROMSA\daromsa\public\IMG_3152.JPG') no-repeat center center;
+    background: url('C:\Users\Damian\OneDrive\Escritorio\DD\DAROMSA\daromsa-clone\public\IMG_3152.JPG') no-repeat center center;
     background-size: cover;
     height: 60vh;
     display: flex;
@@ -18,135 +18,109 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
 .hero-content {
-    text-align: left;
-    max-width: 800px;
+    text-align: left; /* Alineación a la izquierda */
+    max-width: 800px; /* Mantener un ancho máximo */
     position: relative;
     z-index: 2;
     padding: 20px;
-    margin-left: 20px; /* Alinea el contenido a la izquierda */
+    margin-left: 20px; /* Margen izquierdo */
+    animation: slideInLeft 1s ease-in-out; /* Animación de entrada */
 }
 
 .hero-title {
     font-size: 3rem;
     font-weight: bold;
     color: #ffffff;
-    animation: fadeIn 1s ease-in;
-    text-align: left; /* Alinea el título a la izquierda */
+    animation: fadeIn 1s ease-in; /* Animación de aparición */
 }
 
 .hero-subtitle {
     font-size: 1.8rem;
     color: #ffffff;
-    animation: fadeIn 1.5s ease-in;
-    text-align: left; /* Alinea el subtítulo a la izquierda */
+    margin-top: 10px; /* Espacio entre título y subtítulo */
+    animation: fadeIn 1s ease-in; /* Animación de aparición */
+    width: 100%; /* Ocupar todo el ancho disponible */
+    text-align: center; /* Centrar el subtítulo */
+}
+
+/* Animaciones */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animaciones de desvanecimiento */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilos para los títulos de secciones */
+.section-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(90deg, #e00909, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    animation: fadeIn 0.5s ease-in-out; /* Animación en el título */
+}
+
+.section-title:hover {
+    transform: scale(1.05);
+    color: #e00909;
+}
+
+/* Otros estilos existentes */
+.line-divider {
+    width: 1200px;
+    height: 2px;
+    background: #e00909;
+    margin: 20px auto; /* Espaciado ajustado */
 }
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .hero-section {
-        height: 40vh; /* Reduce la altura en dispositivos móviles */
-        padding: 20px 10px; /* Reduce el padding */
-    }
-
-    .hero-content {
-        margin-left: 10px; /* Ajusta el margen para dispositivos móviles */
+        height: 40vh;
+        padding: 20px 10px;
     }
 
     .hero-title {
-        font-size: 2rem; /* Ajusta el tamaño de la fuente */
+        font-size: 2rem;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem; /* Ajusta el tamaño de la fuente */
+        font-size: 1.2rem;
     }
-}
-/* Servicios Section */
-.services-section {
-    background-color: #f0f0f0;
-    padding: 40px 0;
-}
 
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #000;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.line-divider {
-    width: 80px;
-    height: 3px;
-    background: #e00909;
-    margin: 0 auto 20px;
-}
-
-.service-card {
-    background-color: #495057;
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.service-img {
-    height: 250px; /* Agranda las imágenes */
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.service-title {
-    font-size: 1.8rem; /* Aumenta el tamaño de la fuente */
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.service-description {
-    font-size: 1.1rem; /* Aumenta el tamaño de la fuente */
-    color: #e0e0e0; /* Cambia el color a un gris claro para mejor contraste */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
     .section-title {
         font-size: 1.8rem;
     }
 
     .line-divider {
         width: 60px;
-    }
-
-    .service-card {
-        margin-bottom: 20px;
-    }
-
-    .service-img {
-        height: 200px; /* Ajusta la altura para móviles */
     }
 
     .service-title {
@@ -158,26 +132,110 @@
     }
 }
 
-
-
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #000000;
-    animation: fadeIn 0.5s ease-in-out; /* Añadido para animación */
+/* Tarjetas de servicio */
+.service-card {
+    background-color: #495057;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    overflow: hidden; /* Para asegurarse de que el contenido no se salga de la tarjeta */
 }
 
-.line-divider {
-    width: 1200px;
-    height: 3px;
-    background: #e00909;
-    margin: 0 auto 20px;
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    filter: brightness(1.1); /* Hace que la tarjeta se vea más brillante al pasar el mouse */
 }
 
+.service-image-container {
+    position: relative; /* Permite el posicionamiento absoluto de los elementos dentro */
+}
+
+.service-img {
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.service-card:hover .service-img {
+    transform: scale(1.05); /* Agranda la imagen ligeramente al pasar el mouse */
+}
+
+.service-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff; /* Color moderno */
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #e0e0e0; /* Color gris claro para mejor contraste */
+    margin-bottom: 15px;
+}
+
+.backup-info {
+    position: absolute; /* Posicionamiento absoluto sobre la imagen */
+    bottom: 10px; /* Espacio desde el fondo */
+    left: 10px; /* Espacio desde la izquierda */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    padding: 5px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    display: flex; /* Flexbox para alinear texto y logo */
+    align-items: center; /* Centrar verticalmente */
+    margin-top: 10px; /* Espacio superior */
+}
+
+.backup-logo {
+    width: 50px; /* Ancho del logo */
+    height: auto; /* Mantener proporción */
+    margin-left: 5px; /* Espacio entre texto y logo */
+}
+
+.service-footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.service-card:hover .service-footer {
+    background-color: #04ff00; /* Cambio de color en el pie de la tarjeta al pasar el mouse */
+    color: #343a40; /* Texto oscuro para el pie de la tarjeta */
+}
+
+.service-button {
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.service-button:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+}
 
 
 .benefit-container {
-    margin-bottom: 20px; /* Espacio entre beneficios */
+    margin-bottom: 20px;
 }
 
 .benefit-logo {
@@ -185,73 +243,136 @@
     object-fit: contain;
     margin-bottom: 20px;
 }
-
-.supplier-card {
+/* Estilos para el contenedor del carrusel */
+.supplier-carousel {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
-    text-align: center; /* Asegura que el texto esté centrado */
+    justify-content: space-around; /* Distribuye los logos con espacio entre ellos */
+    align-items: center; /* Alinea verticalmente los logos */
+    overflow: hidden; /* Evita el desbordamiento */
+    padding: 20px 0; /* Espaciado superior e inferior */
 }
 
+/* Estilos para los logos de proveedores */
 .supplier-logo {
-    max-width: 100px; /* Ajusta según sea necesario */
+    max-width: 100px; /* Ajusta el tamaño máximo según sea necesario */
     height: auto; /* Mantiene la proporción */
+    transition: transform 0.2s ease; /* Transición suave al pasar el ratón */
 }
 
-.footer-section {
-    background-color: #343a40;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
+.supplier-logo:hover {
+    transform: scale(1.1); /* Efecto de aumento al pasar el ratón */
 }
 
-.footer-links a {
-    color: #f00707;
-    text-decoration: none;
-    margin: 0 10px;
+.company-section {
+    background-color: #f0f0f0; /* Fondo claro para la sección */
+    padding: 40px 20px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    margin: 40px 0; /* Espaciado superior e inferior */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-.contact-form-section {
-    padding: 20px;
-    background-color: #f0f0f0; /* Fondo claro para la sección de contacto */
-}
-
-.contact-form-section h2 {
-    margin-bottom: 20px;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1; /* Se vuelve visible */
-        transform: translateY(0); /* Vuelve a su posición original */
-    }
+.company-description {
+    font-size: 1.2rem; /* Tamaño de fuente ajustado */
+    color: #333; /* Color de texto más oscuro para contraste */
+    line-height: 1.6; /* Mejora la legibilidad */
 }
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
+    .company-description {
+        font-size: 1rem; /* Ajusta el tamaño de la fuente en móviles */
+    }
+}
 
-    .section-title {
-        font-size: 1.8rem;
+/* Estilos para la sección de contacto */
+@import '~font-awesome/css/font-awesome.css';
+
+.contact-form-section {
+    background-color: #f8f9fa; /* Fondo claro */
+    padding: 40px 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    display: flex; /* Flexbox para mejor alineación */
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten */
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000; /* Color negro para el título */
+    margin-bottom: 20px; /* Espacio inferior */
+    text-align: center; /* Centrado para mayor claridad */
+}
+
+.contact-form {
+    margin-bottom: 20px; /* Espacio entre el formulario y el mensaje de éxito */
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 10px 0; /* Espacio entre líneas */
+    display: flex; /* Flexbox para alinear iconos y texto */
+    align-items: center; /* Centrar iconos verticalmente */
+}
+
+.contact-info i {
+    margin-right: 10px; /* Espacio entre icono y texto */
+    color: #000000; /* Color del icono */
+    font-size: 1.3rem; /* Tamaño del icono */
+}
+
+.submit-button {
+    display: flex;
+    align-items: center; /* Centrar el icono verticalmente */
+}
+
+.submit-button i {
+    margin-right: 5px; /* Espacio entre el icono y el texto del botón */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .contact-form-section {
+        padding: 20px; /* Menos espaciado en móviles */
     }
 
-    .line-divider {
-        width: 100px;
+    .contact-title {
+        font-size: 2rem; /* Reducir tamaño del título en móviles */
     }
+}
 
-    .benefit-logo {
-        height: 60px;
-    }
+.footer-section {
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 20px 0; /* Espaciado superior e inferior */
+}
+
+.footer-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #ff0000; /* Color del enlace */
+    font-size: 1rem;
+    margin: 0 10px; /* Espaciado entre enlaces */
+}
+
+.footer-link i {
+    margin-right: 5px; /* Espacio entre ícono y texto */
+}
+
+.footer-link:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+.footer-design {
+    margin-top: 15px;
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    color: #6c757d; /* Color gris */
 }

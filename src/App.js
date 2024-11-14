@@ -17,12 +17,14 @@ function App() {
     return (
         <CartProvider>
             <Container fluid>
-                <Navbar bg="light" expand="lg" className="shadow-sm p-3 mb-5 rounded navbar-custom">
+                <Navbar bg="light" expand="lg" className="shadow-sm mb-3 rounded navbar-custom">
                     <Container fluid>
-                        <Navbar.Brand as={Link} to="/">
-                            <img src="/ultimologodarom.png" alt="Darom SA" className="img-fluid" style={{ height: 120 }} />
-                        </Navbar.Brand>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+    <img src="/ultimologodarom.png" alt="Darom SA" className="img-fluid" style={{ height: 100 }} /> {/* Ajusta la altura según sea necesario */}
+</Navbar.Brand>
+
+
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" className="ms-auto" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ms-auto nav-links">
                                 <Nav.Link as={Link} to="/" className="mx-2">Inicio</Nav.Link>
@@ -32,7 +34,7 @@ function App() {
                                 <Nav.Link as={Link} to="/services/pisos" className="mx-2">Pisos llaneados</Nav.Link>
                                 <Nav.Link as={Link} to="/about" className="mx-2">Sobre Nosotros</Nav.Link>
                                 <Nav.Link as={Link} to="/contact" className="mx-2">Contacto</Nav.Link>
-                                <Nav className="social-icons">
+                                <Nav className="social-icons ms-2">
                                     <Nav.Link href="https://www.facebook.com/tu_pagina" target="_blank" rel="noopener noreferrer" className="mx-1">
                                         <FaFacebook size={25} />
                                     </Nav.Link>
@@ -48,6 +50,7 @@ function App() {
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
+
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/services/materiales" element={<Materiales />} />
