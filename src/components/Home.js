@@ -114,7 +114,7 @@ function Home() {
     const renderCarouselItems = (items, isSupplier = false) => {
         const itemsPerSlide = 4; // Número de elementos por carrusel
         const slides = [];
-
+    
         for (let i = 0; i < Math.ceil(items.length / itemsPerSlide); i++) {
             slides.push(
                 <Carousel.Item key={i}>
@@ -122,7 +122,12 @@ function Home() {
                         {items.slice(i * itemsPerSlide, i * itemsPerSlide + itemsPerSlide).map((item, idx) => (
                             <Col md={isSupplier ? 2 : 3} sm={6} key={idx} className="mb-4">
                                 <Card className={isSupplier ? "supplier-card text-center" : "product-card text-center"}>
-                                    <Card.Img variant="top" src={item.src} alt={item.alt} className={isSupplier ? "supplier-logo" : "benefit-logo"} />
+                                    <Card.Img 
+                                        variant="top" 
+                                        src={item.src} 
+                                        alt={item.alt} 
+                                        className={isSupplier ? "supplier-logo" : "benefit-logo"} 
+                                    />
                                     {!isSupplier && (
                                         <Card.Body>
                                             <Card.Title>{item.title || item.name}</Card.Title>
@@ -145,8 +150,8 @@ function Home() {
             <Row className="hero-section">
                 <Col className="text-center">
                     <div className="hero-content animated fadeIn">
-                        <h2 className="hero-title">BIENVENIDOS A DAROM, CALIDAD GARANTIZADA QUE TE ACOMPAÑA EN TUS PROYECTOS</h2>
-                        <h3 className="hero-subtitle">HORMIGÓN ELABORADO Y SERVICIOS DE CONSTRUCCIÓN DE CALIDAD SUPERIOR. TRANSFORMA TUS PROYECTOS CON NUESTRA EXCELENCIA.</h3>
+                        <h2 className="hero-title">HORMIGÓN ELABORADO Y SERVICIOS DE CALIDAD SUPERIOR</h2>
+                        <h3 className="hero-subtitle">TRANSFORMA TUS PROYECTOS CON NUESTRA EXCELENCIA, INNOVACIÓN Y CALIDAD EN TODAS LAS ETAPAS.</h3>
                     </div>
                 </Col>
             </Row>
@@ -214,17 +219,19 @@ function Home() {
                 {renderCarouselItems(featuredProducts)}
             </Carousel>
 
-            {/* Proveedores Section - Carrusel */}
+{/* Sección logos proveedores */}
+
             <Row className="text-center mb-4">
     <Col>
         <h2 className="section-title">NUESTROS PROVEEDORES</h2>
         <div className="line-divider"></div>
     </Col>
 </Row>
-            <Carousel className="mb-4">
-                {renderCarouselItems(suppliers, true)}
-            </Carousel>
-            
+
+<Carousel className="mb-4">
+    {renderCarouselItems(suppliers, true)} {/* Asegúrate de pasar 'true' para proveedores */}
+</Carousel>
+
             {/* Sección Sobre la Empresa */}
 <Row className="text-center mb-4">
     <Col>

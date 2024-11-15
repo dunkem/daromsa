@@ -1,6 +1,6 @@
 /* Sección Hero */
 .hero-section {
-    background: url('D:\daromsa\public\IMG_3025.jpg') no-repeat center center;
+    background: url('C:\Users\Damian\OneDrive\Escritorio\DD\DAROMSA\daromsa-clone\public\IMG_3152.JPG') no-repeat center center;
     background-size: cover;
     height: 60vh;
     display: flex;
@@ -73,13 +73,13 @@
 /* Estilos para los títulos de secciones */
 .section-title {
     font-family: 'Roboto', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     font-weight: bold;
     color: #ffffff;
     background: linear-gradient(90deg, #e00909, #000000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding: 10px 0;
+    padding: 1px 0;
     margin-bottom: 20px;
     text-align: center;
     border-radius: 5px;
@@ -97,7 +97,7 @@
     width: 1200px;
     height: 2px;
     background: #e00909;
-    margin: 20px auto; /* Espaciado ajustado */
+    margin: 1px auto; /* Espaciado ajustado */
 }
 
 /* Estilos responsivos */
@@ -243,26 +243,44 @@
     object-fit: contain;
     margin-bottom: 20px;
 }
-/* Estilos para el contenedor del carrusel */
-.supplier-carousel {
-    display: flex;
-    justify-content: space-around; /* Distribuye los logos con espacio entre ellos */
-    align-items: center; /* Alinea verticalmente los logos */
-    overflow: hidden; /* Evita el desbordamiento */
-    padding: 20px 0; /* Espaciado superior e inferior */
-}
-
-/* Estilos para los logos de proveedores */
-.supplier-logo {
-    max-width: 100px; /* Ajusta el tamaño máximo según sea necesario */
-    height: auto; /* Mantiene la proporción */
+/* Asegúrate de que el contenedor del Card esté centrado */
+.supplier-card {
+    display: flex; /* Usa flexbox para el layout */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    border-radius: 50%; /* Hace la tarjeta redonda */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+    border: 1px solid #ddd; /* Opcional: añade un borde */
     transition: transform 0.2s ease; /* Transición suave al pasar el ratón */
+    padding: 20px; /* Espacio interno */
 }
 
-.supplier-logo:hover {
-    transform: scale(1.1); /* Efecto de aumento al pasar el ratón */
+.supplier-logo {
+    max-width: 90px; /* Tamaño máximo */
+    height: auto; /* Mantiene la proporción */
+    margin: 0; /* Elimina el margen */
 }
 
+/* Asegúrate de que el contenedor del carrusel esté centrado */
+.supplier-carousel .carousel-item {
+    display: flex;
+    justify-content: center; /* Centra los items en el carrusel */
+    align-items: center; /* Alinea verticalmente los items */
+}
+.supplier-card:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+    .supplier-logo {
+        max-width: 70px; /* Ajusta el tamaño en móviles */
+    }
+}
+
+/* Empresa */
 .company-section {
     background-color: #f0f0f0; /* Fondo claro para la sección */
     padding: 40px 20px; /* Espaciado interno */

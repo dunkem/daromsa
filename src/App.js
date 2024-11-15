@@ -19,10 +19,12 @@ function App() {
             <Container fluid>
                 <Navbar bg="light" expand="lg" className="shadow-sm mb-3 rounded navbar-custom">
                     <Container fluid className="d-flex justify-content-between align-items-center">
-                        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
-                            <img src="/ultimologodarom.png" alt="Darom SA" className="img-fluid" style={{ height: 100 }} />
-                        </Navbar.Brand>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <div className="d-flex align-items-center">
+                            <Navbar.Brand as={Link} to="/" className="me-2">
+                                <img src="/ultimologodarom.png" alt="Darom SA" className="img-fluid" style={{ height: 50 }} />
+                            </Navbar.Brand>
+                            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        </div>
                         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                             <Nav className="ms-auto nav-links">
                                 <Nav.Link as={Link} to="/" className="mx-2">Inicio</Nav.Link>

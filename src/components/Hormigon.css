@@ -1,0 +1,185 @@
+/* Estilos generales para Hormigón */
+.container {
+    padding: 20px;
+}
+
+/* Títulos */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+h2.section-title {
+    font-size: 2rem;
+    margin: 40px 0 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+h4.contact-title {
+    font-size: 1.8rem;
+    margin: 30px 0;
+    color: #333;
+}
+
+/* Estilos para las imágenes */
+img {
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.full-width-image {
+    width: 100%; /* Ancho completo del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Evita espacios en la parte inferior */
+}
+
+/* Estilos para logos de beneficios */
+.benefit-logo {
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* Estilos para tarjetas de proveedores */
+.supplier-card {
+    display: flex; /* Usa flexbox para el layout */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+    border: 1px solid #ddd; /* Añade un borde */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transición suave al pasar el ratón */
+    padding: 20px; /* Espacio interno */
+    background-color: #fff; /* Fondo blanco para la tarjeta */
+}
+
+.supplier-card:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+}
+
+.supplier-logo {
+    max-width: 90px; /* Tamaño máximo */
+    height: auto; /* Mantiene la proporción */
+}
+
+/* Asegúrate de que el contenedor del carrusel esté centrado */
+.supplier-carousel .carousel-item {
+    display: flex;
+    justify-content: center; /* Centra los items en el carrusel */
+    align-items: center; /* Alinea verticalmente los items */
+}
+
+/* Sección de la empresa */
+.company-section {
+    background-color: #f0f0f0; /* Fondo claro para la sección */
+    padding: 40px 20px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    margin: 40px 0; /* Espaciado superior e inferior */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.company-description {
+    font-size: 1.2rem; /* Tamaño de fuente ajustado */
+    color: #333; /* Color de texto más oscuro para contraste */
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .company-description {
+        font-size: 1rem; /* Ajusta el tamaño de la fuente en móviles */
+    }
+}
+
+/* Estilos para la sección de contacto */
+.contact-form-section {
+    background-color: #f8f9fa; /* Fondo claro */
+    padding: 40px 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    display: flex; /* Flexbox para mejor alineación */
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten */
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000; /* Color negro para el título */
+    margin-bottom: 20px; /* Espacio inferior */
+    text-align: center; /* Centrado para mayor claridad */
+}
+
+.contact-form {
+    margin-bottom: 20px; /* Espacio entre el formulario y el mensaje de éxito */
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 10px 0; /* Espacio entre líneas */
+    display: flex; /* Flexbox para alinear iconos y texto */
+    align-items: center; /* Centrar iconos verticalmente */
+}
+
+.contact-info i {
+    margin-right: 10px; /* Espacio entre icono y texto */
+    color: #000000; /* Color del icono */
+    font-size: 1.3rem; /* Tamaño del icono */
+}
+
+.submit-button {
+    display: flex;
+    align-items: center; /* Centrar el icono verticalmente */
+}
+
+.submit-button i {
+    margin-right: 5px; /* Espacio entre el icono y el texto del botón */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .contact-form-section {
+        padding: 20px; /* Menos espaciado en móviles */
+    }
+
+    .contact-title {
+        font-size: 2rem; /* Reducir tamaño del título en móviles */
+    }
+}
+
+/* Footer */
+.footer-section {
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 20px 0; /* Espaciado superior e inferior */
+}
+
+.footer-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #ff0000; /* Color del enlace */
+    font-size: 1rem;
+    margin: 0 10px; /* Espaciado entre enlaces */
+}
+
+.footer-link:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+
+.footer-design {
+    margin-top: 15px;
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    color: #6c757d; /* Color gris */
+}
