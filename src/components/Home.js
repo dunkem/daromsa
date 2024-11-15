@@ -26,7 +26,7 @@ function Home() {
             title: 'HORMIGÓN ELABORADO Y SERVICIOS DE BOMBEO',
             description: 'Nos especializamos en proveer hormigón de alta calidad, asegurando resistencia y durabilidad en cada aplicación. Nuestros servicios de bombeo facilitan su uso en cualquier obra.',
             backup: {
-                text: 'RESPALDADOS POR LOMA NEGRA',
+                text: 'RESPALDADOS POR',
                 logo: '/logolomanegra.png'
             },
             link: '/services/hormigon' // Ruta añadida
@@ -48,7 +48,7 @@ function Home() {
             title: 'PISOS LLANEADOS Y ACABADOS SUPERFICIALES',
             description: 'Transformamos tus superficies con nuestros servicios de pisos llanos y acabados de alta calidad. Mejora la estética y funcionalidad de tus espacios con nuestros especialistas.',
             backup: {
-                text: 'RESPALDADOS POR MAPEI',
+                text: 'RESPALDADOS POR',
                 logo: '/LOGOMAPEI.png'
             },
             link: '/services/pisos' // Ruta añadida

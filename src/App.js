@@ -18,14 +18,12 @@ function App() {
         <CartProvider>
             <Container fluid>
                 <Navbar bg="light" expand="lg" className="shadow-sm mb-3 rounded navbar-custom">
-                    <Container fluid>
-                    <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
-    <img src="/ultimologodarom.png" alt="Darom SA" className="img-fluid" style={{ height: 100 }} /> {/* Ajusta la altura según sea necesario */}
-</Navbar.Brand>
-
-
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" className="ms-auto" />
-                        <Navbar.Collapse id="basic-navbar-nav">
+                    <Container fluid className="d-flex justify-content-between align-items-center">
+                        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+                            <img src="/ultimologodarom.png" alt="Darom SA" className="img-fluid" style={{ height: 100 }} />
+                        </Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                             <Nav className="ms-auto nav-links">
                                 <Nav.Link as={Link} to="/" className="mx-2">Inicio</Nav.Link>
                                 <Nav.Link as={Link} to="/services/hormigon" className="mx-2">Hormigón Elaborado</Nav.Link>

@@ -1,11 +1,11 @@
 /* Sección Hero */
 .hero-section {
-    background: url('C:\Users\Damian\OneDrive\Escritorio\DD\DAROMSA\daromsa-clone\public\IMG_3152.JPG') no-repeat center center;
+    background: url('D:\daromsa\public\IMG_3025.jpg') no-repeat center center;
     background-size: cover;
     height: 60vh;
     display: flex;
     align-items: center;
-    padding: 40px 20px;
+    padding: 40px 10px;
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -28,7 +28,7 @@
     position: relative;
     z-index: 2;
     padding: 20px;
-    margin-left: 20px; /* Margen izquierdo */
+    margin-left: 10px; /* Margen izquierdo */
     animation: slideInLeft 1s ease-in-out; /* Animación de entrada */
 }
 
