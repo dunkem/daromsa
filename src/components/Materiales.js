@@ -141,13 +141,13 @@ function Materiales() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        // Aquí podrías agregar lógica para manejar el envío
         console.log('Email:', email);
         console.log('Mensaje:', message);
         setSubmitted(true);
         setEmail('');
         setMessage('');
     };
-    
 
     return (
         <Container className="mt-4 materiales-container">
@@ -168,7 +168,9 @@ function Materiales() {
                     </ButtonGroup>
                 </Col>
                 <Col md={9}>
-                    <h1 className="display-4 font-weight-bold" style={{ color: 'black' }}> MATERIALES DE CORRALÓN</h1>
+                    <h1 className="display-4 font-weight-bold" style={{ color: 'black' }}>
+                        MATERIALES DE CORRALÓN
+                    </h1>
                     <Row className="d-flex justify-content-center">
                         {materiales[selectedSubrubro].map(material => (
                             <Col xs={12} sm={6} md={4} lg={3} key={material.id} className="mb-4 d-flex align-items-stretch">
@@ -189,27 +191,26 @@ function Materiales() {
 
             {/* Botón de Adjunta tu lista */}
             <Row className="mb-4">
-            <Col className="text-left">
+                <Col className="text-left">
                     <Button 
                         style={{ 
-                            backgroundColor: '#ff4d4d', // Color rojo más suave
+                            backgroundColor: '#ff4d4d', 
                             color: 'white', 
-                            border: 'none', // Sin borde
-                            borderRadius: '5px', // Bordes redondeados
-                            padding: '10px 15px', // Espaciado interno ajustado
+                            border: 'none', 
+                            borderRadius: '5px', 
+                            padding: '10px 15px', 
                             display: 'flex', 
                             alignItems: 'center',
                         }} 
                         onClick={() => alert('Funcionalidad para adjuntar lista de precios aquí.')}
                     >
-                        <FaFileUpload style={{ marginRight: '5px' }} /> {/* Ícono de archivo */}
+                        <FaFileUpload style={{ marginRight: '5px' }} />
                         ADJUNTA TU LISTA
                     </Button>
-                    <p className="lead">¡Comparte tu Lista o Presupuesto con Nosotros!
-
-Te Ofrecemos los Mejores Precios y Condiciones. No dudes en enviarnos tu lista o presupuesto y aprovecha nuestras ofertas inigualables.</p>
+                    <p className="lead">
+                        ¡Comparte tu Lista o Presupuesto con Nosotros! Te Ofrecemos los Mejores Precios y Condiciones.
+                    </p>
                 </Col>
-                
             </Row>
 
             {/* Contacto */}

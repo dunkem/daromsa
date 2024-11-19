@@ -1,6 +1,12 @@
+/* Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
 /* Sección Hero */
 .hero-section {
-    background: url('D:\daromsa\public\IMG_3152.JPG') no-repeat center center;
+    background: url('C:\Users\Damian\OneDrive\Escritorio\DD\DAROMSA\daromsa-clone\public\portada.jpg') no-repeat center center; /* Asegúrate de que la imagen esté en public */
     background-size: cover;
     height: 60vh;
     display: flex;
@@ -233,7 +239,6 @@
     background-color: #0056b3; /* Color al pasar el mouse */
 }
 
-
 .benefit-container {
     margin-bottom: 20px;
 }
@@ -243,6 +248,7 @@
     object-fit: contain;
     margin-bottom: 20px;
 }
+
 /* Asegúrate de que el contenedor del Card esté centrado */
 .supplier-card {
     display: flex; /* Usa flexbox para el layout */
@@ -268,10 +274,10 @@
     justify-content: center; /* Centra los items en el carrusel */
     align-items: center; /* Alinea verticalmente los items */
 }
+
 .supplier-card:hover {
     transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
 }
-
 
 /* Ajustes específicos para móviles */
 @media (max-width: 768px) {
@@ -389,6 +395,7 @@
 .footer-link:hover {
     text-decoration: underline; /* Subrayar al pasar el mouse */
 }
+
 .footer-design {
     margin-top: 15px;
     font-size: 0.9rem; /* Tamaño de fuente más pequeño */

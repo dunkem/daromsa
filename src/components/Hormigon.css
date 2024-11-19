@@ -8,7 +8,6 @@ h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: bold;
-    
 }
 
 h2.section-title {
@@ -65,6 +64,32 @@ img {
 .supplier-logo {
     max-width: 90px; /* Tamaño máximo */
     height: auto; /* Mantiene la proporción */
+}
+
+/* Estilos para los botones del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
+    border-radius: 50%; /* Bordes redondeados */
+    width: 40px; /* Ancho del botón */
+    height: 40px; /* Alto del botón */
+    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #ff4d4d; /* Color de los íconos */
+    border-radius: 50%; /* Bordes redondeados */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #ff1a1a; /* Cambia el fondo al pasar el mouse */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1); /* Cambia el color de los íconos a blanco */
 }
 
 /* Asegúrate de que el contenedor del carrusel esté centrado */
@@ -139,17 +164,6 @@ img {
 
 .submit-button i {
     margin-right: 5px; /* Espacio entre el icono y el texto del botón */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    .contact-form-section {
-        padding: 20px; /* Menos espaciado en móviles */
-    }
-
-    .contact-title {
-        font-size: 2rem; /* Reducir tamaño del título en móviles */
-    }
 }
 
 /* Footer */

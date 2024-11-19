@@ -17,8 +17,8 @@ function Contact() {
 
     return (
         <Container className="contact-container mt-5">
-            <h1 className="text-center mb-4">Contacto</h1>
-            <Card className="shadow-lg">
+            <h1 className="text-center mb-4">CONTACTANOS</h1>
+            <Card className="shadow-lg mb-4">
                 <Card.Body>
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
                         <Form.Group controlId="formName">
@@ -49,50 +49,44 @@ function Contact() {
                 </Card.Body>
             </Card>
 
-            <Row className="mt-4">
-                <Col className="d-flex justify-content-around">
-                    <h5 className="text-center">Conéctate con nosotros:</h5>
-                </Col>
-            </Row>
-            <Row className="mt-2">
-                <Col className="d-flex justify-content-around">
-                    <Button variant="outline-primary" href="https://www.facebook.com/tu_pagina" target="_blank">
-                        <FaFacebook /> Facebook
-                    </Button>
-                    <Button variant="outline-danger" href="https://www.instagram.com/tu_pagina" target="_blank">
-                        <FaInstagram /> Instagram
-                    </Button>
-                    <Button variant="outline-danger" href="https://www.youtube.com/tu_pagina" target="_blank">
-                        <FaYoutube /> YouTube
-                    </Button>
-                    <Button variant="outline-success" href="https://wa.me/1234567890" target="_blank">
-                        <FaWhatsapp /> WhatsApp
-                    </Button>
+            <Row className="contact-info mb-4">
+                <Col md={6} className="text-center">
+                    <h5>Información de Contacto</h5>
+                    <p><i className="fas fa-phone"></i> Teléfono: <a href="tel:08103334567">0810-333-4567</a></p>
+                    <p><i className="fas fa-envelope"></i> Email: <a href="mailto:ventas@darom.com">ventas@daromsa.com |proveedores@daromsa.com |pagos@daromsa</a></p>
+                    <p><i className="fas fa-map-marker-alt"></i> Oficina: C. 152 6352, B1885 Guillermo Enrique Hudson</p>
+                    <p><i className="fas fa-industry"></i> Planta: Parque industrial tecnológico de Florencio Varela</p>
                 </Col>
             </Row>
 
-            <Row className="mt-5">
+            <Row className="social-buttons text-center mt-4">
                 <Col>
-                    <h5 className="text-center">Ubicación</h5>
-                    <div className="map-container">
-                        <iframe
-                            title="Google Maps"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345098472!2d144.95373631531503!3d-37.81720997975112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f0a1c49%3A0x5045675218ceed30!2sYour%20Business%20Name!5e0!3m2!1sen!2sus!4v1635560612549!5m2!1sen!2sus"
-                            width="100%"
-                            height="300"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
-                            loading="lazy"
-                        />
+                    <h5>Síguenos en Redes Sociales</h5>
+                    <div className="d-flex justify-content-around">
+                        <Button variant="outline-primary" href="https://www.facebook.com/tu_pagina" target="_blank">
+                            <FaFacebook /> Facebook
+                        </Button>
+                        <Button variant="outline-danger" href="https://www.instagram.com/tu_pagina" target="_blank">
+                            <FaInstagram /> Instagram
+                        </Button>
+                        <Button variant="outline-danger" href="https://www.youtube.com/tu_pagina" target="_blank">
+                            <FaYoutube /> YouTube
+                        </Button>
+                        <Button variant="outline-success" href="https://wa.me/1234567890" target="_blank">
+                            <FaWhatsapp /> WhatsApp
+                        </Button>
                     </div>
                 </Col>
             </Row>
 
-            <footer className="footer mt-5">
-                <div className="container text-center">
-                    <span>&copy; 2024 Darom SA. Todos los derechos reservados.</span>
-                </div>
-            </footer>
+            {/* Footer Section */}
+            <Row className="footer-section mt-4">
+                <Col className="footer-content text-center">
+                    <h5 className="footer-title">DAROM SA</h5>
+                    <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
+                    <p className="footer-design">Diseñado por <strong>Dtecno</strong></p>
+                </Col>
+            </Row>
         </Container>
     );
 }

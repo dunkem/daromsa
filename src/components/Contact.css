@@ -2,14 +2,16 @@
 
 .contact-container {
     background-color: #f8f9fa; /* Fondo claro */
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 10px; /* Bordes más suaves */
+    padding: 30px; /* Aumentar el padding para más espacio */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 h1 {
     color: #343a40; /* Color del título principal */
     text-align: center; /* Centra el título */
-    margin-bottom: 20px; /* Espaciado inferior */
+    margin-bottom: 30px; /* Espaciado inferior aumentado */
+    font-size: 2rem; /* Tamaño de fuente más grande */
 }
 
 .card {
@@ -17,13 +19,14 @@ h1 {
 }
 
 .card-body {
-    padding: 30px; /* Padding interno de la tarjeta */
+    padding: 40px; /* Aumentar padding interno de la tarjeta */
 }
 
 .card-title {
-    font-size: 1.5rem; /* Tamaño del título de la tarjeta */
+    font-size: 1.75rem; /* Aumentar tamaño del título de la tarjeta */
     margin-bottom: 20px; /* Espaciado inferior */
     text-align: center; /* Centra el título de la tarjeta */
+    font-weight: bold; /* Negrita para mayor énfasis */
 }
 
 .form-group label {
@@ -33,7 +36,7 @@ h1 {
 .form-control {
     border-radius: 5px; /* Bordes redondeados en inputs y textarea */
     box-shadow: none; /* Sin sombra */
-    transition: border-color 0.3s ease; /* Transición suave */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
 
 .form-control:focus {
@@ -46,7 +49,7 @@ button {
     background-color: #007bff; /* Color de fondo del botón */
     border: none; /* Sin borde */
     color: white; /* Texto blanco */
-    padding: 10px 20px; /* Espaciado interno */
+    padding: 12px 20px; /* Espaciado interno más grande */
     border-radius: 5px; /* Bordes redondeados */
     font-weight: bold; /* Negrita para el texto */
 }
@@ -57,7 +60,7 @@ button:hover {
 }
 
 .map-container {
-    margin-top: 20px; /* Espacio superior para el mapa */
+    margin-top: 30px; /* Espacio superior para el mapa */
 }
 
 /* Estilos del Footer */
@@ -71,6 +74,7 @@ footer {
 
 footer h5 {
     margin-bottom: 20px; /* Espaciado inferior en el título del footer */
+    font-size: 1.5rem; /* Tamaño del título del footer */
 }
 
 footer a {
@@ -80,15 +84,21 @@ footer a {
 
 footer a:hover {
     text-decoration: underline; /* Subrayado al pasar el ratón */
+    
 }
 
 /* Media Queries */
 @media (max-width: 576px) {
+    h1 {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño en móviles */
+    }
+
     h5 {
         font-size: 1rem; /* Tamaño de fuente más pequeño en móviles */
     }
-    
+
     button {
         width: 100%; /* Botones ocupan el 100% en móviles */
+        padding: 10px; /* Reducción de padding en móviles */
     }
 }

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Image, Carousel, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FaFileUpload } from 'react-icons/fa'; // Asegúrate de instalar react-icons
-import './Hormigon.css'; // Importa tu CSS
+import { FaFileUpload } from 'react-icons/fa';
+import './Hormigon.css';
 
 function Hormigon() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [submitted, setSubmitted] = useState(false);
 
+    // Maneja el envío del formulario
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Email:', email);
@@ -18,6 +19,7 @@ function Hormigon() {
         setMessage('');
     };
 
+    // Datos de los proveedores
     const suppliers = [
         { src: '/logolomanegra.png', alt: 'Loma Negra' },
         { src: '/LOGOMAPEI.png', alt: 'Mapei' },
@@ -28,29 +30,24 @@ function Hormigon() {
         { src: '/LOGOCANTERAS.jpg', alt: 'Canteras Argentinas' },
     ];
 
-    const renderCarouselItems = (items, isSupplier = false) => {
+    // Renderiza los elementos del carrusel
+    const renderCarouselItems = (items) => {
         const itemsPerSlide = 4; // Número de elementos por carrusel
         const slides = [];
-        
+
         for (let i = 0; i < Math.ceil(items.length / itemsPerSlide); i++) {
             slides.push(
                 <Carousel.Item key={i}>
                     <Row className="justify-content-center">
                         {items.slice(i * itemsPerSlide, i * itemsPerSlide + itemsPerSlide).map((item, idx) => (
-                            <Col md={isSupplier ? 2 : 3} sm={6} key={idx} className="mb-4">
-                                <Card className={isSupplier ? "supplier-card text-center" : "product-card text-center"}>
+                            <Col md={3} sm={6} key={idx} className="mb-4">
+                                <Card className="supplier-card text-center">
                                     <Card.Img 
                                         variant="top" 
                                         src={item.src} 
                                         alt={item.alt} 
-                                        className={isSupplier ? "supplier-logo" : "benefit-logo"} 
+                                        className="supplier-logo" 
                                     />
-                                    {!isSupplier && (
-                                        <Card.Body>
-                                            <Card.Title>{item.title || item.name}</Card.Title>
-                                            <Card.Text>{item.description}</Card.Text>
-                                        </Card.Body>
-                                    )}
                                 </Card>
                             </Col>
                         ))}
@@ -67,25 +64,25 @@ function Hormigon() {
                 <Col className="text-left">
                     <Button 
                         style={{ 
-                            backgroundColor: '#ff4d4d', // Color rojo más suave
+                            backgroundColor: '#ff4d4d', 
                             color: 'white', 
-                            border: 'none', // Sin borde
-                            borderRadius: '5px', // Bordes redondeados
-                            padding: '10px 15px', // Espaciado interno ajustado
+                            border: 'none', 
+                            borderRadius: '5px', 
+                            padding: '10px 15px', 
                             display: 'flex', 
                             alignItems: 'center',
                         }} 
                         onClick={() => alert('Funcionalidad para adjuntar lista de precios aquí.')}
                     >
-                        <FaFileUpload style={{ marginRight: '5px' }} /> {/* Ícono de archivo */}
+                        <FaFileUpload style={{ marginRight: '5px' }} />
                         ADJUNTA TU LISTA
                     </Button>
-                    <p className="lead">¡Comparte tu Lista o Presupuesto con Nosotros!
-
-Te Ofrecemos los Mejores Precios y Condiciones. No dudes en enviarnos tu lista o presupuesto y aprovecha nuestras ofertas inigualables.</p>
+                    <p className="lead">
+                        ¡Comparte tu Lista o Presupuesto con Nosotros! Te Ofrecemos los Mejores Precios y Condiciones.
+                    </p>
                 </Col>
                 <Col className="text-center">
-                    <h1 h1 className="display-4 font-weight-bold" style={{ color: 'black' }}>HORMIGÓN ELABORADO</h1>
+                    <h1 className="display-4 font-weight-bold" style={{ color: 'black' }}>HORMIGÓN ELABORADO</h1>
                     <p className="lead">OFRECEMOS HORMIGÓN DE ALTA CALIDAD Y SERVICIOS DE BOMBEO PARA TUS PROYECTOS DE CONSTRUCCIÓN.</p>
                     <p>TRABAJAMOS CON LOS ESTÁNDARES MÁS ALTOS PARA ASEGURAR LA DURABILIDAD Y RESISTENCIA DE TUS ESTRUCTURAS.</p>
                 </Col>
@@ -119,7 +116,7 @@ Te Ofrecemos los Mejores Precios y Condiciones. No dudes en enviarnos tu lista o
                 </Col>
             </Row>
             <Carousel className="mb-4">
-                {renderCarouselItems(suppliers)} {/* Renderiza los proveedores */}
+                {renderCarouselItems(suppliers)} 
             </Carousel>
 
             {/* Sección Sobre la Empresa */}
@@ -132,7 +129,7 @@ Te Ofrecemos los Mejores Precios y Condiciones. No dudes en enviarnos tu lista o
             <Row className="company-section text-center mb-4">
                 <Col>
                     <p className="company-description">
-                        Desde 1978, Darom SA ha liderado en la construcción con una dedicación inquebrantable a la calidad. Con una expansión desde Zona Sur hasta toda la Provincia de Buenos Aires, ofrecemos hormigón elaborado y materiales de construcción de alta calidad. Nos diferenciamos por un soporte integral pre y post compra, equipo de última tecnología y constante capacitación de nuestro personal. Aspiramos a ser líderes nacionales, llevando nuestros productos y servicios a toda la República Argentina.
+                        Desde 1978, Darom SA ha liderado en la construcción con una dedicación inquebrantable a la calidad. Con una expansión desde Zona Sur hasta toda la Provincia de Buenos Aires, ofrecemos hormigón elaborado y materiales de construcción de alta calidad.
                     </p>
                 </Col>
             </Row>

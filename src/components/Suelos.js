@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Carousel, Form } from 'react-bootstrap';
+import { FaFileUpload } from 'react-icons/fa'; // Asegúrate de instalar react-icons
 import './Suelos.css';
 
 function Suelos() {
@@ -88,6 +89,29 @@ function Suelos() {
                     <Carousel>
                         {renderCarouselItems(movimientos)}
                     </Carousel>
+                </Col>
+            </Row>
+            {/* Botón de Adjunta tu lista */}
+            <Row className="mb-4">
+                <Col className="text-left">
+                    <Button 
+                        style={{ 
+                            backgroundColor: '#ff4d4d', 
+                            color: 'white', 
+                            border: 'none', 
+                            borderRadius: '5px', 
+                            padding: '10px 15px', 
+                            display: 'flex', 
+                            alignItems: 'center',
+                        }} 
+                        onClick={() => alert('Funcionalidad para adjuntar lista de precios aquí.')}
+                    >
+                        <FaFileUpload style={{ marginRight: '5px' }} />
+                        ADJUNTA TU LISTA
+                    </Button>
+                    <p className="lead">
+                        ¡Comparte tu Lista o Presupuesto con Nosotros! Te Ofrecemos los Mejores Precios y Condiciones.
+                    </p>
                 </Col>
             </Row>
 
