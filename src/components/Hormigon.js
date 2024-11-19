@@ -80,9 +80,12 @@ function Hormigon() {
                         <FaFileUpload style={{ marginRight: '5px' }} /> {/* Ícono de archivo */}
                         ADJUNTA TU LISTA
                     </Button>
+                    <p className="lead">¡Comparte tu Lista o Presupuesto con Nosotros!
+
+Te Ofrecemos los Mejores Precios y Condiciones. No dudes en enviarnos tu lista o presupuesto y aprovecha nuestras ofertas inigualables.</p>
                 </Col>
                 <Col className="text-center">
-                    <h1 className="display-4 font-weight-bold">HORMIGÓN ELABORADO</h1>
+                    <h1 h1 className="display-4 font-weight-bold" style={{ color: 'black' }}>HORMIGÓN ELABORADO</h1>
                     <p className="lead">OFRECEMOS HORMIGÓN DE ALTA CALIDAD Y SERVICIOS DE BOMBEO PARA TUS PROYECTOS DE CONSTRUCCIÓN.</p>
                     <p>TRABAJAMOS CON LOS ESTÁNDARES MÁS ALTOS PARA ASEGURAR LA DURABILIDAD Y RESISTENCIA DE TUS ESTRUCTURAS.</p>
                 </Col>
@@ -122,7 +125,7 @@ function Hormigon() {
             {/* Sección Sobre la Empresa */}
             <Row className="text-center mb-4">
                 <Col>
-                    <h2 className="section-title">Sobre la Empresa</h2>
+                    <h2 className="section-title">SOBRE LA EMPRESA</h2>
                     <div className="line-divider"></div>
                 </Col>
             </Row>

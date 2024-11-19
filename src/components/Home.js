@@ -235,7 +235,7 @@ function Home() {
             {/* Sección Sobre la Empresa */}
 <Row className="text-center mb-4">
     <Col>
-        <h2 className="section-title">Sobre la Empresa</h2>
+        <h2 className="section-title">LA EMPRESA</h2>
         <div className="line-divider"></div>
     </Col>
 </Row>

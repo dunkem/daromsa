@@ -1,16 +1,16 @@
 import React, { useContext, useState } from 'react';
-import { Container, Row, Col, Button, Card, ButtonGroup } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card, ButtonGroup, Form } from 'react-bootstrap';
 import { CartContext } from '../contexts/CartContext';
-import './Materiales.css'; // Asegúrate de que este archivo CSS existe
 import { Link } from 'react-router-dom';
-import { FaWhatsapp } from 'react-icons/fa';
-import './Home.css'; // Importa tu CSS
-
-
+import { FaFileUpload } from 'react-icons/fa'; // Asegúrate de instalar react-icons
+import './Materiales.css';
 
 function Materiales() {
     const { addToCart } = useContext(CartContext);
     const [selectedSubrubro, setSelectedSubrubro] = useState('hidrofugos');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [submitted, setSubmitted] = useState(false);
 
     const materiales = {
         hidrofugos: [
@@ -139,6 +139,16 @@ function Materiales() {
         setSelectedSubrubro(subrubro);
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('Email:', email);
+        console.log('Mensaje:', message);
+        setSubmitted(true);
+        setEmail('');
+        setMessage('');
+    };
+    
+
     return (
         <Container className="mt-4 materiales-container">
             <Row>
@@ -158,7 +168,7 @@ function Materiales() {
                     </ButtonGroup>
                 </Col>
                 <Col md={9}>
-                    <h1>Materiales de Corralón</h1>
+                    <h1 className="display-4 font-weight-bold" style={{ color: 'black' }}> MATERIALES DE CORRALÓN</h1>
                     <Row className="d-flex justify-content-center">
                         {materiales[selectedSubrubro].map(material => (
                             <Col xs={12} sm={6} md={4} lg={3} key={material.id} className="mb-4 d-flex align-items-stretch">
@@ -176,98 +186,91 @@ function Materiales() {
                     </Row>
                 </Col>
             </Row>
-            
 
+            {/* Botón de Adjunta tu lista */}
+            <Row className="mb-4">
+            <Col className="text-left">
+                    <Button 
+                        style={{ 
+                            backgroundColor: '#ff4d4d', // Color rojo más suave
+                            color: 'white', 
+                            border: 'none', // Sin borde
+                            borderRadius: '5px', // Bordes redondeados
+                            padding: '10px 15px', // Espaciado interno ajustado
+                            display: 'flex', 
+                            alignItems: 'center',
+                        }} 
+                        onClick={() => alert('Funcionalidad para adjuntar lista de precios aquí.')}
+                    >
+                        <FaFileUpload style={{ marginRight: '5px' }} /> {/* Ícono de archivo */}
+                        ADJUNTA TU LISTA
+                    </Button>
+                    <p className="lead">¡Comparte tu Lista o Presupuesto con Nosotros!
 
-
-
-
-            {/* Quick Contact */}
-            <Row className="mt-4 contact-section">
-                <Col className="text-center">
-                    <h4 className="contact-title">Contáctanos para un Presupuesto Personalizado</h4>
-                    <Row>
-                        <Col md={6} className="d-flex justify-content-center">
-                            <Card className="mb-4 shadow-sm modern-card contact-card">
-                                <Card.Body>
-                                    <Card.Text>Especialista en Hormigón Elaborado.</Card.Text>
-                                    <Button
-                                        variant="success"
-                                        className="whatsapp-button"
-                                        href="https://wa.me/5555555555"
-                                    >
-                                        <FaWhatsapp className="me-2" /> Contactar por WhatsApp
-                                    </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col md={6} className="d-flex justify-content-center">
-                            <Card className="mb-4 shadow-sm modern-card contact-card">
-                                <Card.Body>
-                                    <Card.Text>Especialista en Materiales de Construcción.</Card.Text>
-                                    <Button
-                                        variant="success"
-                                        className="whatsapp-button"
-                                        href="https://wa.me/5555555556"
-                                    >
-                                        <FaWhatsapp className="me-2" /> Contactar por WhatsApp
-                                    </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
+Te Ofrecemos los Mejores Precios y Condiciones. No dudes en enviarnos tu lista o presupuesto y aprovecha nuestras ofertas inigualables.</p>
                 </Col>
+                
             </Row>
 
-            {/* Office Location Section */}
-            <Row className="office-location mt-5">
+            {/* Contacto */}
+            <Row className="contact-form-section mb-4">
                 <Col md={6}>
-                    <h4>Oficinas Hudson</h4>
-                    <p>152 N° 6352 - 2do.Piso-Of.212</p>
-                    <iframe
-                        title="Mapa de oficinas en Hudson"
-                        src="https://www.google.com/maps/embed?pb=..."
-                        width="100%"
-                        height="300"
-                        style={{ border: 0 }}
-                        allowFullScreen=""
-                        loading="lazy"
-                    ></iframe>
+                    <h2 className="contact-title">CONTACTANOS</h2>
+                    <Form onSubmit={handleSubmit} className="contact-form">
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control 
+                                type="email" 
+                                placeholder="Ingrese su email" 
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </Form.Group>
+                        <Form.Group controlId="formBasicMessage">
+                            <Form.Label>Mensaje</Form.Label>
+                            <Form.Control 
+                                as="textarea" 
+                                rows={3} 
+                                placeholder="Escriba su mensaje" 
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                required
+                            />
+                        </Form.Group>
+                        <Button variant="primary" type="submit" className="submit-button">
+                            Enviar
+                        </Button>
+                        {submitted && <p className="mt-3 text-success">Su mensaje ha sido enviado con éxito.</p>}
+                    </Form>
                 </Col>
-                <Col md={6}>
-                    <h4>Planta de Hormigón Elaborado y Corralón</h4>
-                    <p>Pitec - Parque Industrial y Tecnológico Florencio Varela</p>
-                    <iframe
-                        title="Mapa de planta y corralón"
-                        src="https://www.google.com/maps/embed?pb=..."
-                        width="100%"
-                        height="300"
-                        style={{ border: 0 }}
-                        allowFullScreen=""
-                        loading="lazy"
-                    ></iframe>
+                <Col md={6} className="contact-info">
+                    <p>Teléfono: <a href="tel:08103334567">0810-333-4567</a></p>
+                    <p>Email: <a href="mailto:ventas@darom.com">ventas@darom.com</a></p>
+                    <p>Oficina: C. 152 6352, B1885 Guillermo Enrique Hudson</p>
+                    <p>Planta: Parque industrial tecnológico de Florencio Varela</p>
                 </Col>
             </Row>
 
             {/* Footer Section */}
             <Row className="footer-section mt-4">
-                <Col>
-                    <div className="footer-content text-center">
-                        <h5 className="footer-title">Dtecno</h5>
-                        <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
-                        <div className="footer-links">
-                            <Link to="/privacy">Política de Privacidad</Link>
-                            <span>|</span>
-                            <Link to="/terms">Términos de Servicio</Link>
-                            <span>|</span>
-                            <Link to="/contact">Contáctanos</Link>
-                        </div>
+                <Col className="footer-content text-center">
+                    <h5 className="footer-title">DAROM SA</h5>
+                    <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
+                    <div className="footer-links">
+                        <Link to="/privacy" className="footer-link">Política de Privacidad</Link>
+                        <span>|</span>
+                        <Link to="/terms" className="footer-link">Términos de Servicio</Link>
+                        <span>|</span>
+                        <Link to="/contact" className="footer-link">Contáctanos</Link>
                     </div>
+                    <p className="footer-design">
+                        Diseñado por <strong>Dtecno</strong>
+                    </p>
                 </Col>
             </Row>
         </Container>
     );
 }
-
 
 export default Materiales;

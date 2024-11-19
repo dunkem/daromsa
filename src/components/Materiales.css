@@ -1,65 +1,98 @@
 /* Materiales.css */
 
+/* Contenedor general */
 .materiales-container {
-    background-color: #f8f9fa; /* Fondo claro */
-    border-radius: 8px;
-    padding: 20px;
+    padding: 2rem;
+    background-color: #f9f9f9;
 }
 
-h1, h2 {
-    color: #343a40; /* Color de los títulos */
-    text-align: center; /* Centrar títulos */
-}
 
+/* Estilo de la sección de productos */
 .material-card {
-    border: none; /* Sin borde en la tarjeta */
-    transition: transform 0.2s; /* Transición suave al pasar el ratón */
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .material-card:hover {
-    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.card-body {
-    padding: 15px; /* Padding interno de la tarjeta */
+/* Estilo de los botones */
+.button-group .btn {
+    font-weight: bold;
 }
 
-.card-title {
-    font-size: 1.2rem; /* Tamaño del título de la tarjeta */
+/* Sección de contacto */
+.contact-form-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-top: 2rem;
 }
 
-button {
-    transition: background-color 0.3s;
+.contact-title {
+    color: #007bff;
+    margin-bottom: 1rem;
 }
 
-button:hover {
-    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+/* Estilo del formulario */
+.contact-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
 }
 
-.proveedores-images img {
-    margin: 0 10px; /* Espaciado entre imágenes */
-    max-width: 150px; /* Tamaño máximo de las imágenes */
+.contact-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.footer {
-    background-color: #343a40; /* Fondo oscuro para el footer */
-    color: white; /* Texto blanco */
-    padding: 20px 0; /* Espaciado */
-    margin-top: 30px; /* Espaciado superior para el footer */
-    font-size: 0.9rem; /* Tamaño de fuente del footer */
+/* Estilo del pie de página */
+.footer-section {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 2rem 0;
 }
 
-/* Media Queries */
-@media (max-width: 576px) {
-    h1 {
-        font-size: 1.5rem; /* Tamaño de fuente más pequeño en móviles */
+.footer-title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer-links {
+    margin: 1rem 0;
+}
+
+.footer-link {
+    color: #ffffff;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: #007bff;
+}
+
+.footer-design {
+    font-size: 0.9rem;
+    color: #d3d3d3;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contact-form-section {
+        margin-top: 1rem;
     }
 
-    h2 {
-        font-size: 1.25rem; /* Tamaño de subtítulos en móviles */
+    .footer-section {
+        padding: 1rem 0;
     }
 
     .material-card {
-        margin-bottom: 20px; /* Espacio entre tarjetas en móviles */
+        margin-bottom: 1.5rem;
     }
 }

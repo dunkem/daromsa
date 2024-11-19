@@ -1,66 +1,61 @@
 /* Suelos.css */
 
-/* Títulos y párrafos */
-h1, h2 {
-    font-family: 'Arial', sans-serif;
-    color: #2c3e50;
-    margin-bottom: 20px;
+/* Contenedor principal */
+.suelos-container {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h1, h2, .contact-title {
+    color: #007bff;
+    margin-bottom: 1rem;
 }
 
 p {
-    font-family: 'Arial', sans-serif;
-    color: #34495e;
-    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
 }
 
-/* Carrusel */
+/* Estilo del carrusel */
 .carousel-image {
+    border-radius: 8px;
+    max-height: 500px; /* Ajusta según tus necesidades */
+    object-fit: cover;
+}
+
+/* Sección de contacto */
+.contact-form-section {
+    background-color: #ffffff;
     border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-top: 2rem;
 }
 
-.carousel-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+.contact-info {
+    padding-left: 2rem;
 }
 
-/* Botones */
-.me-2 {
-    margin-right: 8px;
+/* Estilo del botón */
+.submit-button {
+    margin-top: 1rem;
 }
 
-.whatsapp-button {
-    background-color: #25D366;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-}
-
-.whatsapp-button:hover {
-    background-color: #1DAF1A;
-}
-
-button {
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-button:active {
-    transform: scale(0.95);
-}
-
-/* Pie de página */
+/* Sección de pie de página */
 .footer-section {
-    background-color: #f8f9fa; /* Color de fondo claro */
-    color: #2c3e50; /* Color de texto oscuro */
-    padding: 20px 0; /* Espaciado vertical */
-    margin-top: 20px;
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .carousel-image {
+        max-height: 300px;
+    }
 }
