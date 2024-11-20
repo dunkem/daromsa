@@ -1,112 +1,64 @@
-/* Estilos generales para el contenedor de About */
 .about-container {
-    padding: 20px;
+    margin: 20px auto;
 }
 
-/* Títulos en About */
 .about-title {
     font-size: 2.5rem;
-    font-weight: bold;
-    color: #e00909;
-    margin-bottom: 20px;
+    color: #333;
 }
 
 .about-section-title {
     font-size: 2rem;
-    font-weight: bold;
     color: #333;
     margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.about-contact-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
     text-align: center;
 }
 
-/* Párrafos en About */
 .about-paragraph {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #666;
-    line-height: 1.6;
-    margin-bottom: 15px;
 }
 
-/* Estilos para las imágenes en About */
+.about-carousel {
+    margin-top: 20px;
+}
+
+.carousel-image-container {
+    position: relative;
+}
+
 .about-image {
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Sección de contacto en About */
-.about-contact-form-section {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
-}
-
-.about-submit-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
+.carousel-caption {
+    position: absolute;
+    bottom: 10px; /* Ajusta esta posición según sea necesario */
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
     border-radius: 5px;
-    transition: background-color 0.3s;
+    padding: 10px;
 }
 
-.about-submit-button:hover {
-    background-color: #0056b3;
+.carousel-caption-title {
+    color: #000; /* Color negro para los títulos */
 }
 
-/* Información de contacto en About */
+/* Ajustes responsivos para las imágenes */
+@media (max-width: 768px) {
+    .about-carousel .carousel-item {
+        text-align: center;
+    }
+
+    .about-image {
+        max-height: 200px; /* Ajustar según sea necesario */
+    }
+}
+
 .about-contact-info {
     margin-top: 20px;
 }
 
-.about-contact-info p {
-    font-size: 1rem;
-    color: #333;
-}
-
-/* Estilos para el footer en About */
-.about-footer-section {
-    background-color: #f8f9fa;
-    padding: 20px 0;
-    margin-top: 40px;
-}
-
-.about-footer-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.about-footer-design {
-    font-size: 0.9rem;
-    color: #999;
-}
-
-/* Responsividad */
-@media (max-width: 768px) {
-    .about-title {
-        font-size: 2rem;
-    }
-
-    .about-section-title {
-        font-size: 1.5rem;
-    }
-
-    .about-paragraph {
-        font-size: 1rem;
-    }
-
-    .about-contact-title {
-        font-size: 1.5rem;
-    }
-
-    .about-submit-button {
-        width: 100%;
-    }
-}

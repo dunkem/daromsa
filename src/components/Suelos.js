@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Carousel, Form } from 'react-bootstrap';
 import { FaFileUpload } from 'react-icons/fa'; // Asegúrate de instalar react-icons
+import { Link } from 'react-router-dom';
 import './Suelos.css';
 
 function Suelos() {
@@ -161,7 +162,22 @@ function Suelos() {
                 <Col className="footer-content text-center">
                     <h5 className="footer-title">DAROM SA</h5>
                     <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
-                    <p className="footer-design">Diseñado por <strong>Dtecno</strong></p>
+                    <div className="footer-links">
+                        <Link to="/privacy" className="footer-link">
+                            <i className="fas fa-shield-alt"></i> Política de Privacidad
+                        </Link>
+                        <span>|</span>
+                        <Link to="/terms" className="footer-link">
+                            <i className="fas fa-file-contract"></i> Términos de Servicio
+                        </Link>
+                        <span>|</span>
+                        <Link to="/contact" className="footer-link">
+                            <i className="fas fa-envelope"></i> Contáctanos
+                        </Link>
+                    </div>
+                    <p className="footer-design">
+                        Diseñado por <strong>DTECNO</strong>
+                    </p>
                 </Col>
             </Row>
         </Container>

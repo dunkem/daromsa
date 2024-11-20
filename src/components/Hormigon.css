@@ -124,7 +124,7 @@ img {
 
 /* Estilos para la sección de contacto */
 .contact-form-section {
-    background-color: #f8f9fa; /* Fondo claro */
+    background-color: #b1b1b1; /* Fondo claro */
     padding: 40px 20px; /* Espaciado interno */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
@@ -166,35 +166,3 @@ img {
     margin-right: 5px; /* Espacio entre el icono y el texto del botón */
 }
 
-/* Footer */
-.footer-section {
-    background-color: #f8f9fa; /* Color de fondo */
-    padding: 20px 0; /* Espaciado superior e inferior */
-}
-
-.footer-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.footer-links {
-    margin-top: 10px;
-}
-
-.footer-link {
-    text-decoration: none;
-    color: #ff0000; /* Color del enlace */
-    font-size: 1rem;
-    margin: 0 10px; /* Espaciado entre enlaces */
-}
-
-.footer-link:hover {
-    text-decoration: underline; /* Subrayar al pasar el mouse */
-}
-
-.footer-design {
-    margin-top: 15px;
-    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
-    color: #6c757d; /* Color gris */
-}

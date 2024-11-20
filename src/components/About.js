@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Button, Image, Form } from 'react-bootstrap';
+import { Container, Row, Col, Button, Image, Form, Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './About.css';
 
 function About() {
@@ -16,11 +17,31 @@ function About() {
         setMessage('');
     };
 
+    const obras = [
+        { src: "/obraconstrumex.jpg", alt: "Obra Construcción Mex", title: "Obra Construcción Mex" },
+        { src: "/obracorredoresverdes.jpg", alt: "Obra Corredores Verdes", title: "Obra Corredores Verdes" },
+        { src: "/obraecas.jpg", alt: "Obra Ecas", title: "Obra Ecas" },
+        { src: "/obralibertatyfrench.jpg", alt: "Obra Libertad y French", title: "Obra Libertad y French" },
+        { src: "/obramagallanes.jpg", alt: "Obra Magallanes", title: "Obra Magallanes" },
+        { src: "/obrapavimentacionmitre.jpg", alt: "Obra Pavimentación Mitre", title: "Obra Pavimentación Mitre" },
+        { src: "/obrasvarias (3).jpg", alt: "Obra Varias 3", title: "Obra Varias 3" },
+        { src: "/obrasvarias (4).jpg", alt: "Obra Varias 4", title: "Obra Varias 4" },
+        { src: "/obrasvarias (5).jpg", alt: "Obra Varias 5", title: "Obra Varias 5" },
+        { src: "/obrasvarias (7).jpg", alt: "Obra Varias 7", title: "Obra Varias 7" },
+        { src: "/obraxapor.jpg", alt: "Obra Xapor", title: "Obra Xapor" }
+    ];
+
+    // Agrupamos las obras en grupos de 4
+    const groupedObras = [];
+    for (let i = 0; i < obras.length; i += 4) {
+        groupedObras.push(obras.slice(i, i + 4));
+    }
+
     return (
         <Container className="about-container mt-4">
             <Row>
                 <Col>
-                    <h1 className="about-title">Sobre Nosotros</h1>
+                    <h1 className="about-title">LA EMPRESA</h1>
                     <p className="about-paragraph">
                         Desde el año 1978, los actuales socios de Darom SA incursionan en la actividad de la construcción, habiendo comenzado como proveedor de Hormigón Elaborado para Zona Sur. Actualmente, la empresa se ha expandido en toda la Provincia de Buenos Aires, comercializando sus productos y servicios en diversas localidades.
                     </p>
@@ -34,7 +55,7 @@ function About() {
                 <Col>
                     <h2 className="about-section-title">Misión</h2>
                     <p className="about-paragraph">
-                        Elaboramos Hormigón y comercializamos materiales para distintos tipos de operaciones. Nos diferenciamos en el mercado por el servicio ofrecido a nuestros clientes, brindando un soporte pre y post compra que asegurará la correcta satisfacción de sus necesidades. Esto es logrado a través de la capacitación constante de nuestros empleados en todos los procesos que intervienen. Contamos con un equipamiento moderno y de alta tecnología que permite la realización de pequeñas, medianas y grandes obras.
+                        Elaboramos Hormigón y comercializamos materiales para distintos tipos de operaciones. Nos diferenciamos en el mercado por el servicio ofrecido a nuestros clientes, brindando un soporte pre y post compra que asegurará la correcta satisfacción de sus necesidades.
                     </p>
                 </Col>
             </Row>
@@ -47,15 +68,28 @@ function About() {
                 </Col>
             </Row>
             <Row className="mt-4">
-                <Col md={6}>
-                    <Image src="/path_to_about_image1.jpg" alt="Equipo de trabajo" fluid className="about-image" />
-                </Col>
-                <Col md={6}>
-                    <Image src="/path_to_about_image2.jpg" alt="Proyectos realizados" fluid className="about-image" />
+                <Col>
+                    <h2 className="about-section-title">NUESTRAS OBRAS</h2>
+                    <Carousel className="about-carousel" interval={3000} controls indicators>
+                        {groupedObras.map((group, index) => (
+                            <Carousel.Item key={index}>
+                                <Row className="justify-content-center">
+                                    {group.map((obra, idx) => (
+                                        <Col md={3} key={idx} className="mb-3">
+                                            <div className="carousel-image-container">
+                                                <Image src={obra.src} alt={obra.alt} fluid className="about-image" />
+                                                <Carousel.Caption className="carousel-caption">
+                                                    <h5 className="carousel-caption-title">{obra.title}</h5>
+                                                </Carousel.Caption>
+                                            </div>
+                                        </Col>
+                                    ))}
+                                </Row>
+                            </Carousel.Item>
+                        ))}
+                    </Carousel>
                 </Col>
             </Row>
-
-            {/* Sección de contacto */}
             <Row className="about-contact-form-section mb-4">
                 <Col md={6}>
                     <h2 className="about-contact-title">CONTACTANOS</h2>
@@ -95,13 +129,26 @@ function About() {
                     <p>Planta: Parque industrial tecnológico de Florencio Varela</p>
                 </Col>
             </Row>
-
-            {/* Footer Section */}
-            <Row className="about-footer-section mt-4">
+            <Row className="footer-section mt-4">
                 <Col className="footer-content text-center">
-                    <h5 className="about-footer-title">DAROM SA</h5>
+                    <h5 className="footer-title">DAROM SA</h5>
                     <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
-                    <p className="about-footer-design">Diseñado por <strong>Dtecno</strong></p>
+                    <div className="footer-links">
+                        <Link to="/privacy" className="footer-link">
+                            <i className="fas fa-shield-alt"></i> Política de Privacidad
+                        </Link>
+                        <span>|</span>
+                        <Link to="/terms" className="footer-link">
+                            <i className="fas fa-file-contract"></i> Términos de Servicio
+                        </Link>
+                        <span>|</span>
+                        <Link to="/contact" className="footer-link">
+                            <i className="fas fa-envelope"></i> Contáctanos
+                        </Link>
+                    </div>
+                    <p className="footer-design">
+                        Diseñado por <strong>DTECNO</strong>
+                    </p>
                 </Col>
             </Row>
         </Container>

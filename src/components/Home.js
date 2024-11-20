@@ -95,10 +95,10 @@ function Home({ setLoading }) {
 
     // Beneficios ofrecidos
     const benefits = [
-        { src: '/elegirnoslaboratorio.jpg', title: 'Asesoramiento Técnico' },
-        { src: '/elegirnosticket.jpg', title: 'Ticket de Pesada' },
-        { src: '/elegirnoscargaprecintada.jpg', title: 'Carga Precintada' },
-        { src: '/elegirnosseguimiento.jpg', title: 'Rastreo Satelital' },
+        { src: '/elegirnoslaboratorio.jpg', title: 'Asesoramiento Técnico', description: 'Recibe orientación experta para elegir los mejores materiales y técnicas.' },
+        { src: '/elegirnosticket.jpg', title: 'Ticket de Pesada', description: 'Garantizamos transparencia y precisión en cada entrega con nuestro sistema de pesaje.' },
+        { src: '/elegirnoscargaprecintada.jpg', title: 'Carga Precintada', description: 'Todos nuestros productos son precintados para asegurar su integridad.' },
+        { src: '/elegirnosseguimiento.jpg', title: 'Rastreo Satelital', description: 'Monitorea el estado y la ubicación de tus pedidos en tiempo real.' },
     ];
 
     // Proveedores
@@ -152,8 +152,8 @@ function Home({ setLoading }) {
             <Row className="hero-section">
                 <Col className="text-center">
                     <div className="hero-content animated fadeIn">
-                        <h2 className="hero-title">HORMIGÓN ELABORADO Y SERVICIOS DE CALIDAD SUPERIOR</h2>
-                        <h3 className="hero-subtitle">TRANSFORMA TUS PROYECTOS CON NUESTRA EXCELENCIA, INNOVACIÓN Y CALIDAD EN TODAS LAS ETAPAS.</h3>
+                        <h2 className="hero-title">COMPROMETIDOS CON LA CALIDAD Y LA CONFIANZA</h2>
+                        <h3 className="hero-subtitle">TRANSFORMA TUS PROYECTOS CON NUESTRA EXPERIENCIA E INNOVACIÓN EN CADA ETAPA DE CONSTRUCCIÓN.</h3>
                     </div>
                 </Col>
             </Row>
@@ -204,6 +204,7 @@ function Home({ setLoading }) {
                         <div className="benefit-container text-center">
                             <img src={benefit.src} alt={benefit.title} className="benefit-logo" />
                             <h4>{benefit.title}</h4>
+                            <p>{benefit.description}</p> {/* Descripción añadida */}
                         </div>
                     </Col>
                 ))}
@@ -309,7 +310,7 @@ function Home({ setLoading }) {
                         </Link>
                     </div>
                     <p className="footer-design">
-                        Diseñado por <strong>Dtecno</strong>
+                        Diseñado por <strong>DTECNO</strong>
                     </p>
                 </Col>
             </Row>

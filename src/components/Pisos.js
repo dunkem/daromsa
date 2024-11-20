@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Image, Form } from 'react-bootstrap';
 import { FaFileUpload } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Pisos.css';
 
 function Pisos() {
@@ -21,7 +22,7 @@ function Pisos() {
         <Container className="mt-4">
             <Row>
                 <Col>
-                    <h1>Pisos de Hormigón Llaneado</h1>
+                    <h1>PISOS LLANEADOS DE HORMIGON ELABORADO</h1>
                     <p>
                         El hormigón llaneado, también conocido como <strong>pisos llaneados</strong>, consiste en una losa de un mínimo de 5 cm,
                         el espesor depende de las exigencias a las que este será sometido. Este puede ser aplicado en suelos
@@ -136,7 +137,22 @@ function Pisos() {
                 <Col className="footer-content text-center">
                     <h5 className="footer-title">DAROM SA</h5>
                     <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
-                    <p className="footer-design">Diseñado por <strong>Dtecno</strong></p>
+                    <div className="footer-links">
+                        <Link to="/privacy" className="footer-link">
+                            <i className="fas fa-shield-alt"></i> Política de Privacidad
+                        </Link>
+                        <span>|</span>
+                        <Link to="/terms" className="footer-link">
+                            <i className="fas fa-file-contract"></i> Términos de Servicio
+                        </Link>
+                        <span>|</span>
+                        <Link to="/contact" className="footer-link">
+                            <i className="fas fa-envelope"></i> Contáctanos
+                        </Link>
+                    </div>
+                    <p className="footer-design">
+                        Diseñado por <strong>DTECNO</strong>
+                    </p>
                 </Col>
             </Row>
         </Container>

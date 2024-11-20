@@ -107,6 +107,33 @@ function Hormigon() {
                     />
                 </Col>
             </Row>
+            {/* Nuevas imágenes de servicios de bomba */}
+            <Row className="text-center mb-4">
+                <Col>
+                    <h2 className="section-title">POSEEMOS UNA FLOTA DE BOMBAS</h2>
+                    <div className="line-divider"></div>
+                </Col>
+            </Row>
+            <Row className="justify-content-center mb-4">
+                <Col xs={6} md={5} className="text-center">
+                    <Image 
+                        src="/bombaarrastre.jpg" 
+                        alt="Bomba Arrastre" 
+                        fluid 
+                        className="full-width-image" 
+                    />
+                    <p>Bomba Arrastre</p>
+                </Col>
+                <Col xs={6} md={5} className="text-center">
+                    <Image 
+                        src="/bombapluma.jpg" 
+                        alt="Bomba Pluma" 
+                        fluid 
+                        className="full-width-image" 
+                    />
+                    <p>Bomba Pluma</p>
+                </Col>
+            </Row>
             
             {/* Sección logos proveedores */}
             <Row className="text-center mb-4">
@@ -180,14 +207,20 @@ function Hormigon() {
                     <h5 className="footer-title">DAROM SA</h5>
                     <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
                     <div className="footer-links">
-                        <Link to="/privacy" className="footer-link">Política de Privacidad</Link>
+                        <Link to="/privacy" className="footer-link">
+                            <i className="fas fa-shield-alt"></i> Política de Privacidad
+                        </Link>
                         <span>|</span>
-                        <Link to="/terms" className="footer-link">Términos de Servicio</Link>
+                        <Link to="/terms" className="footer-link">
+                            <i className="fas fa-file-contract"></i> Términos de Servicio
+                        </Link>
                         <span>|</span>
-                        <Link to="/contact" className="footer-link">Contáctanos</Link>
+                        <Link to="/contact" className="footer-link">
+                            <i className="fas fa-envelope"></i> Contáctanos
+                        </Link>
                     </div>
                     <p className="footer-design">
-                        Diseñado por <strong>Dtecno</strong>
+                        Diseñado por <strong>DTECNO</strong>
                     </p>
                 </Col>
             </Row>

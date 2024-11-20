@@ -63,29 +63,7 @@ button:hover {
     margin-top: 30px; /* Espacio superior para el mapa */
 }
 
-/* Estilos del Footer */
-footer {
-    background-color: #343a40; /* Fondo oscuro para el footer */
-    color: white; /* Texto blanco */
-    padding: 40px 20px; /* Espaciado */
-    margin-top: 30px; /* Espaciado superior para el footer */
-    text-align: center; /* Centrar texto en el footer */
-}
 
-footer h5 {
-    margin-bottom: 20px; /* Espaciado inferior en el título del footer */
-    font-size: 1.5rem; /* Tamaño del título del footer */
-}
-
-footer a {
-    color: #007bff; /* Color de los enlaces */
-    text-decoration: none; /* Sin subrayado */
-}
-
-footer a:hover {
-    text-decoration: underline; /* Subrayado al pasar el ratón */
-    
-}
 
 /* Media Queries */
 @media (max-width: 576px) {
