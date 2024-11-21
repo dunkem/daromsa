@@ -1,13 +1,41 @@
-/* Materiales.css */
-
 /* Contenedor general */
 .materiales-container {
     padding: 2rem;
     background-color: #f9f9f9;
 }
 
+/* Botón "Adjunta tu lista" */
+.adjunta-lista-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+}
 
-/* Estilo de la sección de productos */
+.adjunta-lista-btn {
+    background-color: #ff4d4d; /* Rojo */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.adjunta-lista-btn:hover {
+    background-color: #e63939; /* Rojo más oscuro */
+}
+
+.adjunta-lista-text {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Estilo de los productos */
 .material-card {
     transition: transform 0.3s, box-shadow 0.3s;
     border: none;
@@ -18,11 +46,6 @@
 .material-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilo de los botones */
-.button-group .btn {
-    font-weight: bold;
 }
 
 /* Sección de contacto */
@@ -39,7 +62,6 @@
     margin-bottom: 1rem;
 }
 
-/* Estilo del formulario */
 .contact-form .form-control {
     border-radius: 5px;
     border: 1px solid #ced4da;
@@ -47,10 +69,8 @@
 
 .contact-form .form-control:focus {
     border-color: #ff0000;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
-
-
 
 /* Responsividad */
 @media (max-width: 768px) {

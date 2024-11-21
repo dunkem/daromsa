@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Container, Row, Col, Button, Card, ButtonGroup, Form } from 'react-bootstrap';
 import { CartContext } from '../contexts/CartContext';
 import { Link } from 'react-router-dom';
-import { FaFileUpload } from 'react-icons/fa'; // Asegúrate de instalar react-icons
+import { FaFileUpload } from 'react-icons/fa';
 import './Materiales.css';
 
 function Materiales() {
@@ -11,6 +11,7 @@ function Materiales() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [submitted, setSubmitted] = useState(false);
+    const [visibleProducts, setVisibleProducts] = useState(8); // Cantidad inicial de productos visibles
 
     const materiales = {
         hidrofugos: [
@@ -29,39 +30,39 @@ function Materiales() {
             { id: 16, name: "Ladrillo PORTANTE 12x19x33 CTIBOR [120 X PALLET]", img: "/matladportante12.jpg" },
             { id: 17, name: "Ladrillo retak® 60 15 [64 un]", img: "/matladretak.jpg" },
             { id: 18, name: "Ladrillo PORTANTE 12x25x33 FANELLI", img: "/matladportante12.jpg" },
-            { id: 19, name: "Ladrillo Doble Pared 24x18x33 FANELLI [72 X PALLET]", img: "matladdoblemuro20x18x25.jpg" },
+            { id: 19, name: "Ladrillo Doble Pared 24x18x33 FANELLI [72 X PALLET]", img: "/matladfanelli_doblepared_24x18x33.jpg" },
             { id: 20, name: "Ladrillo KLIMABLOCK 27x19x20 FANELLI", img: "/matladbloque.jpeg" },
-            { id: 21, name: "Ladrillo Doble Pared 20x18x25 [120 X PALLET]", img: "/matladdoblemuro20x18x25.jpg" },
-            { id: 22, name: "Ladrillo Vista Mar Del Plata", img: "matladcomun.png" },
+            { id: 21, name: "Ladrillo Doble Pared 20x18x25 [120 X PALLET]", img: "/matladhuecodoble20x18.png" },
+            { id: 22, name: "Ladrillo Vista Mar Del Plata", img: "/matladcomun.png" },
             { id: 23, name: "Ladrillo Doble Pared 27x18x33 FANELLI [54 X PALLET]", img: "/matladdoblemuro27x18x33.jpg" },
             { id: 24, name: "Ladrillo ECONOBLOCK-27x19x20 Ctibor", img: "/matladbloque.jpeg" },
             { id: 25, name: "Ladrillo ECONOBLOCK-20x19x27 CTIBOR [80 X PALLET]", img: "/matladbloque.jpeg" },
             { id: 26, name: "LADRILLO HUECO 18X18X33 MOLDE NUEVO [90 X PALLET]", img: "/matladmolde18x18x33.jpg" },
-            { id: 27, name: "Ladrillo Doble Pared 20x18x33 [90 X PALLET]", img: "/matladdoblemuro20x18x33.jpg" },
-            { id: 28, name: "LADRILLO HUECO 8X18X33 FANELLI [198 X PALLET]", img: "/matlad8x18x33fanelli.jpg" },
-            { id: 29, name: "LADRILLO HUECO 12X18X33 [9A] CTIBOR [144 X PALLET]", img: "/matlad12x18x33ctibor.jpg" },
-            { id: 30, name: "LADRILLO HUECO 18X18X33 CTIBOR [90 X PALLET]", img: "/matlad18x18x33ctibor.jpg" }
+            { id: 27, name: "Ladrillo Doble Pared 20x18x33 [90 X PALLET]", img: "/matladhuecodoble20x18.png" },
+            { id: 28, name: "LADRILLO HUECO 8X18X33 FANELLI [198 X PALLET]", img: "/matladhueco8x18x33-1.jpg" },
+            { id: 29, name: "LADRILLO HUECO 12X18X33 [9A] CTIBOR [144 X PALLET]", img: "/matladhueco12.jpg" },
+            { id: 30, name: "LADRILLO HUECO 18X18X33 CTIBOR [90 X PALLET]", img: "/matladhueco18.jpg" }
           ],
           aridos: [
-            { id: 31, name: "ARENA GRUESA EN BOLSÓN", img: "matarenagru.jpg" },
-            { id: 32, name: "Tosca a Granel x m3", img: "mattoscagranel.jpg" },
-            { id: 33, name: "Tosca en Bolsón x m3", img: "mattoscabolson.jpg" },
-            { id: 34, name: "Tierra de Relleno a Granel x m3", img: "mattierrarelleno.jpg" },
-            { id: 35, name: "Tierra de Relleno en Bolsón", img: "mattierrarellenoen.jpg" },
-            { id: 36, name: "Tierra Negra en Bolsón", img: "mattnegrabolson.jpg" },
-            { id: 37, name: "Tierra Negra a Granel x m3", img: "mattnegragranel.jpg" },
-            { id: 38, name: "Arena en Bolsón", img: "matarenabolson.jpg" },
-            { id: 39, name: "Arena a Granel x m3", img: "matarenagranel.jpg" },
-            { id: 40, name: "Piedra partida 6/20 en Bolsón", img: "matpiedra620.jpg" },
-            { id: 41, name: "Piedra partida 6/20 a Granel x m3", img: "matpiedra620granel.jpg" },
-            { id: 42, name: "Cascote picado en Bolsón", img: "matcascote.jpg" },
-            { id: 43, name: "Cascote picado a Granel x m3", img: "matcascotegranel.jpg" },
-            { id: 44, name: "Piedra partida 6/12 en Bolsón", img: "matpiedra612.jpg" },
-            { id: 45, name: "Piedra partida 6/12 a Granel x m3", img: "matpiedra612granel.jpg" },
-            { id: 46, name: "Piedra Partida en Bolsa de 30 Kg", img: "matpiedra30kg.jpg" },
-            { id: 47, name: "Arena en Bolsa x 30 Kg.", img: "matarena30kg.jpg" },
-            { id: 48, name: "Piedra Granza Blanca Mar Del Plata en Bolsón", img: "matpiedrablanca.jpg" },
-            { id: 49, name: "Piedra Granza Blanca Mar Del Plata en Bolsa x 30 kg.", img: "matpiedrablancabolsa.jpg" }
+            { id: 31, name: "ARENA GRUESA EN BOLSÓN", img: "/matbolsonarena.jpg" },
+            { id: 32, name: "Tosca a Granel x m3", img: "/mattoscaagranel.png" },
+            { id: 33, name: "Tosca en Bolsón x m3", img: "/mattoscaenbolson.jpg" },
+            { id: 34, name: "Tierra de Relleno a Granel x m3", img: "/mattierraagranel.jpg" },
+            { id: 35, name: "Tierra de Relleno en Bolsón", img: "/mattoscaenbolson.jpg" },
+            { id: 36, name: "Tierra Negra en Bolsón", img: "/matbolsontierra.jpg" },
+            { id: 37, name: "Tierra Negra a Granel x m3", img: "/mattierraagranel.jpg" },
+            { id: 38, name: "Arena en Bolsón", img: "/matbolsonarena.jpg" },
+            { id: 39, name: "Arena a Granel x m3", img: "/matarenaagranel.png" },
+            { id: 40, name: "Piedra partida 6/20 en Bolsón", img: "/matpiedra620.jpg" },
+            { id: 41, name: "Piedra partida 6/20 a Granel x m3", img: "/matpiedraadranel.jpg" },
+            { id: 42, name: "Cascote picado en Bolsón", img: "/matbolsoncascote.jpg" },
+            { id: 43, name: "Cascote picado a Granel x m3", img: "/matcascoteagranel.jpg" },
+            { id: 44, name: "Piedra partida 6/12 en Bolsón", img: "/matbolsonpiedra.jpg" },
+            { id: 45, name: "Piedra partida 6/12 a Granel x m3", img: "/matpiedraagranel2.jpg" },
+            { id: 46, name: "Piedra Partida en Bolsa de 30 Kg", img: "/mataridoenbolsa.jpg" },
+            { id: 47, name: "Arena en Bolsa x 30 Kg.", img: "/mataridoenbolsa.jpg" },
+            { id: 48, name: "Piedra Granza Blanca Mar Del Plata en Bolsón", img: "/matpiedra620.jpg" },
+            { id: 49, name: "Piedra Granza Blanca Mar Del Plata en Bolsa x 30 kg.", img: "/mataridoenbolsa.jpg" }
           ],
           cementoscales: [
             { id: 50, name: "Cemento Loma Negra x 50 Kg", img: "/matcementoloma50kg.jpg" },
@@ -136,11 +137,11 @@ function Materiales() {
       };
       const handleSubrubroSelect = (subrubro) => {
         setSelectedSubrubro(subrubro);
+        setVisibleProducts(8); // Reinicia la cantidad de productos visibles al cambiar de subrubro
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Aquí podrías agregar lógica para manejar el envío
         console.log('Email:', email);
         console.log('Mensaje:', message);
         setSubmitted(true);
@@ -148,67 +149,83 @@ function Materiales() {
         setMessage('');
     };
 
+    const handleLoadMore = () => {
+        setVisibleProducts((prev) => prev + 8); // Incrementa la cantidad visible en lotes de 8
+    };
+
     return (
         <Container className="mt-4 materiales-container">
+            {/* Botón "Adjunta tu lista" */}
+            <div className="adjunta-lista-container">
+                <Button
+                    className="adjunta-lista-btn"
+                    onClick={() => alert('Funcionalidad para adjuntar lista de precios aquí.')}
+                >
+                    <FaFileUpload className="mr-2" />
+                    Adjunta tu Lista
+                </Button>
+                <p className="lead">
+                        ¡Comparte tu Lista o Presupuesto con Nosotros! Te Ofrecemos los Mejores Precios y Condiciones.
+                    </p>
+            </div>
+
+            {/* Lista de productos */}
             <Row>
                 <Col md={3}>
-                    <h2>Productos</h2>
+                    <h2 className="text-uppercase">Productos</h2>
                     <ButtonGroup vertical className="w-100 mb-4">
-                        {Object.keys(materiales).map(subrubro => (
-                            <Button 
-                                key={subrubro} 
+                        {Object.keys(materiales).map((subrubro) => (
+                            <Button
+                                key={subrubro}
                                 variant={selectedSubrubro === subrubro ? "primary" : "light"}
                                 onClick={() => handleSubrubroSelect(subrubro)}
-                                className="mb-2"
+                                className="mb-2 text-uppercase"
                             >
-                                {subrubro.charAt(0).toUpperCase() + subrubro.slice(1)}
+                                {subrubro}
                             </Button>
                         ))}
                     </ButtonGroup>
                 </Col>
                 <Col md={9}>
-                    <h1 className="display-4 font-weight-bold" style={{ color: 'black' }}>
-                        MATERIALES DE CORRALÓN
+                    <h1 className="display-4 font-weight-bold text-uppercase" style={{ color: 'black' }}>
+                        Materiales de Corralón
                     </h1>
                     <Row className="d-flex justify-content-center">
-                        {materiales[selectedSubrubro].map(material => (
-                            <Col xs={12} sm={6} md={4} lg={3} key={material.id} className="mb-4 d-flex align-items-stretch">
-                                <Card className="material-card">
-                                    <Card.Img variant="top" src={material.img} alt={material.name} />
-                                    <Card.Body>
-                                        <Card.Title className="text-center">{material.name}</Card.Title>
-                                        <Button variant="success" size="sm" onClick={() => addToCart(material)} className="w-100">
-                                            Agregar al Carrito
-                                        </Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        ))}
+                        {materiales[selectedSubrubro]
+                            .slice(0, visibleProducts) // Muestra solo los productos visibles
+                            .map((material) => (
+                                <Col
+                                    xs={12}
+                                    sm={6}
+                                    md={4}
+                                    lg={3}
+                                    key={material.id}
+                                    className="mb-4 d-flex align-items-stretch"
+                                >
+                                    <Card className="material-card">
+                                        <Card.Img variant="top" src={material.img} alt={material.name} />
+                                        <Card.Body>
+                                            <Card.Title className="text-center text-uppercase">{material.name}</Card.Title>
+                                            <Button
+                                                variant="success"
+                                                size="sm"
+                                                onClick={() => addToCart(material)}
+                                                className="w-100"
+                                            >
+                                                Agregar al Carrito
+                                            </Button>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            ))}
                     </Row>
-                </Col>
-            </Row>
-
-            {/* Botón de Adjunta tu lista */}
-            <Row className="mb-4">
-                <Col className="text-left">
-                    <Button 
-                        style={{ 
-                            backgroundColor: '#ff4d4d', 
-                            color: 'white', 
-                            border: 'none', 
-                            borderRadius: '5px', 
-                            padding: '10px 15px', 
-                            display: 'flex', 
-                            alignItems: 'center',
-                        }} 
-                        onClick={() => alert('Funcionalidad para adjuntar lista de precios aquí.')}
-                    >
-                        <FaFileUpload style={{ marginRight: '5px' }} />
-                        ADJUNTA TU LISTA
-                    </Button>
-                    <p className="lead">
-                        ¡Comparte tu Lista o Presupuesto con Nosotros! Te Ofrecemos los Mejores Precios y Condiciones.
-                    </p>
+                    {visibleProducts < materiales[selectedSubrubro].length && (
+                        <div className="text-center mt-4">
+                            <Button variant="outline-primary" onClick={handleLoadMore}>
+                                Cargar más
+                            </Button>
+                        </div>
+                    )}
                 </Col>
             </Row>
 
