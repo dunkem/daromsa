@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Card, Button, Image, Carousel, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+
+import { Container, Row, Col, Card, Button, Image, Carousel } from 'react-bootstrap';
 import { FaFileUpload } from 'react-icons/fa';
 import './Hormigon.css';
 
 function Hormigon() {
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const [submitted, setSubmitted] = useState(false);
 
-    // Maneja el envío del formulario
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log('Email:', email);
-        console.log('Mensaje:', message);
-        setSubmitted(true);
-        setEmail('');
-        setMessage('');
-    };
+     // Beneficios ofrecidos
+     const benefits = [
+        { src: '/elegirnoslaboratorio.jpg', title: 'Asesoramiento Técnico', description: 'Recibe orientación experta para elegir los mejores materiales y técnicas.' },
+        { src: '/elegirnosticket.jpg', title: 'Ticket de Pesada', description: 'Garantizamos transparencia y precisión en cada entrega con nuestro sistema de pesaje.' },
+        { src: '/elegirnoscargaprecintada.jpg', title: 'Carga Precintada', description: 'Todos nuestros productos son precintados para asegurar su integridad.' },
+        { src: '/elegirnosseguimiento.jpg', title: 'Rastreo Satelital', description: 'Monitorea el estado y la ubicación de tus pedidos en tiempo real.' },
+    ];
 
     // Datos de los proveedores
     const suppliers = [
@@ -107,6 +101,28 @@ function Hormigon() {
                     />
                 </Col>
             </Row>
+
+
+{/* Beneficios Section */}
+<Row className="text-center mb-4" style={{ backgroundColor: '#f8f9fa', padding: '20px 0' }}>
+                <Col>
+                    <h2 className="section-title">SERVICIOS QUE NOS DIFERENCIAN</h2>
+                    <div className="line-divider"></div>
+                </Col>
+            </Row>
+            <Row className="justify-content-center">
+                {benefits.map((benefit, index) => (
+                    <Col md={3} sm={6} key={index} className="mb-4">
+                        <div className="benefit-container text-center">
+                            <img src={benefit.src} alt={benefit.title} className="benefit-logo" />
+                            <h4>{benefit.title}</h4>
+                            <p>{benefit.description}</p> {/* Descripción añadida */}
+                        </div>
+                    </Col>
+                ))}
+            </Row>
+
+
             {/* Nuevas imágenes de servicios de bomba */}
             <Row className="text-center mb-4">
                 <Col>
@@ -161,69 +177,7 @@ function Hormigon() {
                 </Col>
             </Row>
 
-            {/* Contacto */}
-            <Row className="contact-form-section mb-4">
-                <Col md={6}>
-                    <h2 className="contact-title">CONTACTANOS</h2>
-                    <Form onSubmit={handleSubmit} className="contact-form">
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control 
-                                type="email" 
-                                placeholder="Ingrese su email" 
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicMessage">
-                            <Form.Label>Mensaje</Form.Label>
-                            <Form.Control 
-                                as="textarea" 
-                                rows={3} 
-                                placeholder="Escriba su mensaje" 
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                                required
-                            />
-                        </Form.Group>
-                        <Button variant="primary" type="submit" className="submit-button">
-                            Enviar
-                        </Button>
-                        {submitted && <p className="mt-3 text-success">Su mensaje ha sido enviado con éxito.</p>}
-                    </Form>
-                </Col>
-                <Col md={6} className="contact-info">
-                    <p>Teléfono: <a href="tel:08103334567">0810-333-4567</a></p>
-                    <p>Email: <a href="mailto:ventas@darom.com">ventas@darom.com</a></p>
-                    <p>Oficina: C. 152 6352, B1885 Guillermo Enrique Hudson</p>
-                    <p>Planta: Parque industrial tecnológico de Florencio Varela</p>
-                </Col>
-            </Row>
-
-            {/* Footer Section */}
-            <Row className="footer-section mt-4">
-                <Col className="footer-content text-center">
-                    <h5 className="footer-title">DAROM SA</h5>
-                    <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
-                    <div className="footer-links">
-                        <Link to="/privacy" className="footer-link">
-                            <i className="fas fa-shield-alt"></i> Política de Privacidad
-                        </Link>
-                        <span>|</span>
-                        <Link to="/terms" className="footer-link">
-                            <i className="fas fa-file-contract"></i> Términos de Servicio
-                        </Link>
-                        <span>|</span>
-                        <Link to="/contact" className="footer-link">
-                            <i className="fas fa-envelope"></i> Contáctanos
-                        </Link>
-                    </div>
-                    <p className="footer-design">
-                        Diseñado por <strong>DTECNO</strong>
-                    </p>
-                </Col>
-            </Row>
+            
         </Container>
     );
 }

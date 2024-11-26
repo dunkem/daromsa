@@ -3,15 +3,41 @@
 .contact-container {
     background-color: #f8f9fa; /* Fondo claro */
     border-radius: 10px; /* Bordes más suaves */
-    padding: 30px; /* Aumentar el padding para más espacio */
+    padding: 30px; /* Espaciado interno */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    position: relative; /* Para el posicionamiento del fondo */
+}
+
+/* Portada de fondo para la sección de contacto */
+.contact-background {
+    background-image: url('C:\Users\Damian\OneDrive\Escritorio\DD\DAROMSA\daromsa-clone\public\PORTADAHORMIGONBOMBAOFICIAL.JPG'); /* Ruta a la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda la sección */
+    background-position: center; /* Centra la imagen */
+    padding: 40px; /* Espaciado alrededor del contenido */
+    border-radius: 10px; /* Mantiene el borde redondeado */
+    color: white; /* Cambia el color del texto a blanco para mejorar la legibilidad */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Añade sombra */
+    position: relative; /* Para el pseudo-elemento */
+}
+
+/* Overlay semi-transparente para mejorar la legibilidad del texto */
+.contact-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    border-radius: 10px; /* Mantiene el borde redondeado */
+    z-index: 1; /* Asegura que esté detrás del contenido */
 }
 
 h1 {
-    color: #343a40; /* Color del título principal */
+    color: #ffffff; /* Color del título principal */
     text-align: center; /* Centra el título */
     margin-bottom: 30px; /* Espaciado inferior aumentado */
-    font-size: 2rem; /* Tamaño de fuente más grande */
+    font-size: 2.5rem; /* Tamaño de fuente más grande */
 }
 
 .card {
@@ -20,6 +46,9 @@ h1 {
 
 .card-body {
     padding: 40px; /* Aumentar padding interno de la tarjeta */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+    position: relative; /* Para la superposición de texto */
+    z-index: 2; /* Asegura que el contenido esté por encima del fondo */
 }
 
 .card-title {
@@ -27,10 +56,12 @@ h1 {
     margin-bottom: 20px; /* Espaciado inferior */
     text-align: center; /* Centra el título de la tarjeta */
     font-weight: bold; /* Negrita para mayor énfasis */
+    color: #007bff; /* Color atractivo para el título */
 }
 
 .form-group label {
     font-weight: bold; /* Negrita para las etiquetas */
+    color: #343a40; /* Color de texto oscuro */
 }
 
 .form-control {
@@ -52,6 +83,7 @@ button {
     padding: 12px 20px; /* Espaciado interno más grande */
     border-radius: 5px; /* Bordes redondeados */
     font-weight: bold; /* Negrita para el texto */
+    cursor: pointer; /* Cursor de puntero para botones */
 }
 
 button:hover {
@@ -63,20 +95,32 @@ button:hover {
     margin-top: 30px; /* Espacio superior para el mapa */
 }
 
+/* Redes Sociales */
+.social-buttons {
+    margin-top: 20px; /* Espaciado superior */
+}
 
+.social-buttons button {
+    margin: 0 5px; /* Espaciado entre botones de redes sociales */
+}
 
 /* Media Queries */
 @media (max-width: 576px) {
     h1 {
-        font-size: 1.5rem; /* Tamaño de fuente más pequeño en móviles */
+        font-size: 1.75rem; /* Tamaño de fuente más pequeño en móviles */
     }
 
     h5 {
-        font-size: 1rem; /* Tamaño de fuente más pequeño en móviles */
+        font-size: 1.25rem; /* Tamaño de fuente más pequeño en móviles */
     }
 
     button {
         width: 100%; /* Botones ocupan el 100% en móviles */
-        padding: 10px; /* Reducción de padding en móviles */
+        padding: 12px; /* Reducción de padding en móviles */
+        font-size: 1rem; /* Tamaño de fuente consistente */
+    }
+
+    .contact-info p {
+        font-size: 0.9rem; /* Tamaño de texto más pequeño en móviles */
     }
 }

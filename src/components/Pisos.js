@@ -1,22 +1,10 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Button, Image, Form } from 'react-bootstrap';
+
+import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 import { FaFileUpload } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import './Pisos.css';
 
 function Pisos() {
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const [submitted, setSubmitted] = useState(false);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log('Email:', email);
-        console.log('Mensaje:', message);
-        setSubmitted(true);
-        setEmail('');
-        setMessage('');
-    };
 
     return (
         <Container className="mt-4">
@@ -91,70 +79,8 @@ function Pisos() {
                 </Col>
             </Row>
 
-            {/* Sección de contacto */}
-            <Row className="contact-form-section mb-4">
-                <Col md={6}>
-                    <h2 className="contact-title">CONTACTANOS</h2>
-                    <Form onSubmit={handleSubmit} className="contact-form">
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control 
-                                type="email" 
-                                placeholder="Ingrese su email" 
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicMessage">
-                            <Form.Label>Mensaje</Form.Label>
-                            <Form.Control 
-                                as="textarea" 
-                                rows={3} 
-                                placeholder="Escriba su mensaje" 
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                                required
-                            />
-                        </Form.Group>
-                        <Button variant="primary" type="submit" className="submit-button">
-                            Enviar
-                        </Button>
-                        {submitted && <p className="mt-3 text-success">Su mensaje ha sido enviado con éxito.</p>}
-                    </Form>
-                </Col>
-                <Col md={6} className="contact-info">
-                    <h4>Información de Contacto</h4>
-                    <p>Teléfono: <a href="tel:08103334567">0810-333-4567</a></p>
-                    <p>Email: <a href="mailto:ventas@darom.com">ventas@darom.com</a></p>
-                    <p>Oficina: C. 152 6352, B1885 Guillermo Enrique Hudson</p>
-                    <p>Planta: Parque industrial tecnológico de Florencio Varela</p>
-                </Col>
-            </Row>
+           
 
-            {/* Footer Section */}
-            <Row className="footer-section mt-4">
-                <Col className="footer-content text-center">
-                    <h5 className="footer-title">DAROM SA</h5>
-                    <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
-                    <div className="footer-links">
-                        <Link to="/privacy" className="footer-link">
-                            <i className="fas fa-shield-alt"></i> Política de Privacidad
-                        </Link>
-                        <span>|</span>
-                        <Link to="/terms" className="footer-link">
-                            <i className="fas fa-file-contract"></i> Términos de Servicio
-                        </Link>
-                        <span>|</span>
-                        <Link to="/contact" className="footer-link">
-                            <i className="fas fa-envelope"></i> Contáctanos
-                        </Link>
-                    </div>
-                    <p className="footer-design">
-                        Diseñado por <strong>DTECNO</strong>
-                    </p>
-                </Col>
-            </Row>
         </Container>
     );
 }

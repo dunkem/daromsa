@@ -11,6 +11,7 @@ import Hormigon from './components/Hormigon';
 import Materiales from './components/Materiales';
 import Suelos from './components/Suelos';
 import Pisos from './components/Pisos';
+import Footer from './components/Footer'; // Importamos el componente Footer
 import './App.css';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
                     </Container>
                 </Navbar>
 
+                {/* Rutas de la aplicación */}
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/services/materiales" element={<Materiales />} />
@@ -61,9 +63,13 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/cart" element={<Cart />} />
                 </Routes>
+
                 <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="whatsapp-float" title="Chat on WhatsApp">
-                    <FaWhatsapp size={60} />
+                    <FaWhatsapp size={50} className="whatsapp-icon" /> {/* Asegúrate de que el icono tenga el tamaño correcto */}
                 </a>
+
+                {/* Footer global */}
+                <Footer />
             </Container>
         </CartProvider>
     );

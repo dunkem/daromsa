@@ -99,70 +99,12 @@ img {
     align-items: center; /* Alinea verticalmente los items */
 }
 
-/* Sección de la empresa */
-.company-section {
-    background-color: #f0f0f0; /* Fondo claro para la sección */
-    padding: 40px 20px; /* Espaciado interno */
-    text-align: center; /* Centra el texto */
-    margin: 40px 0; /* Espaciado superior e inferior */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-}
 
-.company-description {
-    font-size: 1.2rem; /* Tamaño de fuente ajustado */
-    color: #333; /* Color de texto más oscuro para contraste */
-    line-height: 1.6; /* Mejora la legibilidad */
-}
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .company-description {
         font-size: 1rem; /* Ajusta el tamaño de la fuente en móviles */
     }
-}
-
-/* Estilos para la sección de contacto */
-.contact-form-section {
-    background-color: #b1b1b1; /* Fondo claro */
-    padding: 40px 20px; /* Espaciado interno */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    display: flex; /* Flexbox para mejor alineación */
-    flex-wrap: wrap; /* Permitir que los elementos se ajusten */
-}
-
-.contact-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #000; /* Color negro para el título */
-    margin-bottom: 20px; /* Espacio inferior */
-    text-align: center; /* Centrado para mayor claridad */
-}
-
-.contact-form {
-    margin-bottom: 20px; /* Espacio entre el formulario y el mensaje de éxito */
-}
-
-.contact-info p {
-    font-size: 1.1rem;
-    margin: 10px 0; /* Espacio entre líneas */
-    display: flex; /* Flexbox para alinear iconos y texto */
-    align-items: center; /* Centrar iconos verticalmente */
-}
-
-.contact-info i {
-    margin-right: 10px; /* Espacio entre icono y texto */
-    color: #000000; /* Color del icono */
-    font-size: 1.3rem; /* Tamaño del icono */
-}
-
-.submit-button {
-    display: flex;
-    align-items: center; /* Centrar el icono verticalmente */
-}
-
-.submit-button i {
-    margin-right: 5px; /* Espacio entre el icono y el texto del botón */
 }
 

@@ -1,27 +1,31 @@
 import React, { useState } from 'react';
-import { Container, Form, Button, Row, Col, Card } from 'react-bootstrap';
+import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 import { FaFacebook, FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import './Contact.css'; // Asegúrate de que este archivo CSS existe
 
 function Contact() {
     const [validated, setValidated] = useState(false);
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [submitted, setSubmitted] = useState(false);
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+        } else {
+            setSubmitted(true);
         }
         setValidated(true);
     };
 
     return (
         <Container className="contact-container mt-5">
-            <h1 className="text-center mb-4">CONTACTANOS</h1>
-            <Card className="shadow-lg mb-4">
-                <Card.Body>
-                    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+            <Row className="contact-background mb-4">
+                <Col md={6} className="p-4">
+                    <h2 className="contact-title">CONTACTANOS</h2>
+                    <Form noValidate validated={validated} onSubmit={handleSubmit} className="contact-form">
                         <Form.Group controlId="formName">
                             <Form.Label>Nombre</Form.Label>
                             <Form.Control required type="text" placeholder="Ingresa tu nombre" />
@@ -30,31 +34,43 @@ function Contact() {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group controlId="formEmail">
-                            <Form.Label>Correo Electrónico</Form.Label>
-                            <Form.Control required type="email" placeholder="Ingresa tu correo electrónico" />
-                            <Form.Control.Feedback type="invalid">
-                                Por favor ingresa un correo electrónico válido.
-                            </Form.Control.Feedback>
+                            <Form.Label>
+                                <i className="fas fa-envelope"></i> Email
+                            </Form.Label>
+                            <Form.Control 
+                                type="email" 
+                                placeholder="Ingrese su email" 
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
                         </Form.Group>
                         <Form.Group controlId="formMessage">
-                            <Form.Label>Mensaje</Form.Label>
-                            <Form.Control required as="textarea" rows={4} placeholder="Tu mensaje" />
+                            <Form.Label>
+                                <i className="fas fa-comment-dots"></i> Mensaje
+                            </Form.Label>
+                            <Form.Control 
+                                as="textarea" 
+                                rows={3} 
+                                placeholder="Escriba su mensaje" 
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                required
+                            />
                             <Form.Control.Feedback type="invalid">
                                 Por favor ingresa un mensaje.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Button variant="primary" type="submit" className="mt-3 w-100">
-                            Enviar
+                        <Button variant="primary" type="submit" className="submit-button mt-3">
+                            <i className="fas fa-paper-plane"></i> Enviar
                         </Button>
+                        {submitted && <p className="mt-3 text-success">Su mensaje ha sido enviado con éxito.</p>}
                     </Form>
-                </Card.Body>
-            </Card>
-
-            <Row className="contact-info mb-4">
-                <Col md={6} className="text-center">
+                </Col>
+                <Col md={6} className="contact-info p-4 text-center">
                     <h5>Información de Contacto</h5>
                     <p><i className="fas fa-phone"></i> Teléfono: <a href="tel:08103334567">0810-333-4567</a></p>
-                    <p><i className="fas fa-envelope"></i> Email: <a href="mailto:ventas@darom.com">ventas@daromsa.com |proveedores@daromsa.com |pagos@daromsa</a></p>
+                    <p><i className="fas fa-envelope"></i> Email: <a href="mailto:ventas@darom.com">ventas@darom.com | proveedores@darom.com | pagos@daromsa</a></p>
                     <p><i className="fas fa-map-marker-alt"></i> Oficina: C. 152 6352, B1885 Guillermo Enrique Hudson</p>
                     <p><i className="fas fa-industry"></i> Planta: Parque industrial tecnológico de Florencio Varela</p>
                 </Col>
@@ -77,30 +93,6 @@ function Contact() {
                             <FaWhatsapp /> WhatsApp
                         </Button>
                     </div>
-                </Col>
-            </Row>
-
-            {/* Footer Section */}
-            <Row className="footer-section mt-4">
-                <Col className="footer-content text-center">
-                    <h5 className="footer-title">DAROM SA</h5>
-                    <p>&copy; {new Date().getFullYear()} Darom SA. Todos los derechos reservados.</p>
-                    <div className="footer-links">
-                        <Link to="/privacy" className="footer-link">
-                            <i className="fas fa-shield-alt"></i> Política de Privacidad
-                        </Link>
-                        <span>|</span>
-                        <Link to="/terms" className="footer-link">
-                            <i className="fas fa-file-contract"></i> Términos de Servicio
-                        </Link>
-                        <span>|</span>
-                        <Link to="/contact" className="footer-link">
-                            <i className="fas fa-envelope"></i> Contáctanos
-                        </Link>
-                    </div>
-                    <p className="footer-design">
-                        Diseñado por <strong>DTECNO</strong>
-                    </p>
                 </Col>
             </Row>
         </Container>

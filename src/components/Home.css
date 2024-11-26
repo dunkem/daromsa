@@ -1,17 +1,21 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
 /* Estilos Generales */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #333;
+    margin: 0;
 }
 
 /* Sección Hero */
 .hero-section {
-    background: url('C:\Users\Damian\OneDrive\Escritorio\DD\DAROMSA\daromsa-clone\public\portada.jpg') no-repeat center center;
+    background: url('C:/Users/Damian/OneDrive/Escritorio/DD/DAROMSA/daromsa-clone/public/portada.jpg') no-repeat center center;
     background-size: cover;
     height: 60vh;
     display: flex;
     align-items: center;
-    padding: 40px 10px;
+    justify-content: center;
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -24,32 +28,32 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
 .hero-content {
-    text-align: left; /* Alineación a la izquierda */
-    max-width: 800px; /* Mantener un ancho máximo */
+    text-align: center;
+    max-width: 800px;
     position: relative;
     z-index: 2;
     padding: 20px;
-    animation: slideInLeft 1s ease-in-out; /* Animación de entrada */
+    animation: slideInLeft 1s ease-in-out;
 }
 
 .hero-title {
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 3.5rem;
+    font-weight: 700;
     color: #ffffff;
-    animation: fadeIn 1s ease-in; /* Animación de aparición */
+    animation: fadeIn 1s ease-in;
 }
 
 .hero-subtitle {
     font-size: 1.8rem;
     color: #ffffff;
-    margin-top: 10px; /* Espacio entre título y subtítulo */
-    width: 100%; /* Ocupar todo el ancho disponible */
-    text-align: left; /* Cambiado a la izquierda */
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
 }
 
 /* Animaciones */
@@ -64,7 +68,6 @@ body {
     }
 }
 
-/* Animaciones de desvanecimiento */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -76,31 +79,31 @@ body {
 
 /* Estilos para los títulos de secciones */
 .section-title {
-    font-size: 2.0rem;
-    font-weight: bold;
-    color: #ffffff;
-    background: linear-gradient(90deg, #e00909, #000000);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 1px 0;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333; /* Cambiado a color sin fondo */
+    padding: 10px 15px;
+    margin: 10px 0; /* Reducido margen inferior */
     text-align: center;
     border-radius: 5px;
-    transition: transform 0.3s ease, color 0.3s ease;
-    animation: fadeIn 0.5s ease-in-out; /* Animación en el título */
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.5s ease-in-out;
+    display: inline-block;
 }
 
 .section-title:hover {
     transform: scale(1.05);
-    color: #e00909;
 }
 
-/* Otros estilos existentes */
-.line-divider {
-    width: 1200px;
-    height: 2px;
-    background: #e00909;
-    margin: 1px auto; /* Espaciado ajustado */
+/* Carruseles */
+.carousel {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 /* Estilos responsivos */
@@ -111,245 +114,155 @@ body {
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .line-divider {
-        width: 60px;
-    }
-
-    .service-title {
         font-size: 1.5rem;
     }
 
-    .service-description {
-        font-size: 1rem;
+    .section-title {
+        font-size: 2rem;
     }
 
-    /* Ajustes para carruseles en dos columnas */
     .carousel-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-        gap: 20px; /* Espacio entre columnas */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
 /* Tarjetas de servicio */
 .service-card {
-    background-color: #495057;
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    overflow: hidden; /* Para asegurarse de que el contenido no se salga de la tarjeta */
-    position: relative; /* Asegura que los elementos internos puedan posicionarse correctamente */
+    overflow: hidden;
+    position: relative;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    filter: brightness(1.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.05);
 }
 
 .service-image-container {
-    position: relative; /* Permite el posicionamiento absoluto de los elementos dentro */
+    position: relative;
+    height: 200px;
+    overflow: hidden;
 }
 
 .service-img {
-    height: 250px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .service-body {
     padding: 20px;
-    text-align: center; /* Centrar el texto */
+    text-align: left;
+    flex-grow: 1;
 }
 
 .service-title {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.8rem;
+    font-weight: 500;
     margin-bottom: 10px;
-    color: #ffffff; /* Color moderno */
+    color: #000;
 }
 
 .service-description {
     font-size: 1rem;
-    color: #e0e0e0; /* Color gris claro para mejor contraste */
+    color: #555;
     margin-bottom: 15px;
 }
 
-/* Logo de respaldo */
 .backup-info {
-    position: absolute; /* Permite el flotante */
-    left: 10px; /* Alineación a la izquierda */
-    bottom: 10px; /* Alineación en la parte inferior */
-    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 5px;
     border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centrar contenido */
+    justify-content: center;
 }
 
 .backup-logo {
-    width: 50px; /* Ancho del logo */
-    height: auto; /* Mantener proporción */
-    margin-left: 5px; /* Espacio entre texto y logo */
+    width: 50px;
+    height: auto;
+    margin-left: 5px;
 }
 
 .service-footer {
-    background-color: #343a40;
-    color: #ffffff;
+    background-color: #f7f7f7;
+    color: #333;
     padding: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     text-align: center;
     transition: background-color 0.3s ease;
 }
 
 .service-card:hover .service-footer {
-    background-color: #04ff00; /* Cambio de color en el pie de la tarjeta al pasar el mouse */
-    color: #343a40; /* Texto oscuro para el pie de la tarjeta */
+    background-color: #e0e0e0;
+    color: #333;
 }
 
 .service-button {
-    background-color: #007bff; /* Color de fondo */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    padding: 10px 15px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s; /* Transición suave */
-    text-align: center; /* Centrar el texto del botón */
-    display: inline-block; /* Asegura que el botón sea un bloque en línea */
-    margin: 0 auto; /* Centra el botón */
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .service-button:hover {
-    background-color: #0056b3; /* Color al pasar el mouse */
+    background-color: #c40000;
 }
 
-/* Ajustes específicos para móviles */
 @media (max-width: 768px) {
     .service-img {
-        height: 200px; /* Ajustar la altura de la imagen en móviles */
+        height: 150px;
     }
 
     .backup-info {
-        flex-direction: row; /* Mantener en fila */
-        text-align: left; /* Alinear texto a la izquierda */
+        flex-direction: row;
+        text-align: left;
     }
 
     .backup-logo {
-        width: 40px; /* Ajustar tamaño del logo en móviles */
+        width: 40px;
     }
 }
 
 /* Empresa */
 .company-section {
-    background-color: #f0f0f0; /* Fondo claro para la sección */
-    padding: 40px 20px; /* Espaciado interno */
-    text-align: center; /* Centra el texto */
-    margin: 40px 0; /* Espaciado superior e inferior */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    background-color: #f0f0f0;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 40px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .company-description {
-    font-size: 1.2rem; /* Tamaño de fuente ajustado */
-    color: #333; /* Color de texto más oscuro para contraste */
-    line-height: 1.6; /* Mejora la legibilidad */
-}
-
-/* Estilos para la sección de contacto */
-.contact-form-section {
-    background-color: #f8f9fa; /* Fondo claro */
-    padding: 40px 20px; /* Espaciado interno */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    display: flex; /* Flexbox para mejor alineación */
-    flex-wrap: wrap; /* Permitir que los elementos se ajusten */
-}
-
-.contact-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #000; /* Color negro para el título */
-    margin-bottom: 20px; /* Espacio inferior */
-    text-align: center; /* Centrado para mayor claridad */
-}
-
-/* Estilos Generales del Footer */
-.footer-section {
-    background-color: #000; /* Fondo negro */
-    color: #fff; /* Texto en blanco */
-    padding: 20px 0; /* Espaciado superior e inferior */
-    position: relative; /* Posición relativa para efectos adicionales */
-    text-align: center; /* Centrar texto */
-}
-
-.footer-title {
-    font-size: 2rem; /* Tamaño de fuente grande */
-    font-weight: bold; /* Negrita */
-    color: #ff0000; /* Color rojo */
-    margin-bottom: 10px; /* Espaciado inferior */
-}
-
-.footer-content p {
-    margin: 5px 0; /* Espaciado entre párrafos */
-    font-size: 1rem; /* Tamaño de fuente estándar */
-    color: rgba(255, 255, 255, 0.8); /* Color blanco con opacidad */
-}
-
-/* Estilos para los enlaces del footer */
-.footer-links {
-    margin: 10px 0; /* Espaciado superior e inferior */
-}
-
-.footer-link {
-    color: #ff0000; /* Color rojo */
-    text-decoration: none; /* Sin subrayado */
-    font-size: 1rem; /* Tamaño de fuente estándar */
-    transition: color 0.3s ease; /* Transición suave para el color */
-}
-
-.footer-link:hover {
-    color: #fff; /* Cambia a blanco al pasar el mouse */
-    text-decoration: underline; /* Subrayar al pasar el mouse */
-}
-
-/* Diseño de créditos */
-.footer-design {
-    margin-top: 15px; /* Espaciado superior */
-    font-size: 0.9rem; /* Tamaño de fuente pequeño */
-    color: rgba(255, 255, 255, 0.7); /* Color gris claro */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    .footer-title {
-        font-size: 1.5rem; /* Reducir tamaño en pantallas pequeñas */
-    }
-
-    .footer-link {
-        font-size: 0.9rem; /* Ajustar tamaño de fuente de enlaces */
-    }
-
-    .footer-design {
-        font-size: 0.8rem; /* Tamaño más pequeño para créditos */
-    }
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
 }
