@@ -56,7 +56,7 @@ h1 {
     margin-bottom: 20px; /* Espaciado inferior */
     text-align: center; /* Centra el título de la tarjeta */
     font-weight: bold; /* Negrita para mayor énfasis */
-    color: #007bff; /* Color atractivo para el título */
+    color: #000000; /* Color atractivo para el título */
 }
 
 .form-group label {
@@ -71,13 +71,13 @@ h1 {
 }
 
 .form-control:focus {
-    border-color: #007bff; /* Color de borde al enfocar */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+    border-color: #ff0000; /* Color de borde al enfocar */
+    box-shadow: 0 0 5px rgba(251, 255, 0, 0.5); /* Sombra al enfocar */
 }
 
 button {
     transition: all 0.3s ease;
-    background-color: #007bff; /* Color de fondo del botón */
+    background-color: #ff0000; /* Color de fondo del botón */
     border: none; /* Sin borde */
     color: white; /* Texto blanco */
     padding: 12px 20px; /* Espaciado interno más grande */
@@ -88,7 +88,7 @@ button {
 
 button:hover {
     transform: scale(1.05); /* Efecto de escala al pasar el ratón */
-    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+    background-color: #ff6a00; /* Color más oscuro al pasar el ratón */
 }
 
 .map-container {

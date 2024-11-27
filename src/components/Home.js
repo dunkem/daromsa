@@ -1,7 +1,7 @@
-import { Container, Row, Col, Card, Carousel, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card, Carousel, Button, Image } from 'react-bootstrap'; // Asegúrate de importar Image
 import { Link } from 'react-router-dom';
 import './Home.css';
-import { FaCheckCircle, FaTools, FaBuilding, FaHammer } from 'react-icons/fa'; // Importar íconos
+import { FaCheckCircle, FaBuilding, FaVials, FaUserCheck, FaRegUser } from 'react-icons/fa'; // Importar íconos
 
 function Home({ setLoading }) {
   // Servicios ofrecidos
@@ -26,8 +26,8 @@ function Home({ setLoading }) {
       link: '/services/suelos'
     },
     {
-      src: '/portadapisollaneado.jpg',
-      title: 'PISOS LLANEADOS Y ACABADOS SUPERFICIALES',
+      src: '/portadapisosindustriales.png',
+      title: 'PISOS INDUSTRIALES Y ACABADOS SUPERFICIALES',
       description: 'Transformamos superficies con pisos llanos y acabados de alta calidad.',
       backup: { text: 'RESPALDADOS POR', logo: '/LOGOMAPEI.png' },
       link: '/services/pisos'
@@ -36,13 +36,13 @@ function Home({ setLoading }) {
 
   // Productos destacados
   const featuredProducts = [
-    { src: '/mathidrofugosika20l.jpg', name: 'Hidrofugo Sika 20 tls', link: '/products/hidrofugo-sika-200' },
+    { src: '/mathidrofugosika20l.jpg', name: 'Hidrofugo Sika 20 lts', link: '/products/hidrofugo-sika-200' },
     { src: '/matlad12.jpg', name: 'Ladrillo 12x12x18', link: '/products/ladrillo-comun' },
     { src: '/matbolsonarena.jpg', name: 'Arena en Bolsón', link: '/products/arena-gruesa' },
     { src: '/matcementoloma50kg.jpg', name: 'Cemento Loma Negra 50kg', link: '/products/cemento-portland' },
     { src: '/matcalcaciquemax30kg.jpg', name: 'Cal Hidratada x 30kg', link: '/products/cal-hidratada' },
     { src: '/matvarillashierro.png', name: 'Hierro de Construcción', link: '/products/hierro-construccion' },
-    { src: '/matpiedra620.jpg', name: 'Piedra en Bolson', link: '/products/piedra-bolson' }
+    { src: '/matpiedra620.jpg', name: 'Piedra en Bolsón', link: '/products/piedra-bolson' }
   ];
 
   // Proveedores
@@ -57,56 +57,72 @@ function Home({ setLoading }) {
   ];
 
   // Renderiza los elementos del carrusel
-  const renderCarouselItems = (items, isSupplier = false) => {
-    const itemsPerSlide = 4;
-    const slides = [];
-    for (let i = 0; i < Math.ceil(items.length / itemsPerSlide); i++) {
+const renderCarouselItems = (items, isSupplier = false) => {
+  const itemsPerSlide = 4; // Mantener 4 elementos por diapositiva
+  const slides = [];
+  for (let i = 0; i < Math.ceil(items.length / itemsPerSlide); i++) {
       slides.push(
-        <Carousel.Item key={i}>
-          <Row className="justify-content-center">
-            {items.slice(i * itemsPerSlide, i * itemsPerSlide + itemsPerSlide).map((item, idx) => (
-              <Col md={isSupplier ? 2 : 3} sm={6} key={idx} className="mb-4">
-                <Card className={isSupplier ? "supplier-card text-center" : "product-card text-center"}>
-                  <Card.Img variant="top" src={item.src} alt={item.alt} className={isSupplier ? "supplier-logo" : "benefit-logo"} />
-                  {!isSupplier && (
-                    <Card.Body>
-                      <Card.Title>{item.title || item.name}</Card.Title>
-                      <Card.Text>{item.description}</Card.Text>
-                    </Card.Body>
-                  )}
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Carousel.Item>
+          <Carousel.Item key={i}>
+              <Row className="justify-content-center">
+                  {items.slice(i * itemsPerSlide, i * itemsPerSlide + itemsPerSlide).map((item, idx) => (
+                      <Col md={isSupplier ? 2 : 3} sm={6} key={idx} className="mb-2"> {/* Ajustar aquí para hacer más compacto */}
+                          <Card className={isSupplier ? "supplier-card text-center" : "product-card text-center"} style={{ width: '100%', height: 'auto' }}>
+                              <Card.Img variant="top" src={item.src} alt={item.alt} className={isSupplier ? "supplier-logo" : "benefit-logo"} />
+                              {!isSupplier && (
+                                  <Card.Body>
+                                      <Card.Title>{item.title || item.name}</Card.Title>
+                                      <Card.Text>{item.description}</Card.Text>
+                                  </Card.Body>
+                              )}
+                          </Card>
+                      </Col>
+                  ))}
+              </Row>
+          </Carousel.Item>
       );
-    }
-    return slides;
-  };
+  }
+  return slides;
+};
 
-  return (
-    <Container fluid className="main-container">
-      {/* Sección de Portada */}
-      <Row className="hero-section">
-        <Col className="text-center">
-          <div className="hero-content animated fadeIn">
-            <h2 className="hero-title">COMPROMETIDOS CON LA CALIDAD Y LA CONFIANZA</h2>
-            <h3 className="hero-subtitle">TRANSFORMA TUS PROYECTOS CON NUESTRA EXPERIENCIA E INNOVACIÓN EN CADA ETAPA DE CONSTRUCCIÓN.</h3>
-          </div>
-        </Col>
-      </Row>
+return (
+  <Container fluid className="main-container">
+     {/* Sección de Portada */}
+<Row className="hero-section text-center">
+  <Col md={8} className="hero-content-wrapper">
+    <div className="hero-content animated fadeIn">
+      <h2 className="hero-title">COMPROMETIDOS CON LA CALIDAD Y LA CONFIANZA</h2>
+      <h3 className="hero-subtitle">TRANSFORMA TUS PROYECTOS CON NUESTRA EXPERIENCIA E INNOVACIÓN EN CADA ETAPA DE CONSTRUCCIÓN.</h3>
+    </div>
+  </Col>
+  <Col md={4} className="d-flex align-items-center justify-content-end">
+    <img src="/logolomanegra.png" alt="Logo Loma Negra" className="logo-hero" />
+  </Col>
+</Row>
 
       {/* Compromiso con el Cliente */}
       <Row className="text-center mb-4" style={{ backgroundColor: '#e9ecef', padding: '40px 0' }}>
-        <Col>
+        <Col md={6}>
           <h2 className="section-title">NUESTRO COMPROMISO CON EL CLIENTE</h2>
           <div className="line-divider"></div>
           <p className="commitment-description">
-            <FaCheckCircle /> Atención personalizada en todo momento.<br />
-            <FaTools /> Proveemos hormigón de los más altos estándares.<br />
-            <FaBuilding /> Servicios de bombas y laboratorio.<br />
-            <FaHammer /> Rotura de probetas, y más.
+            <FaCheckCircle /> Descuentos por compras conjuntas.<br />
+            <FaRegUser /> Atención personalizada en todas las etapas.<br />
+            <FaBuilding /> Proveemos hormigón y materiales de los más altos estándares.<br />
+            <FaUserCheck /> Amplia flota de equipos para toda la gama de servicios.<br />
+            <FaVials /> Laboratorio en obra. Rotura de probetas, y más.
           </p>
+        </Col>
+        <Col md={6}>
+          {/* Video de YouTube */}
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/8LLpOQTr4Yk"
+            title="Video de Compromiso"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </Col>
       </Row>
 
@@ -117,12 +133,13 @@ function Home({ setLoading }) {
           <div className="line-divider"></div>
         </Col>
       </Row>
+
       <Row className="mb-4">
         {services.map((service, index) => (
           <Col md={3} sm={6} key={index} className="mb-4 d-flex align-items-stretch">
             <Card className="service-card">
               <div className="service-image-container">
-                <Card.Img variant="top" src={service.src} className="service-img" style={{ height: '300px' }} /> {/* Aumentar altura de imagen */}
+                <Card.Img variant="top" src={service.src} className="service-img" style={{ height: '300px' }} />
                 {service.backup && (
                   <div className="backup-info">
                     <p>{service.backup.text}</p>
@@ -142,7 +159,7 @@ function Home({ setLoading }) {
         ))}
       </Row>
 
-      {/* Sección Sobre la Empresa - Ahora debajo de los servicios */}
+      {/* Sección Sobre la Empresa */}
       <Row className="text-center mb-4">
         <Col>
           <h2 className="section-title">LA EMPRESA</h2>
@@ -179,14 +196,20 @@ function Home({ setLoading }) {
         {renderCarouselItems(suppliers, true)}
       </Carousel>
 
-      {/* Sección de Entregas */}
-      <Row className="text-center mb-4" style={{ backgroundColor: '#e9ecef', padding: '20px 0' }}>
-        <Col>
-          <h2 className="section-title">ÁREA DE ENTREGAS</h2>
-          <div className="line-divider"></div>
-          <p>Realizamos entregas en toda la Zona Sur y Puerto Madero.</p>
-        </Col>
-      </Row>
+   {/* Sección de Entregas */}
+<Row className="mb-4 align-items-center" style={{ backgroundColor: '#e9ecef', padding: '10px 0' }}>
+  <Col md={{ span: 8, offset: 2 }} className="d-flex flex-column flex-md-row align-items-center"> {/* Flexbox para alinear en columnas en escritorio */}
+    <Col md={4} className="d-flex justify-content-center mb-3 mb-md-0"> {/* Columna para la imagen */}
+      <Image src="/ZONAS2.png" alt="Zonas de Entrega" fluid className="delivery-area-image" />
+    </Col>
+    <Col md={8} className="text-center text-md-left"> {/* Columna para el texto */}
+      <h2 className="section-title">ÁREA DE ENTREGAS</h2>
+      <div className="line-divider"></div>
+      <p>Realizamos entregas en toda Zona Sur, también llegamos a La Plata y Puerto Madero.</p>
+      <p>Desde nuestra planta ubicada en el Parque Industrial Tecnológico de Florencio Varela.</p>
+    </Col>
+  </Col>
+</Row>
     </Container>
   );
 }

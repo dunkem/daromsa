@@ -6,6 +6,7 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #333;
     margin: 0;
+    background-color: #f0f0f0; /* Color de fondo más suave */
 }
 
 /* Sección Hero */
@@ -15,10 +16,11 @@ body {
     height: 60vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Centrar contenido */
     color: #fff;
     position: relative;
     overflow: hidden;
+    padding: 20px; /* Espaciado interno */
 }
 
 .hero-section::before {
@@ -28,7 +30,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.1); /* Menos opacidad para el fondo oscuro */
     z-index: 1;
 }
 
@@ -38,28 +40,12 @@ body {
     position: relative;
     z-index: 2;
     padding: 20px;
-    animation: slideInLeft 1s ease-in-out;
 }
 
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    animation: fadeIn 1s ease-in;
-}
-
-.hero-subtitle {
-    font-size: 1.8rem;
-    color: #ffffff;
-    margin-top: 10px;
-    width: 100%;
-    text-align: center;
-}
-
-/* Animaciones */
-@keyframes slideInLeft {
+/* Animación de entrada de derecha a izquierda */
+@keyframes slideInRight {
     0% {
-        transform: translateX(-100%);
+        transform: translateX(100%);
         opacity: 0;
     }
     100% {
@@ -68,68 +54,92 @@ body {
     }
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    animation: slideInRight 1s ease-in; /* Aplicar la animación */
 }
 
-/* Estilos para los títulos de secciones */
+.hero-subtitle {
+    font-size: 1.5rem; /* Ajustado para que se vea mejor en móvil */
+    color: #ffffff;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    animation: slideInRight 1s ease-in 0.3s; /* Aplicar la animación con un retraso */
+}
+
+/* Estilos para el logo en la sección hero */
+.logo-hero {
+    width: 200px; 
+    height: auto;
+    margin-left: 20px; /* Alinear a la derecha */
+    filter: brightness(1.5); /* Aumentar el brillo del logo para que resalte más */
+    z-index: 3; /* Asegura que el logo esté por encima del fondo */
+}
+
+/* Otros estilos (mantener el resto del CSS) */
+
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #333; /* Cambiado a color sin fondo */
-    padding: 10px 15px;
-    margin: 10px 0; /* Reducido margen inferior */
+    color: #000; 
+    padding: 5px 15px; 
+    margin: 5px 0; 
     text-align: center;
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-    animation: fadeIn 0.5s ease-in-out;
     display: inline-block;
+    position: relative;
+    overflow: hidden;
 }
 
-.section-title:hover {
-    transform: scale(1.05);
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #ff0000; 
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.section-title:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 /* Carruseles */
 .carousel {
     border-radius: 15px;
     overflow: hidden;
+    background-color: #fff; 
+    padding: 20px; 
 }
 
-.carousel-item {
-    border-radius: 15px;
-    overflow: hidden;
+/* Estilos para los productos del carrusel */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; 
+    width: 200px; /* Tamaño atractivo para las tarjetas de productos */
+    margin: 10px auto; /* Centrar en la columna */
 }
 
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    .hero-section {
-        height: 40vh;
-        padding: 20px 10px;
-    }
+.product-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
 
-    .hero-title {
-        font-size: 2.5rem;
-    }
+.product-img {
+    height: 150px; 
+    object-fit: cover; 
+}
 
-    .hero-subtitle {
-        font-size: 1.5rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .carousel-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
+/* Compromiso con el Cliente */
+.commitment-description {
+    font-size: 1.2rem; /* Aumentar tamaño de las descripciones */
+    color: #333;
+    line-height: 1.6;
 }
 
 /* Tarjetas de servicio */
@@ -151,12 +161,11 @@ body {
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    filter: brightness(1.05);
 }
 
 .service-image-container {
     position: relative;
-    height: 200px;
+    height: 260px; 
     overflow: hidden;
 }
 
@@ -175,10 +184,10 @@ body {
 }
 
 .service-title {
-    font-size: 1.8rem;
+    font-size: 2rem; 
     font-weight: 500;
     margin-bottom: 10px;
-    color: #000;
+    color: #000; 
 }
 
 .service-description {
@@ -221,7 +230,7 @@ body {
 }
 
 .service-button {
-    background-color: #ff0000;
+    background-color: #ff0000; 
     color: white;
     border: none;
     padding: 10px 15px;
@@ -233,12 +242,38 @@ body {
 }
 
 .service-button:hover {
-    background-color: #c40000;
+    background-color: #c40000; 
 }
 
+/* Estilos responsivos */
 @media (max-width: 768px) {
+    .hero-section {
+        height: 40vh; /* Ajustar altura en móvil */
+        padding: 20px 10px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem; /* Ajustar tamaño del subtítulo en móvil */
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .product-card {
+        width: 90%; /* Hacer más anchas las tarjetas en móvil */
+    }
+
+    .product-img {
+        height: 120px; /* Ajustar tamaño en móvil */
+    }
+
     .service-img {
-        height: 150px;
+        height: 200px; 
     }
 
     .backup-info {
@@ -253,7 +288,7 @@ body {
 
 /* Empresa */
 .company-section {
-    background-color: #f0f0f0;
+    background-color: #fff; 
     padding: 40px 20px;
     text-align: center;
     margin: 40px 0;
@@ -265,4 +300,16 @@ body {
     font-size: 1.2rem;
     color: #333;
     line-height: 1.6;
+}
+.delivery-area-image {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .delivery-area-image {
+        width: 100%; /* Asegura que la imagen ocupe todo el ancho en móviles */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
 }

@@ -32,7 +32,7 @@ function App() {
                                 <Nav.Link as={Link} to="/services/hormigon" className="mx-2">Hormigón Elaborado</Nav.Link>
                                 <Nav.Link as={Link} to="/services/materiales" className="mx-2">Materiales</Nav.Link>
                                 <Nav.Link as={Link} to="/services/suelos" className="mx-2">Estudio y Movimientos de Suelos</Nav.Link>
-                                <Nav.Link as={Link} to="/services/pisos" className="mx-2">Pisos llaneados</Nav.Link>
+                                <Nav.Link as={Link} to="/services/pisos" className="mx-2">Pisos Industriales</Nav.Link>
                                 <Nav.Link as={Link} to="/about" className="mx-2">Sobre Nosotros</Nav.Link>
                                 <Nav.Link as={Link} to="/contact" className="mx-2">Contacto</Nav.Link>
                                 <Nav className="social-icons ms-2">

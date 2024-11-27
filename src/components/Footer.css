@@ -19,14 +19,14 @@
 }
 
 .footer-link {
-    color: #007bff;
+    color: #ff0000;
     text-decoration: none;
     font-size: 14px;
 }
 
 .footer-link:hover {
     text-decoration: underline;
-    color: #0056b3;
+    color: #ff0000;
 }
 
 .footer-design {
