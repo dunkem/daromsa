@@ -1,7 +1,8 @@
 import { Container, Row, Col, Card, Carousel, Button, Image } from 'react-bootstrap'; // Asegúrate de importar Image
 import { Link } from 'react-router-dom';
 import './Home.css';
-import { FaCheckCircle, FaBuilding, FaVials, FaUserCheck, FaRegUser } from 'react-icons/fa'; // Importar íconos
+import { FaCheckCircle, FaBuilding, FaVials } from 'react-icons/fa'; // Importar íconos
+import { FaHandshakeSimple, FaUserGroup } from 'react-icons/fa6';
 
 function Home({ setLoading }) {
   // Servicios ofrecidos
@@ -106,9 +107,9 @@ return (
           <div className="line-divider"></div>
           <p className="commitment-description">
             <FaCheckCircle /> Descuentos por compras conjuntas.<br />
-            <FaRegUser /> Atención personalizada en todas las etapas.<br />
+            <FaHandshakeSimple /> Atención personalizada en todas las etapas.<br />
             <FaBuilding /> Proveemos hormigón y materiales de los más altos estándares.<br />
-            <FaUserCheck /> Amplia flota de equipos para toda la gama de servicios.<br />
+            <FaUserGroup /> Amplia flota de equipos para toda la gama de servicios.<br />
             <FaVials /> Laboratorio en obra. Rotura de probetas, y más.
           </p>
         </Col>
